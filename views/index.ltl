@@ -1,0 +1,34 @@
+// AUTOROUTE
+call page
+
+    set title:
+        Lighter - Life is short. Build quickly.
+
+    set content
+
+        svg(viewBox="0 0 120 120" style="width:240px;height:240px;margin:5px")
+            path(fill="#e60" d="M20,80c0,40,80,40,80,0c0-40-40-60-40-70c0,20-40,30-40,70z")
+            path(fill="#fc0" d="M35,85c0,25,50,25,50,0c0-20-25-35-25-40c0,15-25,20-25,40z")
+            path(fill="#fff" d="M50,90c0,10,20,10,20,0c0-10-10-20-10-20c0,10-10,10-10,20z")
+
+        br
+
+        svg(viewBox="0 0 120 120" style="width:240px;height:240px;margin:5px")
+            path(fill="#fff" d="M85,25c40-5,40,75,0,70v-10c30,5,30-55,0-50z")
+            path(fill="#fff" d="M20,105c0,10,70,10,70,0l-5-90c0-10-60-10-60,0l-5,90z")
+            path(fill="#fc0" d="M25,100c0,7,60,7,60,0l-5-78c0,7-50,7-50,0l-5,78z")
+            path(fill="#e60" d="M28,96c0,6,12,6,12,0l2-69l-6,69c0,2-8,2-8,0zM48,98c0,6,12,6,12,0l-1-70l-3,70c0,2-8,2-8,0zM68,96c0,6,12,6,12,0l-4-69v69c0,2-8,2-8,0z")
+
+        br
+
+        svg(viewBox="0 0 120 120" style="width:240px;height:240px;margin:5px")
+            path(fill="#fc0" d="M25,15h20l25,45l-25,45h-20c-5,0-10-5-10-10v-70c0-5,5-10,10-10z")
+            path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
+            path(fill="#e60" d="M60,15l25,45l-25,45h35c5,0,10-5,10-10v-70c0-5-5-10-10-10z")
+
+        br
+
+        script:
+            setTimeout(function () {
+                location.reload();
+            }, 500);
