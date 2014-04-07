@@ -21,7 +21,7 @@ chug('views')
 
 chug('scripts')
 	.compile()
-	//.watch()
+	.watch()
 	.concat('/all.js')
 	.route()
 	.then(function () {
@@ -34,7 +34,7 @@ chug([
 	'styles/layout.styl'
 	])
 	.compile()
-	//.watch()
+	.watch()
 	.concat('/all.css')
 	.route()
 	.then(function () {
