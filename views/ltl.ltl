@@ -1,19 +1,36 @@
 // AUTOROUTE
 call page
+
     set title:
-        ltl - The clean, fast template language.
+        ltl - lightweight template language.
 
     set content
 
-        div.page-header
-            h1
-                svg(viewBox="0 0 120 120" style="width:60px;height:60px;margin:1px")
-                    path(fill="#fc0" d="M35,15h15l25,45l-25,45h-15c-10,0-20-10-20-20v-50c0-10,10-20,20-20z")
-                    path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
-                    path(fill="#e60" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
-                span ltl
+        #_HEAD
+            ._PANEL
+                h1#_LOGO
+                    svg(viewBox="0 0 120 120" style="width:60px;height:60px;margin:0 8px 0 0;vertical-align:middle")
+                        path(fill="#fc0" d="M35,15h15l25,45l-25,45h-15c-10,0-20-10-20-20v-50c0-10,10-20,20-20z")
+                        path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
+                        path(fill="#e60" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
+                    - ltl
+                    span lightweight template language
 
-        script:
-            setTimeout(function () {
-                location.reload();
-            }, 5000);
+        #_BODY
+            ._PANEL
+                ._BOX
+                    table
+                        tr
+                            td
+                                textarea._TEMPLATE(rows=8 cols=40):
+                                    html
+                                        head>title Hello World
+                                        body Welcome to ltl!
+                            td
+                                textarea._COMPILED(rows=8 cols=40 disabled)
+                        tr
+                            td
+                                textarea._CONTEXT(rows=5 cols=40):
+                                    {name: 'World'}
+                            td
+                                textarea._OUTPUT(rows=5 cols=40 disabled)

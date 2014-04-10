@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	border-top: 1em solid #e60;
+	font: normal 12px Arial;
+	background: #000;
+	color: #ddd;
+	height: 100%;
+	min-width: 980px;
+}
+
+#_HEAD {
+	background: #222;
+	border: 0 solid #000;
+	border-width: 0.2em 0;
+}
+
+#_LOGO {
+	font-size: 2.8em;
+	color: #fff;
+	text-shadow: 0.1em 0.1em #000;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=45);
+}
+
+#_LOGO svg {
+	display: inline-block;
+	vertical-align: middle;
+	height: 1.5em;
+	width: 1.5em;
+}
+
+#_LOGO span {
+	color: #666;
+	margin-left: 0.5em;
+	font-size: 0.8em;
+}
+
+#_LOGO b {
+	font-weight: bold;
+	color: #c70;
+}
+
+.home #_LOGO {
+	font-size: 2.4em;
+}
+
+.page #_HEAD ._PANEL {
+	padding: 0;
+}
+
+#_BODY {
+	background: #111;
+}
+
+.page #_BODY {
+	background: #eee;
+	color: #000;
+}
+
+#_USE {
+	background: #128;
+	color: #fff;
+	border: 0 solid #000;
+	border-width: 0.2em 0;
+	font-size: 1.2em;
+}
+
+#_INSIDE {
+	background: #111;
+	color: #888;
+}
+
+#_INSIDE h3 {
+	color: #c70;
+}
+
+#_FOOT {
+	border-top: 0.2em solid #000;
+	background: #000;
+	color: #555;
+}
+
+#_USE tt {
+	display: block;
+	background: #000;
+	border: 0.1em solid #999;
+	padding: 0.6em 1em;
+	color: #2f2;
+	font-family: Lucida Console,Courier;
+	line-height: 1.6em;
+}
+
+#_USE a._RESOURCE {
+	display: block;
+	padding: 0.4em 0.8em;
+	margin: 0 0 0.2em;
+	border: 0.1em solid #35f;
+	border-radius: 0.3em;
+	background: #016;
+	font-size: 1.2em;
+	color: #acf;
+	text-shadow: 0.1em 0.1em #000;
+}
+
+li {
+	margin: 0 0 0 1.5em;
+}
+
+#_USE h4 {
+	margin-top: 0.5em;
+}
+
+#_USE li {
+	font-size: 1.2em;
+	margin-top: 0.5em;
+}
+
+._PANEL {
+	clear: both;
+	margin: 0 auto;
+	padding: 6px;
+	width: 980px;
+}
+
+._SET, ._SECTION {
+	clear: both;
+}
+
+p {
+	margin: 1em 0;
+}
+
+br {
+	clear: both;
+}
+
+._SECTION {
+	padding: 2em 0;
+}
+
+._BOX, ._BOX12  {
+	padding: 1em;
+}
+
+._BOX1, ._BOX2, ._BOX3,
+._BOX4, ._BOX5, ._BOX6,
+._BOX7, ._BOX8, ._BOX9,
+._BOX10, ._BOX11 {
+	float: left;
+	padding: 1em;
+}
+
+._BOX1 { width: 8.33%; }
+._BOX2 { width: 16.67%; }
+._BOX3 { width: 25%; }
+._BOX4 { width: 33.33%; }
+._BOX5 { width: 41.67%; }
+._BOX6 { width: 50%; }
+._BOX7 { width: 58.33%; }
+._BOX8 { width: 66.67%; }
+._BOX9 { width: 75%; }
+._BOX10 { width: 83.33%; }
+._BOX11 { width: 91.67%; }
+
+._RIGHT { float: right; }
+
+#_FORK {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#_FORK img{
+	width: 150px;
+	height: 150px;
+	border: 0;
+}
+
+@media all and (max-width: 1000px) {
+	._BOX1, ._BOX2, ._BOX3,
+	._BOX4, ._BOX5, ._BOX6,
+	._BOX7, ._BOX8, ._BOX9,
+	._BOX10, ._BOX11,
+	._PANEL {
+		width: 100%;
+	}
+	#_TAGLINE {
+		display: none;
+	}
+	body {
+		min-width: 400px;
+	}
+}

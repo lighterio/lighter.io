@@ -1,8 +1,9 @@
 html
     head
-        link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css")
-        link(rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css")
         link(rel="stylesheet" href="/all.css")
+        link(rel="shortcut icon" href="/favicon.ico")
+        meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1")
+        script(src="/all.js")
         title
             get title
     body

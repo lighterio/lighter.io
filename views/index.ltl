@@ -6,27 +6,35 @@ call page
 
     set content
 
-        svg(viewBox="0 0 120 120" style="width:240px;height:240px;margin:1px")
-            path(fill="#e60" d="M20,80c0,45,80,45,80,0c0-40-40-60-40-70c0,20-40,30-40,70z")
-            path(fill="#fc0" d="M35,85c0,30,50,30,50,0c0-20-25-35-25-40c0,15-25,20-25,40z")
-            path(fill="#fff" d="M50,90c0,14,20,14,20,0c0-10-10-20-10-20c0,10-10,10-10,20z")
+        #_LOGO
 
-        br
+            svg(viewBox="0 0 120 120" style="width:120px;height:120px;margin:1px")
+                path(fill="#fc0" d="M35,15h15l25,45l-25,45h-15c-10,0-20-10-20-20v-50c0-10,10-20,20-20z")
+                path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
+                path(fill="#e60" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
+            - ltl
+            span lightweight template language
 
-        svg(viewBox="0 0 120 120" style="width:240px;height:240px;margin:1px")
-            path(fill="#fff" d="M85,25c40-5,40,75,0,70v-10c30,5,30-55,0-50z")
-            path(fill="#fff" d="M20,105c0,10,70,10,70,0l-5-90c0-10-60-10-60,0l-5,90z")
-            path(fill="#fc0" d="M25,100c0,7,60,7,60,0l-5-78c0,7-50,7-50,0l-5,78z")
-            path(fill="#e60" d="M28,96c0,6,12,6,12,0l2-69l-6,69c0,2-8,2-8,0zM48,98c0,6,12,6,12,0l-1-70l-3,70c0,2-8,2-8,0zM68,96c0,6,12,6,12,0l-4-69v69c0,2-8,2-8,0z")
+            br
 
-        br
+            svg(viewBox="0 0 120 120" style="width:120px;height:120px;margin:1px")
+                path(fill="#fff" d="M85,25c40-5,40,75,0,70v-10c30,5,30-55,0-50z")
+                path(fill="#fff" d="M20,105c0,10,70,10,70,0l-5-90c0-10-60-10-60,0l-5,90z")
+                path(fill="#fc0" d="M25,100c0,7,60,7,60,0l-5-78c0,7-50,7-50,0l-5,78z")
+                path(fill="#e60" d="M28,96c0,6,12,6,12,0l2-69l-6,69c0,2-8,2-8,0zM48,98c0,6,12,6,12,0l-1-70l-3,70c0,2-8,2-8,0zM68,96c0,6,12,6,12,0l-4-69v69c0,2-8,2-8,0z")
+            - &nbsp;chug
+            span caching asset loader
 
-        svg(viewBox="0 0 120 120" style="width:240px;height:240px;margin:1px")
-            path(fill="#fc0" d="M35,15h15l25,45l-25,45h-15c-10,0-20-10-20-20v-50c0-10,10-20,20-20z")
-            path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
-            path(fill="#e60" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
+            br
 
-        br
+            svg(viewBox="0 0 120 120" style="width:120px;height:120px;margin:1px")
+                path(fill="#e60" d="M20,80c0,45,80,45,80,0c0-40-40-60-40-70c0,20-40,30-40,70z")
+                path(fill="#fc0" d="M35,85c0,30,50,30,50,0c0-20-25-35-25-40c0,15-25,20-25,40z")
+                path(fill="#fff" d="M50,90c0,14,20,14,20,0c0-10-10-20-10-20c0,10-10,10-10,20z")
+            - lighter
+            span fast MVC for Node.js
+
+            br
 
         script:
             setTimeout(function () {

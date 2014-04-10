@@ -19,19 +19,28 @@ chug('views')
 	})
 	.watch();
 
-chug('scripts')
+chug([
+	'node_modules/jquery/dist/jquery.js',
+	'node_modules/codemirror/lib/codemirror.js',
+	'node_modules/ltl/ltl.js',
+	'scripts'])
 	.compile()
+	.then(function () {
+	})
 	.watch()
 	.concat('/all.js')
 	.route()
 	.then(function () {
+		var locations = [];
+		this.assets.forEach(function (asset) {
+			locations.push(asset.location);
+		});
+		console.log('Script assets: ' + locations.join(', '));
 		console.log('Scripts loaded.');
 	});
 
 chug([
-	'styles/bootstrap.css',
-	'styles/font-awesome.css',
-	'styles/layout.styl'
+	'styles'
 	])
 	.compile()
 	.watch()
