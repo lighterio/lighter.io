@@ -18,19 +18,21 @@ call page
 
         #_BODY
             ._PANEL
-                ._BOX
-                    table
-                        tr
-                            td
-                                textarea._TEMPLATE(rows=8 cols=40):
-                                    html
-                                        head>title Hello World
-                                        body Welcome to ltl!
-                            td
-                                textarea._COMPILED(rows=8 cols=40 disabled)
-                        tr
-                            td
-                                textarea._CONTEXT(rows=5 cols=40):
-                                    {name: 'World'}
-                            td
-                                textarea._OUTPUT(rows=5 cols=40 disabled)
+                .
+                    ._BOX6
+                        ._CODE_TAB Template
+                        textarea._TEMPLATE(rows=8 cols=40):
+                            html
+                                head>title Hello World
+                                body Welcome to ltl!
+                    ._BOX6
+                        ._CODE_TAB Compiled
+                        textarea._COMPILED(rows=8 cols=40 disabled)
+                .
+                    ._BOX6
+                        ._CODE_TAB Context
+                        textarea._CONTEXT(rows=5 cols=40):
+                            {name: 'World'}
+                    ._BOX6
+                        ._CODE_TAB Output
+                        textarea._OUTPUT(rows=5 cols=40 disabled)

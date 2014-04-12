@@ -23,7 +23,7 @@ call page
                 path(fill="#fc0" d="M25,100c0,7,60,7,60,0l-5-78c0,7-50,7-50,0l-5,78z")
                 path(fill="#e60" d="M28,96c0,6,12,6,12,0l2-69l-6,69c0,2-8,2-8,0zM48,98c0,6,12,6,12,0l-1-70l-3,70c0,2-8,2-8,0zM68,96c0,6,12,6,12,0l-4-69v69c0,2-8,2-8,0z")
             - &nbsp;chug
-            span caching asset loader
+            span caching asset builder
 
             br
 
@@ -39,4 +39,4 @@ call page
         script:
             setTimeout(function () {
                 location.reload();
-            }, 500);
+            }, 50000);
