@@ -1,38 +1,50 @@
 // AUTOROUTE
 call page
 
-    set title:
-        ltl - lightweight template language.
+  set title:
+    ltl - lightweight template language.
 
-    set content
+  set content
 
-        #_HEAD
-            ._PANEL
-                h1#_LOGO
-                    svg(viewBox="0 0 120 120" style="width:60px;height:60px;margin:0 8px 0 0;vertical-align:middle")
-                        path(fill="#fc0" d="M35,15h15l25,45l-25,45h-15c-10,0-20-10-20-20v-50c0-10,10-20,20-20z")
-                        path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
-                        path(fill="#e60" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
-                    - ltl
-                    span lightweight template language
+    #_HEAD
+      ._PANEL
+        h1#_LOGO
+          svg(viewBox="0 0 120 120" style="width:60px;height:60px;margin:0 8px 0 0;vertical-align:middle")
+            path(fill="#fc0" d="M35,15h15l25,45l-25,45h-15c-10,0-20-10-20-20v-50c0-10,10-20,20-20z")
+            path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
+            path(fill="#e60" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
+          - ltl
+          span lightweight template language
 
-        #_BODY
-            ._PANEL
-                .
-                    ._BOX6
-                        ._CODE_TAB Template
-                        textarea._TEMPLATE(rows=8 cols=40):
-                            html
-                                head>title Hello World
-                                body Welcome to ltl!
-                    ._BOX6
-                        ._CODE_TAB Compiled
-                        textarea._COMPILED(rows=8 cols=40 disabled)
-                .
-                    ._BOX6
-                        ._CODE_TAB Context
-                        textarea._CONTEXT(rows=5 cols=40):
-                            {name: 'World'}
-                    ._BOX6
-                        ._CODE_TAB Output
-                        textarea._OUTPUT(rows=5 cols=40 disabled)
+    #_BODY
+      ._PANEL
+        .
+          ._BOX6
+            ._CODE_TAB Template
+            textarea._TEMPLATE(rows=8 cols=40):
+              // Experience the joy of ltl!
+
+              html(lang="en")
+
+                head
+                  title #{pageTitle}
+
+                body
+                  h1 ltl - lightweight template language
+                  #content.panel
+                    p:
+                      ltl is a simple template language
+                      that renders faster than any other
+                      JavaScript template language. Use
+                      it in Node.js or in the browser.
+                    if youUseLtl
+                      . Your pages will be fast!
+                    else
+                      . Why wait?
+
+            textarea._COMPILED(style="display:none")
+            textarea._CONTEXT(style="display:none"):
+                {"pageTitle": "Welcome to ltl!", "youUseLtl": true}
+          ._BOX6
+            ._CODE_TAB Output
+            textarea._OUTPUT(rows=5 cols=40 disabled)
