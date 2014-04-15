@@ -20,7 +20,8 @@ createEditor = (mode, textarea) ->
 		mode: mode
 		tabSize: 4
 		theme: 'blackboard'
-		lineNumbers: true
+		lineNumbers: true,
+	  smartIndent: true
 
 	editor.on 'change', ->
 		editor.save()

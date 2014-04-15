@@ -2,7 +2,7 @@
 call page
 
   set title:
-    ltl - lightweight template language.
+    ltl - lean template language.
 
   set content
 
@@ -14,7 +14,7 @@ call page
             path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
             path(fill="#e60" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
           - ltl
-          span lightweight template language
+          span <b>l</b>ean <b>t</b>emplate <b>l</b>anguage
 
     #_BODY
       ._PANEL
@@ -27,20 +27,21 @@ call page
               html(lang="en")
 
                 head
-                  title #{pageTitle}
+                  title \\${pageTitle}
 
                 body
-                  h1 ltl - lightweight template language
+                  h1 ltl - lean template language
+
                   #content.panel
                     p:
-                      ltl is a simple template language
-                      that renders faster than any other
-                      JavaScript template language. Use
-                      it in Node.js or in the browser.
+                      ltl (pronounced "little") is the lean,
+                      clean, fast-rendering template machine.
+                      Use it in Node.js or in the browser.
+
                     if youUseLtl
-                      . Your pages will be fast!
+                      . Your pages will be super fast!
                     else
-                      . Why wait?
+                      . Seriously, why wait?
 
             textarea._COMPILED(style="display:none")
             textarea._CONTEXT(style="display:none"):
