@@ -6,6 +6,11 @@ call page
 
   set content
 
+    script(src="//coffeescript.org/extras/coffee-script.js")
+    script:
+      window['coffee-script'] = CoffeeScript;
+      window.markdown = marked;
+
     #_HEAD
       ._PANEL
         h1#_LOGO
@@ -24,19 +29,20 @@ call page
             textarea._TEMPLATE(rows=8 cols=40):
               // Experience the joy of ltl!
               html(lang="en")
-                head
-                  title \\${pageTitle}
-                body
-                  h1 ltl - lean template language
-                  #content.panel
-                    p:
-                      ltl (pronounced "little") is the lean,
-                      clean, fast-rendering template machine.
-                      Use it in Node.js or in the browser.
-                    if youUseLtl
-                      . Your pages will be fast!
-                    else
-                      . Seriously, why wait?
+                head>title \\${pageTitle}
+                body#demo
+                  h1.big ltl - lean template language=
+                  p:
+                    ltl (pronounced "little") is the lean,
+                    clean, fast-rendering template machine.
+                    Use it in Node.js or in the browser.
+                  -:marked
+                    ## Custom Filters?
+                    Yes, [ltl](/ltl) supports them.
+                  if youUseLtl
+                    . Your pages are super fast!
+                  else
+                    . Use ltl!
             textarea._COMPILED(style="display:none")
             textarea._CONTEXT(style="display:none"):
                 {"pageTitle": "Welcome to ltl!", "youUseLtl": true}
