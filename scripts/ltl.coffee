@@ -4,7 +4,7 @@ $ ->
 		$panel = $(this).closest '._PANEL'
 		template = $panel.find('._TEMPLATE').val()
 		context = JSON.parse $panel.find('._CONTEXT').val()
-		compiled = ltl.compile template
+		compiled = ltl.compile template, {space: '  '}
 		output = compiled context
 		$panel.find('._COMPILED').val compiled.toString()
 		$panel.find('._OUTPUT').val output
