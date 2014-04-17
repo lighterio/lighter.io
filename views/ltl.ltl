@@ -31,7 +31,7 @@ call page
               html(lang="en")
                 head>title \\${pageTitle}
                 body#demo
-                  h1.big ltl - lean template language=
+                  h1.big ltl demo
                   p:
                     ltl (pronounced "little") is the lean,
                     clean, fast-rendering template machine.
@@ -43,6 +43,10 @@ call page
                     . Your pages are super fast!
                   else
                     . Use ltl!
+                  script:coffee
+                    console.log "CoffeeScript can be fun."
+                  script
+                    console.log("And of course JS works too.")
             textarea._COMPILED(style="display:none")
             textarea._CONTEXT(style="display:none"):
                 {"pageTitle": "Welcome to ltl!", "youUseLtl": true}
@@ -50,3 +54,6 @@ call page
             ._CODE_TAB Output
             textarea._OUTPUT(rows=5 cols=40 disabled)
       br
+iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -i eth0 -p tcp --dport 8888 -j ACCEPT
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8888

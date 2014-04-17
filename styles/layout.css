@@ -223,3 +223,32 @@ div._CODE_TAB {
 	margin-bottom: -1px;
 	z-index: 1;
 }
+
+a._PROJECT {
+	display: block;
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid #222;
+	border-radius: 30px;
+	background: #111;
+	font-weight: bold;
+	font-size: 40px;
+	color: #fff;
+}
+
+a._PROJECT:hover {
+	background: #113;
+	border-color: #336;
+}
+
+a._PROJECT svg {
+	vertical-align: middle;
+	width: 120px;
+	height: 120px;
+}
+
+a._PROJECT span {
+	color: #666;
+	margin-left: 0.5em;
+	font-size: 0.8em;
+}
