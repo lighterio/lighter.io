@@ -1,28 +1,52 @@
 $ ->
-	$document = $(document)
-	$document.on 'keydown keyup', 'textarea._TEMPLATE,textarea._CONTEXT', ->
-		$panel = $(this).closest '._PANEL'
-		template = $panel.find('._TEMPLATE').val()
-		context = JSON.parse $panel.find('._CONTEXT').val()
-		compiled = ltl.compile template, {space: '  '}
-		output = compiled context
-		$panel.find('._COMPILED').val compiled.toString()
-		$panel.find('._OUTPUT').val output
 
-	$('textarea._TEMPLATE').keyup()
+	$('textarea').each (index, textarea) ->
+		className = textarea.className
+		if className is '_TEMPLATE'
+			createEditor 'jade', textarea
+		#else if className is '_CONTEXT'
+		#	createEditor 'json', textarea
+		#else if className is '_COMPILED'
+		#	createEditor 'javascript', textarea
+		else if className is '_OUTPUT'
+			createEditor 'htmlmixed', textarea
 
-	createEditor 'jade', $('textarea._TEMPLATE')[0]
-
-
+	$(document).on 'click', 'b._CODE_TAB', ->
+		className = this.className.split(' ')[1]
+		$(this)
+			.parent().children().filter('div').addClass('_HIDDEN')
+			.filter('.' + className).removeClass('_HIDDEN')
+		  .parent().find('._ON').removeClass('_ON')
+		$(this).addClass('_ON')
 
 createEditor = (mode, textarea) ->
+	isLtl = mode is 'jade'
+
 	editor = CodeMirror.fromTextArea textarea,
 		mode: mode
-		tabSize: 4
+		tabSize: 2
 		theme: 'blackboard'
-		lineNumbers: true,
-	  smartIndent: true
+		lineNumbers: isLtl,
+	  smartIndent: true,
+		readOnly: not isLtl
+		lineWrapping: mode is 'javascript'
 
-	editor.on 'change', ->
+  $panel = $(textarea).closest('._PANEL')
+  panel = $panel[0]
+	panel[textarea.className] = editor
+
+	change = ->
 		editor.save()
-		$(textarea).keyup()
+		template = $panel.find('textarea._TEMPLATE').val()
+		context = JSON.parse $panel.find('textarea._CONTEXT').val()
+		compiled = ltl.compile template, {space: '  '}
+		cleanCompiled = ltl.compile template
+		output = compiled context
+		#panel['_COMPILED'].doc.setValue compiled.toString()
+		$panel.find('textarea._COMPILED').val cleanCompiled.toString()
+		panel['_OUTPUT'].doc.setValue output
+
+
+	if isLtl
+	  editor.on 'change', change
+		setTimeout change, 10

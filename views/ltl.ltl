@@ -2,11 +2,10 @@
 call page
 
   set title:
-    ltl - lean template language.
+    ltl - the lean template language.
 
   set content
 
-    script(src="//coffeescript.org/extras/coffee-script.js")
     script:
       window['coffee-script'] = CoffeeScript;
       window.markdown = marked;
@@ -19,38 +18,46 @@ call page
             path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
             path(fill="#e60" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
           - ltl
-          span <b>l</b>ean <b>t</b>emplate <b>l</b>anguage
+          span the <b>l</b>ean <b>t</b>emplate <b>l</b>anguage
 
     #_BODY
       ._PANEL
         .
           ._BOX6
-            ._CODE_TAB Template
-            textarea._TEMPLATE(rows=8 cols=40):
-              // Experience the joy of ltl!
-              html(lang="en")
-                head>title \\${pageTitle}
-                body#demo
-                  h1.big ltl demo
-                  p:
-                    ltl (pronounced "little") is the lean,
-                    clean, fast-rendering template machine.
-                    Use it in Node.js or in the browser.
-                  -:marked
-                    ## Custom Filters?
-                    Yes, [ltl](/ltl) supports them.
-                  if youUseLtl
-                    . Your pages are super fast!
-                  else
-                    . Use ltl!
-                  script:coffee
-                    console.log "CoffeeScript can be fun."
-                  script:
-                    console.log("And of course JS works too.")
-            textarea._COMPILED(style="display:none")
-            textarea._CONTEXT(style="display:none"):
-                {"pageTitle": "Welcome to ltl!", "youUseLtl": true}
+            b._CODE_TAB._TEMPLATE._ON Template
+            b._CODE_TAB._COMPILED Compiled
+            ._TEMPLATE
+              textarea._TEMPLATE(rows=8 cols=40):
+                // Experience the joy of ltl!
+                html(lang="en")
+                  head>title \\${pageTitle}
+                  body#demo
+                    h1.big.heading ltl Demo
+                    #description:
+                      ltl (pronounced "little") is the lean,
+                      clean, fast-rendering template machine.
+                      Use it in Node.js or in the browser.
+                    :markdown
+                      ## Custom Filters?
+                      Yes, [ltl](/ltl) has them.
+                    if youUseLtl
+                      . Your pages are super fast!
+                    else
+                      . Use ltl!
+                    script:coffee
+                      # NOWRAP
+                      console.log "CoffeeScript can be fun."
+                    script:
+                      console.log("Of course JS works too.");
+                  - Rendered by: \\={renderedBy}
+            ._COMPILED._HIDDEN
+              textarea._COMPILED
           ._BOX6
-            ._CODE_TAB Output
-            textarea._OUTPUT(rows=5 cols=40 disabled)
+            b._CODE_TAB._CONTEXT Context
+            b._CODE_TAB._OUTPUT._ON Output
+            ._CONTEXT._HIDDEN
+              textarea._CONTEXT:
+                {"pageTitle": "Welcome to ltl!", "youUseLtl": true, "renderedBy": "<b>ltl</b>"}
+            ._OUTPUT
+              textarea._OUTPUT(rows=5 cols=40 disabled)
       br

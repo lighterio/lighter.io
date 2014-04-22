@@ -34,23 +34,3 @@ p._ABOUT {
 #_INSIDE p {
 	margin: 0;
 }
-
-textarea, .CodeMirror {
-	background: #000!important;
-	color: #fff;
-	border: 1px solid #333!important;
-	height: 430px;
-	font-size: 14px!important;
-	font: 14px Menlo, "Lucida Console", "Courier New", monospace;
-}
-
-textarea {
-	outline: 0;
-	padding: 4px 6px;
-}
-
-.CodeMirror-gutter {
-	background: #181818;
-	border-right: 1px solid #222;
-	color: #999;
-}
