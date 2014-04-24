@@ -210,10 +210,10 @@ a._PROJECT {
 	padding: 5px;
 	margin: 5px;
 	border: 1px solid #222;
-	border-radius: 30px;
+	border-radius: 20px;
 	background: #111;
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 24px;
 	color: #fff;
 }
 
@@ -224,8 +224,9 @@ a._PROJECT:hover {
 
 a._PROJECT svg {
 	vertical-align: middle;
-	width: 120px;
-	height: 120px;
+	width: 60px;
+	height: 60px;
+	margin: 1px 8px;
 }
 
 a._PROJECT span {

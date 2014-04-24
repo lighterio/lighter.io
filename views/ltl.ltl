@@ -2,7 +2,7 @@
 call page
 
   set title:
-    ltl - the lean template language.
+    Ltl - the lean template language.
 
   set content
 
@@ -17,7 +17,7 @@ call page
             path(fill="#fc0" d="M35,15h15l25,45l-25,45h-15c-10,0-20-10-20-20v-50c0-10,10-20,20-20z")
             path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
             path(fill="#e60" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
-          - ltl
+          - Ltl
           span the <b>l</b>ean <b>t</b>emplate <b>l</b>anguage
 
     #_BODY
@@ -28,22 +28,22 @@ call page
             b._CODE_TAB._COMPILED Compiled
             ._TEMPLATE
               textarea._TEMPLATE(rows=8 cols=40):
-                // Experience the joy of ltl!
+                // Experience the joy of Ltl!
                 html(lang="en")
                   head>title \\${pageTitle}
                   body#demo
-                    h1.big.heading ltl Demo
+                    h1.big.heading Ltl Demo
                     #description:
-                      ltl (pronounced "little") is the lean,
+                      Ltl (pronounced "little") is the lean,
                       clean, fast-rendering template machine.
                       Use it in Node.js or in the browser.
                     :markdown
                       ## Custom Filters?
-                      Yes, [ltl](/ltl) has them.
+                      Yes, [Ltl](/ltl) has them.
                     if youUseLtl
                       . Your pages are super fast!
                     else
-                      . Use ltl!
+                      . Use Ltl!
                     script:coffee
                       # NOWRAP
                       console.log "CoffeeScript can be fun."
@@ -57,7 +57,10 @@ call page
             b._CODE_TAB._OUTPUT._ON Output
             ._CONTEXT._HIDDEN
               textarea._CONTEXT:
-                {"pageTitle": "Welcome to ltl!", "youUseLtl": true, "renderedBy": "<b>ltl</b>"}
+                {
+                  "pageTitle": "Welcome to Ltl!",
+                  "youUseLtl": true, "renderedBy": "<b>Ltl</b>"
+                }
             ._OUTPUT
               textarea._OUTPUT(rows=5 cols=40 disabled)
       br
