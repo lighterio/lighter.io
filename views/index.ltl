@@ -63,8 +63,3 @@ call page
                             path(fill="#fff" d="M15,30l58,40l32-15l-60-35l56,34l-28,12z")
                         - Gold
                         span application manager
-
-        script:
-            setTimeout(function () {
-            //    location.reload();
-            }, 1000);
