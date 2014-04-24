@@ -66,5 +66,5 @@ call page
 
         script:
             setTimeout(function () {
-                location.reload();
+            //    location.reload();
             }, 1000);
