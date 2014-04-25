@@ -15,12 +15,10 @@ body {
 
 #_HEAD {
 	background: #222;
-	border: 0 solid #000;
-	border-width: 0.2em 0;
 }
 
 #_LOGO {
-	font-size: 2.8em;
+	font-size: 28px;
 	color: #fff;
 	text-shadow: 0.1em 0.1em #000;
 	filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=45);
@@ -28,9 +26,10 @@ body {
 
 #_LOGO svg {
 	display: inline-block;
+	width: 60px;
+	height: 60px;
+	margin: 0 8px 0 0;
 	vertical-align: middle;
-	height: 1.5em;
-	width: 1.5em;
 }
 
 #_LOGO span {
@@ -61,25 +60,11 @@ body {
 }
 
 #_FEATURES {
-	background: #222 url(/gears.gif);
-	color: #fff;
-	border: 0 solid #333;
-	border-width: 0.2em 0;
-	font-size: 1.5em;
-	font-weight: bold;
-}
-
-#_USE {
-	background: #128;
-	color: #fff;
+	background: #fc0;
+	color: #000;
 	border: 0 solid #000;
-	border-width: 0.2em 0;
-	font-size: 1.2em;
-}
-
-#_INSIDE {
-	background: #111;
-	color: #888;
+	border-width: 2px 0;
+	font-size: 20px;
 }
 
 #_INSIDE h3 {
@@ -213,7 +198,7 @@ a._PROJECT {
 	border-radius: 20px;
 	background: #111;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 22px;
 	color: #fff;
 }
 

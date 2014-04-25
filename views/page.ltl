@@ -1,7 +1,10 @@
 html
     head
         link(rel="stylesheet" href="/all.css")
-        link(rel="shortcut icon" href="/favicon.ico")
+        if favicon
+            link(rel="shortcut icon" href="/${favicon}.ico")
+        else
+            link(rel="shortcut icon" href="/lighter.ico")
         meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1")
         script(src="/all.js")
         title

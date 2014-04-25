@@ -2,9 +2,26 @@
 call page
 
     set title:
-        Lighter - Life is short. Build quickly.
+        Lighter.io - Faster is Better
 
     set content
+
+        #_HEAD
+            ._PANEL
+                h1#_LOGO
+                    svg(viewBox="0 0 120 120")
+                        path(fill="#e60" d="M20,80c0,45,80,45,80,0c0-40-40-60-40-70c0,20-40,30-40,70z")
+                        path(fill="#fc0" d="M35,85c0,30,50,30,50,0c0-20-25-35-25-40c0,15-25,20-25,40z")
+                        path(fill="#fff" d="M50,90c0,14,20,14,20,0c0-10-10-20-10-20c0,10-10,10-10,20z")
+                    - Lighter.io
+                    span Faster is Better
+
+        #_FEATURES
+            ._PANEL
+                ._BOX:
+                    Lighter.io modules deliver fast experiences for JavaScript developers and
+                    web application users. We maintain easy APIs with 100% test coverage and
+                    unbeatable performance.
 
         #_BODY
 
@@ -35,7 +52,7 @@ call page
                             path(fill="#fc0" d="M15,35l70,-5l-70,55z")
                             path(fill="#e60" d="M105,35l-70,55l70-5z")
                         - Zeriousify
-                        span module standard
+                        span module standardizer
 
                 ._BOX6
 
@@ -46,7 +63,7 @@ call page
                             path(fill="#fff" d="M30,15c0,11,60,11,60,0c0,8-60,8-60,0z")
                             path(fill="#fff" d="M40,21l4,0.7l-2,89.8l-5,-0.8z")
                         - FirePoll
-                        span lightweight long poll
+                        span lightweight long polling
 
                     a._PROJECT(href="https://github.com/zerious/lighter")
                         svg(viewBox="0 0 120 120")
