@@ -56,14 +56,19 @@ call page
 
                 ._BOX6
 
-                    a._PROJECT(href="https://github.com/zerious/firepoll")
+                    a._PROJECT(href="https://github.com/zerious/beams")
                         svg(viewBox="0 0 120 120")
-                            path(fill="#fc0" d="M25,105c0,10,70,10,70,0l-5-90h-60l-5,90z")
-                            path(fill="#e60" d="M30,15c0,10,60,10,60,0c0-10-60-10-60,0z")
-                            path(fill="#fff" d="M30,15c0,11,60,11,60,0c0,8-60,8-60,0z")
-                            path(fill="#fff" d="M40,21l4,0.7l-2,89.8l-5,-0.8z")
-                        - FirePoll
-                        span lightweight long polling
+                            path(fill="#fc0" d="M25,105c0,15,70,15,70,0l-35-95l-35,95z")
+                            path(fill="#e60" d="M25,105c0-15,70-15,70,0c0-16-70-16-70,0z")
+                            path(fill="#fff" d="M5,32c0,18,110,18,110,0c0-15-110-15-110,0z")
+                            path(fill="#fff" d="M35,25c5-25,45,-25,50,0z")
+                            path(fill="#e60" d="M35,25c0,10,50,10,50,0c0,8-50,8-50,0z")
+                            path(fill="#fc0" d="M37,22c0,5,8,5,8,0c0-5-8-5-8,0z")
+                            path(fill="#fc0" d="M48,24c0,5,8,5,8,0c0-5-8-5-8,0z")
+                            path(fill="#fc0" d="M62,24c0,5,8,5,8,0c0-5-8-5-8,0z")
+                            path(fill="#fc0" d="M75,22c0,5,8,5,8,0c0-5-8-5-8,0z")
+                        - Beams
+                        span long polling transport
 
                     a._PROJECT(href="https://github.com/zerious/lighter")
                         svg(viewBox="0 0 120 120")
