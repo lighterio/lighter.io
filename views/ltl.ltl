@@ -6,10 +6,6 @@ call page
 
   set content
 
-    script:
-      window['coffee-script'] = CoffeeScript;
-      window.markdown = marked;
-
     #_HEAD
       ._PANEL
         h1#_LOGO
@@ -24,11 +20,10 @@ call page
       ._PANEL
         .
           ._BOX6
-            b._CODE_TAB._TEMPLATE._ON Template
+            b._CODE_TAB._TEMPLATE._ON Live Editable Template
             b._CODE_TAB._COMPILED Compiled
             ._TEMPLATE
-              textarea._TEMPLATE(rows=8 cols=40):
-                // Experience the joy of Ltl!
+              textarea._TEMPLATE(rows=8 cols=40 autofocus):
                 html(lang="en")
                   head>title \\${pageTitle}
                   body#demo
@@ -40,6 +35,7 @@ call page
                     :markdown
                       ## Custom Filters?
                       Yes, [Ltl](/ltl) has them.
+                    // Note: youUseLtl comes from the context.
                     if youUseLtl
                       . Your pages are super fast!
                     else
@@ -49,7 +45,7 @@ call page
                       console.log "CoffeeScript can be fun."
                     script:
                       console.log("Of course JS works too.");
-                  - Rendered by: \\={renderedBy}
+                    - Rendered by: \\={renderedBy}
             ._COMPILED._HIDDEN
               textarea._COMPILED
           ._BOX6
