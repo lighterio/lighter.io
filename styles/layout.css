@@ -5,7 +5,7 @@
 }
 
 body {
-	border-top: 1em solid #e60;
+	border-top: 1em solid #e50;
 	font: normal 12px Arial;
 	background: #000;
 	color: #ddd;
@@ -50,7 +50,8 @@ body {
 	padding: 0;
 }
 
-#_BODY {
+#_BODY,
+#_PROJECTS {
 	background: #111;
 }
 
@@ -64,17 +65,33 @@ body {
 	color: #000;
 	border: 0 solid #000;
 	border-width: 2px 0;
-	font-size: 20px;
+	font-size: 22px;
 }
 
-#_INSIDE h3 {
-	color: #c70;
+#_FEATURES ._BOX {
+	background: #fff;
+	border-radius: 20px;
+	margin: 8px;
+	padding: 4px;
+}
+
+#_FEATURES ._BOX6 {
+	padding: 10px 20px;
+	line-height: 1.5;
+}
+
+#_PROJECTS ._BOX6 {
+	padding: 0 8px;
 }
 
 #_FOOT {
-	border-top: 0.2em solid #000;
-	background: #000;
 	color: #555;
+	text-align: right;
+	font-size: 16px;
+}
+
+#_FOOT b {
+	color: #777;
 }
 
 #_USE tt {
@@ -193,7 +210,6 @@ br {
 a._PROJECT {
 	display: block;
 	padding: 5px;
-	margin: 5px;
 	border: 1px solid #222;
 	border-radius: 20px;
 	background: #111;

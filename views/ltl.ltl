@@ -12,7 +12,7 @@ call page
           svg(viewBox="0 0 120 120" style="width:60px;height:60px;margin:0 8px 0 0;vertical-align:middle")
             path(fill="#fc0" d="M35,15h15l25,45l-25,45h-15c-10,0-20-10-20-20v-50c0-10,10-20,20-20z")
             path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
-            path(fill="#e60" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
+            path(fill="#e50" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
           - Ltl
           span the <b>l</b>ean <b>t</b>emplate <b>l</b>anguage
 
