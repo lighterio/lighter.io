@@ -1,6 +1,10 @@
 a {
-	color: #25b;
+	color: #12b;
 	text-decoration: none;
+}
+
+a:hover {
+	color: #e50;
 }
 
 h1, h2, h3, h4 {
@@ -25,12 +29,7 @@ h4 {
 	font-weight: normal;
 }
 
-p._ABOUT {
-	color: #aaa;
-	font-size: 1.3em;
-	margin: 0.5em 0;
-}
-
-#_INSIDE p {
-	margin: 0;
+#_FEATURES a._ANCHOR {
+	margin: 0 0.4em;
+	font-size: 0.8em;
 }

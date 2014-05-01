@@ -16,6 +16,14 @@ call page
           - Ltl
           span <b>l</b>ean <b>t</b>emplate <b>l</b>anguage
 
+    #_FEATURES
+      ._PANEL
+        //
+          a._ANCHOR(href="#API") API
+          a._ANCHOR(href="#Tags") Tags
+          a._ANCHOR(href="#Filters") Filters
+          a._ANCHOR(href="#Includes") Includes
+
     #_BODY
       ._PANEL
         .

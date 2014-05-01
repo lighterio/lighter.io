@@ -29,7 +29,7 @@ textarea, .CodeMirror {
 	background: #000!important;
 	color: #fff;
 	border: 1px solid #333!important;
-	height: 460px;
+	height: 400px;
 	font-size: 14px!important;
 	font: 14px Menlo, "Lucida Console", "Courier New", monospace;
 }
