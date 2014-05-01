@@ -2,7 +2,7 @@
 call page
 
   set title:
-    Ltl - the lean template language.
+    Ltl - lean template language.
 
   set content
 
@@ -14,7 +14,7 @@ call page
             path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
             path(fill="#e50" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
           - Ltl
-          span the <b>l</b>ean <b>t</b>emplate <b>l</b>anguage
+          span <b>l</b>ean <b>t</b>emplate <b>l</b>anguage
 
     #_BODY
       ._PANEL

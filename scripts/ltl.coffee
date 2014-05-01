@@ -1,7 +1,7 @@
-window['coffee-script'] = window.CoffeeScript;
-window.markdown = window.marked;
-
 $ ->
+
+	window['coffee-script'] = window.CoffeeScript;
+	window.markdown = window.marked;
 
 	$('textarea').each (index, textarea) ->
 		className = textarea.className

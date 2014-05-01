@@ -19,9 +19,6 @@ chug('public')
 
 chug('views')
 	.compile()
-	.then(function () {
-		console.log('Views loaded.');
-	})
 	.watch();
 
 chug([
