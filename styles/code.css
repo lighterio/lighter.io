@@ -25,13 +25,21 @@ b._CODE_TAB:hover {
 	border-color: #333;
 }
 
-textarea, .CodeMirror {
+textarea,
+.CodeMirror {
 	background: #000!important;
 	color: #fff;
 	border: 1px solid #333!important;
 	height: 400px;
 	font-size: 14px!important;
 	font: 14px Menlo, "Lucida Console", "Courier New", monospace;
+	transition: border-color 0.5s;
+}
+
+textarea:hover,
+.CodeMirror:hover {
+	border-color: #666!important;
+	transition: border-color 1s;
 }
 
 textarea {
@@ -43,4 +51,8 @@ textarea {
 	background: #181818;
 	border-right: 1px solid #222;
 	color: #999;
+}
+
+div.cm-s-blackboard div.CodeMirror-cursor {
+	border-left: 2px solid #fff!important;
 }

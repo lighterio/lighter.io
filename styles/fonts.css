@@ -33,3 +33,11 @@ h4 {
 	margin: 0 0.4em;
 	font-size: 0.8em;
 }
+
+a,
+button,
+input,
+select,
+textarea {
+	transition: background 0.3s, border-color 0.2s, color 0.1s, text-decoration 0.1s;
+}
