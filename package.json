@@ -1,0 +1,51 @@
+{
+  "name": "lighter.io",
+  "version": "0.0.0",
+  "description": "Website for the Lighter framework and associated modules.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha",
+    "retest": "mocha --watch",
+    "cover": "istanbul cover _mocha",
+    "report": "open coverage/lcov-report/index.html",
+    "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zerious/lighter.io.git"
+  },
+  "author": "Sam Eubank <sameubank@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/zerious/lighter.io/issues"
+  },
+  "homepage": "https://github.com/zerious/lighter.io",
+  "keywords": [
+    "lighter.io"
+  ],
+  "contributors": {
+    "name": "Sam Eubank",
+    "email": "sameubank@gmail.com"
+  },
+  "engines": [
+    "node >= 0.2.6"
+  ],
+  "dependencies": {
+    "ltl": "0.1.1",
+    "marked": "^0.3.2",
+    "jquery": "2.1.1",
+    "codemirror": "4.1.0"
+  },
+  "devDependencies": {
+    "zeriousify": "0.0.7",
+    "mocha": "1.18.2",
+    "istanbul": "0.2.8",
+    "assert-plus": "0.1.5",
+    "coveralls": "2.10.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/zerious/lighter.io/blob/master/MIT-LICENSE.md"
+    }
+  ]
+}

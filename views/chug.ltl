@@ -1,0 +1,196 @@
+// AUTOROUTE {"project": "Chug", "favicon": "chug"}
+call page
+	set title:
+		Chug - asset cache builder
+	set content
+		#_HEAD
+			._PANEL
+				h1#_LOGO
+					svg(viewBox="0 0 120 120")
+						path(fill="#fff" d="M85,25c40-5,40,75,0,70v-10c30,5,30-55,0-50z")
+						path(fill="#fff" d="M20,105c0,10,70,10,70,0l-5-90c0-10-60-10-60,0l-5,90z")
+						path(fill="#fc0" d="M25,100c0,7,60,7,60,0l-5-78c0,7-50,7-50,0l-5,78z")
+						path(fill="#e50" d="M28,96c0,6,12,6,12,0l2-69l-6,69c0,2-8,2-8,0zM48,98c0,6,12,6,12,0l-1-70l-3,70c0,2-8,2-8,0zM68,96c0,6,12,6,12,0l-4-69v69c0,2-8,2-8,0z")
+					: Chug
+					span asset cache builder
+		#_FEATURES
+			._PANEL
+
+		#_BODY
+			._PANEL
+				._BOX
+					p._TOP:
+						Chug is a caching build system. It compiles, minifies, and caches your
+						project's assets so they can be served directly. This eliminates
+						the unnecessary step of saving your files to a build directory.
+
+					h2 Installation
+					p:
+						In your project directory, run:
+					pre._BASH:
+						npm i --save chug
+
+					h2 Getting Started
+					p:
+						Chug is a function with chaining methods, and you can use it inside your Node
+						app. Calls to <tt>chug</tt> return a <tt>Load</tt>, which is a list of assets, very
+						similar to the way jQuery returns an object containing a list of DOM elements.
+						Operations on a <tt>Load</tt> are chained asynchronously.
+					p:
+						If your <tt>scripts</tt> directory contains some CoffeeScript that you're using
+						along with jQuery, and you want to compile your CS, concatenate it with JS,
+						and serve it from Express as a single file which gets reloaded when you make
+						changes, you can use the following:
+
+					pre._JS:
+						var app = require('express')();
+						var chug = require('chug');
+						chug.setApp(app);
+							chug(['node_modules/jquery/dist/jquery.js', 'scripts'])
+							.compile()
+							.watch()
+							.concat('/all.js')
+							.route();
+
+					h2 The chug function
+					p:
+						The <tt>chug</tt> module exports a function which returns an object called a <tt>Load</tt>.
+						(Chug a load, eh?) A load contains an array of assets that can be compiled,
+						minified, concatenated, etc.  There are several types of arguments that can
+						be passed into chug.
+
+					h3 chug(Array)
+					p:
+						Recursively chugs each element of the array into the load. This happens
+						asynchronously, so module order is not guaranteed.
+
+					h3 chug(string)
+					p:
+						Resolves to the file system and loads a file or recursively loads a
+						directory. If the string does not begin with a slash, the current working
+						directory is prepended.
+
+					h2 Load
+					h3 .each(function callback)
+					p:
+						Waits until all assets are loaded, then iterates over them
+						with a callback that takes an asset argument.
+
+					h3 .then(function callback)
+					p:
+						Waits until all assets are loaded, then runs a callback.
+
+					h3 .compile()
+					p:
+						Runs <tt>compile</tt> on each asset, using <tt>each</tt>.
+
+					h3 .minify()
+					p:
+						Runs <tt>minify</tt> on each asset, using <tt>each</tt>.
+
+					h3 .watch()
+					p:
+						Puts a <tt>fs.watch</tt> on the files and directories that were
+						added to the <tt>Load</tt>. When changes occur, the affected assets are
+						reloaded, then the load re-runs its chain of actions.
+
+					h3 .require()
+					p:
+						Loads each asset as a Node.js module.
+
+					h3 .route([string path])
+					p:
+						Adds a route to the app that was linked to <tt>chug</tt> with
+						the <tt>setApp</tt> method. It uses <tt>app.get</tt>, so Express-like apps are
+						supported.  If a path is specified, it is used.  If not, chug
+						will use a modified file path as the URL path.
+
+					h3 .concat([string location][, Load load])
+					p:
+						Creates a concatenation of all assets from the load on
+						which <tt>concat</tt> was called.  The optional <tt>location</tt> argument
+						specifies the asset cache key for the newly concatenated asset.
+						The optional <tt>load</tt> argument, if specified, will cause the new
+						asset to be added to an existing load rather than the default
+						behavior of returning a new load with a single asset.
+
+					h3 .write([directory][, filename][, mode])
+					p:
+						Writes one or more assets to files. If the directory
+						argument is omitted, the current working directory is used.
+						The filename argument (if provided) gets appended to the
+						directory, otherwise the asset location is used.  The mode
+						argument can be null or "compiled" or "minified", and it
+						specifies which version of the content should be written
+						to file.
+
+					h3 .getLocations()
+					p:
+						Returns an array of the locations of the assets
+						in the load.
+
+					h3 .getTags([string path])
+					p:
+						Returns a string of HTML, containing script tags and
+						link tags for any JS and CSS assets in the load. The optional
+						path argument prepends a path to the location of those assets.
+
+					h2 API
+					p:
+						The chug function is also an object with several methods.
+
+					h3 setApp(App app)
+					p:
+						When you pass an Express-like app to <tt>setApp</tt>, you can then call
+						<tt>route</tt> on any assets that you'd like to route via <tt>app.get</tt>.
+
+					h3 setCompiler(string fileExtension, string moduleName)
+					p:
+						If you are using a file extension whose compiler has the same
+						name, then chug will require it automagically.
+					p:
+						This will use <tt>require('jade')</tt> to compile.
+					pre._JS:
+						chug('page.jade').compile();
+					p:
+						However, if you want to use a compiler with a different file
+						extension, you can call <tt>setCompiler</tt> first.
+					p:
+						This will use <tt>require('marked')</tt> to compile .md files.
+					pre._JS:
+						chug.setCompiler('md', 'marked');
+						chug('README.md').compile();
+
+					h3 setMinifier(string language, string moduleName)
+					p:
+						The default minifiers for JS and CSS in Chug are
+						<tt>uglify-js</tt> and <tt>csso</tt>. If you would like, for example, to
+						minify your CSS using <tt>clean-css</tt> instead, you could set
+						<tt>clean-css</tt> as your CSS minifier.
+					pre._JS:
+						chug.setMinifier('css', 'clean-css');
+						chug('test.css').minify();
+					p:
+						Note: The language value for JavaScript is "js" rather
+						than "javascript".
+
+					h3 enableShrinking()
+					p:
+						Shrinking is unique-ish feature for minifying class names
+						and IDs in your assets.  Just name your classes and IDs
+						with names like <tt>_<b></b>HIDDEN</tt> or
+						<tt>_<b></b>BORDER_BOX</tt> or <tt>_<b></b>PANEL2</tt>
+						- basically anything that starts with an underscore
+						followed by a capital letter, followed by at least one
+						more capital letter, underscore or number.  When you have
+						shrinking enabled, it will happen as a post-minification
+						step, so be sure to minify all of your assets so their
+						IDs and classes will match.
+
+			br
+
+		a#_FORK(href="https://github.com/zerious/chug")
+			svg(viewBox="0 0 300 300")
+				path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
+				path(fill="#35a" d="M10,0l290,290v-190l-100-100z")
+				path(fill="#fff" d="M142,98c0-33,27-60,60-60c33,0,60,27,60,60c0,33-27,60-60,60c-10,0-17-1-27-7c-1-1-1-3,0-4l12-12c4-4,4-8,4,-11c19,21,48,2,47-16c7-4,7-4,12-13c-10-6-8-4-17-7c-8-14-16-18-22-22 c-3-9-1-7-7-17c-8,6-8,6-12,13c-18-1-37,28-16,47c-6-1-8,3-9,3c-19-12,2-20-15-29c4,16-10,22,9,35l-8,8 c-1,1-3,1-4,0c-6-10-7-17-7-27z")

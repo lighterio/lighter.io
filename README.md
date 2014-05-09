@@ -6,3 +6,10 @@
 </svg> Lighter.io
 
 Website for the Lighter framework.
+
+[![NPM Version](https://badge.fury.io/js/lighter.io.png)](http://badge.fury.io/js/lighter.io)
+[![Build Status](https://travis-ci.org/zerious/lighter.io.png?branch=master)](https://travis-ci.org/zerious/lighter.io)
+[![Code Coverage](https://coveralls.io/repos/zerious/lighter.io/badge.png?branch=master)](https://coveralls.io/r/zerious/lighter.io)
+[![Dependencies](https://david-dm.org/zerious/lighter.io.png?theme=shields.io)](https://david-dm.org/zerious/lighter.io)
+[![Support](http://img.shields.io/gittip/zerious.png)](https://www.gittip.com/zerious/)
+

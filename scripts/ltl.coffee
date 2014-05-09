@@ -15,7 +15,7 @@ $ ->
 		$(this)
 			.parent().children().filter('div').addClass('_HIDDEN')
 			.filter('.' + className).removeClass('_HIDDEN')
-		  .parent().find('._ON').removeClass('_ON')
+			.parent().find('._ON').removeClass('_ON')
 		$(this).addClass('_ON')
 
 createEditor = (mode, textarea) ->
@@ -26,19 +26,20 @@ createEditor = (mode, textarea) ->
 		tabSize: 2
 		theme: 'blackboard'
 		lineNumbers: isLtl,
-	  smartIndent: true,
+		indentWithTabs: true,
 		readOnly: not isLtl
 		lineWrapping: mode is 'javascript'
+		cursorBlinkRate: 400
 
-  $panel = $(textarea).closest('._PANEL')
-  panel = $panel[0]
+	$panel = $(textarea).closest('._PANEL')
+	panel = $panel[0]
 	panel[textarea.className] = editor
 
 	change = ->
 		editor.save()
 		template = $panel.find('textarea._TEMPLATE').val()
 		context = JSON.parse $panel.find('textarea._CONTEXT').val()
-		compiled = ltl.compile template, {space: '  '}
+		compiled = ltl.compile template, {space: '\t'}
 		cleanCompiled = ltl.compile template
 		output = compiled context
 		$panel.find('textarea._COMPILED').val cleanCompiled.toString()
@@ -46,5 +47,5 @@ createEditor = (mode, textarea) ->
 
 
 	if isLtl
-	  editor.on 'change', change
+		editor.on 'change', change
 		setTimeout change, 10

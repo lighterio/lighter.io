@@ -1,144 +1,143 @@
 // AUTOROUTE
 call page
 
-    set title:
-        Lighter.io - faster is better
+	set title:
+		Lighter.io - faster is better
 
-    set content
+	set content
 
-        #_HEAD
-            ._PANEL
-                h1#_LOGO
-                    svg(viewBox="0 0 120 120")
-                        path(fill="#e50" d="M20,80c0,45,80,45,80,0c0-40-40-60-40-70c0,20-40,30-40,70z")
-                        path(fill="#fc0" d="M35,85c0,30,50,30,50,0c0-20-25-35-25-40c0,15-25,20-25,40z")
-                        path(fill="#fff" d="M50,90c0,14,20,14,20,0c0-10-10-20-10-20c0,10-10,10-10,20z")
-                    - Lighter.io
-                    span faster is better
+		#_HEAD
+			._PANEL
+				h1#_LOGO
+					svg(viewBox="0 0 120 120")
+						path(fill="#e50" d="M20,80c0,45,80,45,80,0c0-40-40-60-40-70c0,20-40,30-40,70z")
+						path(fill="#fc0" d="M35,85c0,30,50,30,50,0c0-20-25-35-25-40c0,15-25,20-25,40z")
+						path(fill="#fff" d="M50,90c0,14,20,14,20,0c0-10-10-20-10-20c0,10-10,10-10,20z")
+					: Lighter.io
+					span faster is better
 
-        #_FEATURES
-            ._PANEL
-                ._BOX
-                    ._BOX6
-                        - Lighter.io modules are the <b>fastest tools</b> for modern web development.
-                        br
-                    ._BOX6
-                        - We build <b>easy APIs</b> with <b>interactive docs</b> and <b>100% test coverage</b>.
-                        br
-                    br
+		#_FEATURES
+			._PANEL
+				._BOX
+					._BOX6 Lighter.io modules are the <b>fastest tools</b> for modern web development.
+						br
+					._BOX6 We build <b>easy APIs</b> with <b>interactive docs</b> and <b>100% test coverage</b>.
+						br
+					br
 
-        #_PROJECTS
+		#_PROJECTS
 
-            br
-            ._PANEL
+			br
+			._PANEL
 
-                ._BOX6
+				._BOX6
 
-                    a._PROJECT(href="/ltl")
-                        svg(viewBox="0 0 120 120")
-                            path(fill="#fc0" d="M35,15h15l25,45l-25,45h-15c-10,0-20-10-20-20v-50c0-10,10-20,20-20z")
-                            path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
-                            path(fill="#e50" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
-                        - Ltl
-                        span lean template language
-                    br
+					a._PROJECT(href="/ltl")
+						svg(viewBox="0 0 120 120")
+							path(fill="#fc0" d="M35,15h15l25,45l-25,45h-15c-10,0-20-10-20-20v-50c0-10,10-20,20-20z")
+							path(fill="#fff" d="M35,15l25,45l-25,45h25l25-45l-25-45z")
+							path(fill="#e50" d="M60,15l25,45l-25,45h25c10,0,20-10,20-20v-50c0-10-10-20-20-20z")
+						: Ltl
+						span lean template language
+					br
 
-                    a._PROJECT(href="https://github.com/zerious/chug")
-                        svg(viewBox="0 0 120 120")
-                            path(fill="#fff" d="M85,25c40-5,40,75,0,70v-10c30,5,30-55,0-50z")
-                            path(fill="#fff" d="M20,105c0,10,70,10,70,0l-5-90c0-10-60-10-60,0l-5,90z")
-                            path(fill="#fc0" d="M25,100c0,7,60,7,60,0l-5-78c0,7-50,7-50,0l-5,78z")
-                            path(fill="#e50" d="M28,96c0,6,12,6,12,0l2-69l-6,69c0,2-8,2-8,0zM48,98c0,6,12,6,12,0l-1-70l-3,70c0,2-8,2-8,0zM68,96c0,6,12,6,12,0l-4-69v69c0,2-8,2-8,0z")
-                        - Chug
-                        span asset cache builder
-                    br
+					a._PROJECT(href="/chug")
+						svg(viewBox="0 0 120 120")
+							path(fill="#fff" d="M85,25c40-5,40,75,0,70v-10c30,5,30-55,0-50z")
+							path(fill="#fff" d="M20,105c0,10,70,10,70,0l-5-90c0-10-60-10-60,0l-5,90z")
+							path(fill="#fc0" d="M25,100c0,7,60,7,60,0l-5-78c0,7-50,7-50,0l-5,78z")
+							path(fill="#e50" d="M28,96c0,6,12,6,12,0l2-69l-6,69c0,2-8,2-8,0zM48,98c0,6,12,6,12,0l-1-70l-3,70c0,2-8,2-8,0zM68,96c0,6,12,6,12,0l-4-69v69c0,2-8,2-8,0z")
+						: Chug
+						span asset cache builder
+					br
 
-                    a._PROJECT(href="https://github.com/zerious/jymin")
-                        svg(viewBox="0 0 120 120")
-                            path(fill="#e50" d="M60,3l49.5,30v54l-49.5,30l-49.5-30v-54z")
-                            path(fill="#fc0" d="M60,22l33,20v36l-33,20l-33-20v-36z")
-                            path(fill="#fff" d="M60,41l16.5,10v18l-16.5,10l-16.5-10v-18z")
-                        - Jymin
-                        span JavaScript you minify
-                    br
+					a._PROJECT(href="/jymin")
+						svg(viewBox="0 0 120 120")
+							path(fill="#e50" d="M60,3l49.5,30v54l-49.5,30l-49.5-30v-54z")
+							path(fill="#fc0" d="M60,22l33,20v36l-33,20l-33-20v-36z")
+							path(fill="#fff" d="M60,41l16.5,10v18l-16.5,10l-16.5-10v-18z")
+						: Jymin
+						span JavaScript you minify
+					br
 
-                    a._PROJECT(href="https://github.com/zerious/sly")
-                        svg(viewBox="0 0 120 120")
-                            path(fill="#e50" d="M25,100c-10,0-20-10-20-20v-40c0-10,10-20,20-20h70c10,0,20,10,20,20v40c0,10-10,20-20,20z")
-                            path(fill="#fff" d="M40,96c-8,0-16-8-16-16v-40c0-8,8-16,16-16h40c8,0,16,8,16,16v40c0,8-8,16-16,16z")
-                            path(fill="#fc0" d="M40,94c-7,0-14-7-14-14v-40c0-7,7-14,14-14h40c7,0,14,7,14,14v40c0,7-7,14-14,14z")
-                            path(fill="#fff" d="M9,60l10-15v30zM111,60l-10-15v30z")
-                        - Sly
-                        span slide player
-                    br
+					a._PROJECT(href="/sly")
+						svg(viewBox="0 0 120 120")
+							path(fill="#e50" d="M25,100c-10,0-20-10-20-20v-40c0-10,10-20,20-20h70c10,0,20,10,20,20v40c0,10-10,20-20,20z")
+							path(fill="#fff" d="M40,96c-8,0-16-8-16-16v-40c0-8,8-16,16-16h40c8,0,16,8,16,16v40c0,8-8,16-16,16z")
+							path(fill="#fc0" d="M40,94c-7,0-14-7-14-14v-40c0-7,7-14,14-14h40c7,0,14,7,14,14v40c0,7-7,14-14,14z")
+							path(fill="#fff" d="M9,60l10-15v30zM111,60l-10-15v30z")
+						: Sly
+						span slide player
+					br
 
-                    a._PROJECT(href="https://github.com/zerious/d6")
-                        svg(viewBox="0 0 120 120")
-                            path(fill="#fc0" d="M60,2l50,30v56l-49.5,30l-49.5-30v-56z")
-                            path(fill="#e50" d="M60,5l45,27l-45,27l-45-27zM14,35v52l45,27v-52zM107,35v52l-45,27v-52z")
-                            path(fill="#fff" d="M52,32c0,8,16,8,16,0c0-8-16-8-16,0z")
-                            path(fill="#fff" d="M20,59c1,10,13,10,12,0c-1-10-13-10-12,0zM40,89c1,10,13,10,12,0c-1-10-13-10-12,0z")
-                            path(fill="#fff" d="M91,55c-1,10,11,10,12,0c1-10-11-10-12,0M79,74c-1,10,11,10,12,0c1-10-11-10-12,0M67,93c-1,10,11,10,12,0c1-10-11-10-12,0")
-                        - D6
-                        span data-driven documents
-                    br
+					a._PROJECT(href="/d6")
+						svg(viewBox="0 0 120 120")
+							path(fill="#fc0" d="M60,2l50,30v56l-49.5,30l-49.5-30v-56z")
+							path(fill="#e50" d="M60,5l45,27l-45,27l-45-27zM14,35v52l45,27v-52zM107,35v52l-45,27v-52z")
+							path(fill="#fff" d="M52,32c0,8,16,8,16,0c0-8-16-8-16,0z")
+							path(fill="#fff" d="M20,59c1,10,13,10,12,0c-1-10-13-10-12,0zM40,89c1,10,13,10,12,0c-1-10-13-10-12,0z")
+							path(fill="#fff" d="M91,55c-1,10,11,10,12,0c1-10-11-10-12,0M79,74c-1,10,11,10,12,0c1-10-11-10-12,0M67,93c-1,10,11,10,12,0c1-10-11-10-12,0")
+						: D6
+						span data-driven documents
+					br
 
-                ._BOX6
+				._BOX6
 
-                    a._PROJECT(href="https://github.com/zerious/lighter")
-                        svg(viewBox="0 0 120 120")
-                            path(fill="#e50" d="M20,80c0,45,80,45,80,0c0-40-40-60-40-70c0,20-40,30-40,70z")
-                            path(fill="#fc0" d="M35,85c0,30,50,30,50,0c0-20-25-35-25-40c0,15-25,20-25,40z")
-                            path(fill="#fff" d="M50,90c0,14,20,14,20,0c0-10-10-20-10-20c0,10-10,10-10,20z")
-                        - Lighter
-                        span isomorphic MVC
-                    br
+					a._PROJECT(href="/lighter")
+						svg(viewBox="0 0 120 120")
+							path(fill="#e50" d="M20,80c0,45,80,45,80,0c0-40-40-60-40-70c0,20-40,30-40,70z")
+							path(fill="#fc0" d="M35,85c0,30,50,30,50,0c0-20-25-35-25-40c0,15-25,20-25,40z")
+							path(fill="#fff" d="M50,90c0,14,20,14,20,0c0-10-10-20-10-20c0,10-10,10-10,20z")
+						: Lighter
+						span isomorphic MVC
+					br
 
-                    a._PROJECT(href="https://github.com/zerious/beams")
-                        svg(viewBox="0 0 120 120")
-                            path(fill="#fc0" d="M25,105c0,15,70,15,70,0l-35-95l-35,95z")
-                            path(fill="#e50" d="M25,105c0-15,70-15,70,0c0-16-70-16-70,0z")
-                            path(fill="#fff" d="M5,35c0,18,110,18,110,0c0-15-110-15-110,0z")
-                            path(fill="#fff" d="M35,25c5-25,45,-25,50,0z")
-                            path(fill="#e50" d="M35,25c0,10,50,10,50,0c0,8-50,8-50,0z")
-                            path(fill="#fc0" d="M37.5,21.5c0,5,7,5,7,0c0-5-7-5-7,0z")
-                            path(fill="#fc0" d="M48,24c0,5,8,5,8,0c0-5-8-5-8,0z")
-                            path(fill="#fc0" d="M62,24c0,5,8,5,8,0c0-5-8-5-8,0z")
-                            path(fill="#fc0" d="M75.5,21.5c0,5,7,5,7,0c0-5-7-5-7,0z")
-                        - Beams
-                        span long poller
-                    br
+					a._PROJECT(href="/beams")
+						svg(viewBox="0 0 120 120")
+							path(fill="#fc0" d="M25,105c0,15,70,15,70,0l-35-95l-35,95z")
+							path(fill="#e50" d="M25,105c0-15,70-15,70,0c0-16-70-16-70,0z")
+							path(fill="#fff" d="M5,35c0,18,110,18,110,0c0-15-110-15-110,0z")
+							path(fill="#fff" d="M35,25c5-25,45,-25,50,0z")
+							path(fill="#e50" d="M35,25c0,10,50,10,50,0c0,8-50,8-50,0z")
+							path(fill="#fc0" d="M37.5,21.5c0,5,7,5,7,0c0-5-7-5-7,0z")
+							path(fill="#fc0" d="M48,24c0,5,8,5,8,0c0-5-8-5-8,0z")
+							path(fill="#fc0" d="M62,24c0,5,8,5,8,0c0-5-8-5-8,0z")
+							path(fill="#fc0" d="M75.5,21.5c0,5,7,5,7,0c0-5-7-5-7,0z")
+						: Beams
+						span long poller
+					br
 
-                    a._PROJECT(href="https://github.com/zerious/gold")
-                        svg(viewBox="0 0 120 120")
-                            path(fill="#fc0" d="M5,55l65,55l45-25l-10-30l-60-35l-30,10z")
-                            path(fill="#e50" d="M70,110l45-25l-10-30l-32,15z")
-                            path(fill="#fff" d="M15,30l58,40l32-15l-60-35l56,34l-28,12z")
-                        - Gold
-                        span multi-app admin
-                    br
+					a._PROJECT(href="/gold")
+						svg(viewBox="0 0 120 120")
+							path(fill="#fc0" d="M5,55l65,55l45-25l-10-30l-60-35l-30,10z")
+							path(fill="#e50" d="M70,110l45-25l-10-30l-32,15z")
+							path(fill="#fff" d="M15,30l58,40l32-15l-60-35l56,34l-28,12z")
+						: Gold
+						span multi-app admin
+					br
 
-                    a._PROJECT(href="https://github.com/zerious/shield")
-                        svg(viewBox="0 0 120 120")
-                            path(fill="#fc0" d="M15,10h90v50c0,30,-45,58-45,58c0,0-45-23-45-58z")
-                            path(fill="#e50" d="M25,20h35v35h-35zM60,55h35v5c0,20,-35,45-35,45z")
-                            path(fill="#fff" d="M60,20h35v35h-35zM25,55h35v50c0,0-35-20-35-45z")
-                        - Shield
-                        span DDOS protection
-                    br
+					a._PROJECT(href="/shield")
+						svg(viewBox="0 0 120 120")
+							path(fill="#fc0" d="M15,10h90v50c0,30,-45,58-45,58c0,0-45-23-45-58z")
+							path(fill="#e50" d="M25,20h35v35h-35zM60,55h35v5c0,20,-35,45-35,45z")
+							path(fill="#fff" d="M60,20h35v35h-35zM25,55h35v50c0,0-35-20-35-45z")
+						: Shield
+						span DDOS protection
+					br
 
-                    a._PROJECT(href="https://github.com/zerious/zeriousify")
-                        svg(viewBox="0 0 120 120")
-                            path(fill="#fff" d="M35,105c-10,0-20-10-20-20v-50c0-10,10-20,20-20h50c10,0,20,10,20,20v50c0,10,-10,20-20,20z")
-                            path(fill="#fc0" d="M15,35l70,-5l-70,55z")
-                            path(fill="#e50" d="M105,35l-70,55l70-5z")
-                        - Zeriousify
-                        span module tester
-                    br
+					a._PROJECT(href="/zeriousify")
+						svg(viewBox="0 0 120 120")
+							path(fill="#fff" d="M35,105c-10,0-20-10-20-20v-50c0-10,10-20,20-20h50c10,0,20,10,20,20v50c0,10,-10,20-20,20z")
+							path(fill="#fc0" d="M15,35l70,-5l-70,55z")
+							path(fill="#e50" d="M105,35l-70,55l70-5z")
+						: Zeriousify
+						span module tester
+					br
 
-            br
-            br
+			br
 
-        #_FOOT
-            ._PANEL
-                ._BOX <b>&lt;&gt;</b> with <b>&#9829;</b> by <b>z+</b>
+		a#_FORK(href="https://github.com/zerious/lighter.io")
+			svg(viewBox="0 0 300 300")
+				path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
+				path(fill="#35a" d="M10,0l290,290v-190l-100-100z")
+				path(fill="#fff" d="M142,98c0-33,27-60,60-60c33,0,60,27,60,60c0,33-27,60-60,60c-10,0-17-1-27-7c-1-1-1-3,0-4l12-12c4-4,4-8,4,-11c19,21,48,2,47-16c7-4,7-4,12-13c-10-6-8-4-17-7c-8-14-16-18-22-22 c-3-9-1-7-7-17c-8,6-8,6-12,13c-18-1-37,28-16,47c-6-1-8,3-9,3c-19-12,2-20-15-29c4,16-10,22,9,35l-8,8 c-1,1-3,1-4,0c-6-10-7-17-7-27z")

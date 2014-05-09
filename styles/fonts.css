@@ -1,5 +1,9 @@
+* {
+	line-height: 1.5;
+}
+
 a {
-	color: #12b;
+	color: #69f;
 	text-decoration: none;
 }
 
@@ -7,26 +11,64 @@ a:hover {
 	color: #e50;
 }
 
-h1, h2, h3, h4 {
-	margin: 0.1em 0;
+h2, h3, h4 {
+	margin: 0.5em 0 0.1em 0;
 }
 
 h1 {
-	font-size: 2.4em;
+	margin: 0;
+	font-size: 2em;
 }
 
 h2 {
-	font-size: 2em;
-	font-weight: normal;
+	font-size: 1.6em;
+	color: #999;
+	border-bottom: 2px solid #666;
+	margin: 0.5em 0 0 0;
 }
 
 h3 {
-	font-size: 1.8em;
+	color: #ccc;
+	border-bottom: 1px solid #999;
+	font-size: 1.4em;
 }
 
 h4 {
 	font-size: 1.2em;
 	font-weight: normal;
+}
+
+p {
+	color: #eee;
+}
+
+p._TOP {
+	margin-top: 0;
+}
+
+pre, tt {
+	border: 1px solid #333;
+	background: #000;
+	color: #fff;
+	border-radius: 0.3em;
+}
+
+tt {
+	padding: 0.1em 0.2em;
+	border: 1px solid #333;
+}
+
+pre {
+	margin: 0.5em 0;
+	padding: 0.5em 1em;
+}
+
+pre._BASH {
+	color: #0c0;
+}
+
+pre._JS {
+	color: #fe6;
 }
 
 #_FEATURES a._ANCHOR {
