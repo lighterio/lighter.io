@@ -33,7 +33,9 @@
     "ltl": "0.1.1",
     "marked": "^0.3.2",
     "jquery": "2.1.1",
-    "codemirror": "4.1.0"
+    "codemirror": "4.1.0",
+    "lighter": "0.0.1",
+    "coffee-script": "1.7.1"
   },
   "devDependencies": {
     "zeriousify": "0.0.7",
