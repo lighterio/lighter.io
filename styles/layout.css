@@ -164,10 +164,9 @@ br {
 	right: 0;
 }
 
-#_FORK svg{
+#_FORK svg {
 	width: 100px;
 	height: 100px;
-	border: 0;
 }
 
 @media all and (max-width: 1000px) {
@@ -198,6 +197,7 @@ a._PROJECT {
 }
 
 a._PROJECT:hover {
+	color: #fff;
 	background: #125;
 	border-color: #35a;
 }
@@ -210,9 +210,9 @@ a._PROJECT svg {
 }
 
 a._PROJECT span {
-	color: #666;
 	margin-left: 0.5em;
 	font-size: 0.8em;
+	opacity: 0.4;
 }
 
 ._HIDDEN {

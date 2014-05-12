@@ -1,6 +1,6 @@
 {
   "name": "lighter.io",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Website for the Lighter framework and associated modules.",
   "main": "app.js",
   "scripts": {
@@ -30,17 +30,18 @@
     "node >= 0.2.6"
   ],
   "dependencies": {
-    "ltl": "0.1.1",
-    "marked": "^0.3.2",
+    "ltl": "latest",
+    "marked": "0.3.2",
     "jquery": "2.1.1",
     "codemirror": "4.1.0",
-    "lighter": "0.0.1",
-    "coffee-script": "1.7.1"
+    "lighter": "latest",
+    "coffee-script": "1.7.1",
+    "jymin": "latest"
   },
   "devDependencies": {
-    "zeriousify": "0.0.7",
+    "zeriousify": "latest",
     "mocha": "1.18.2",
-    "istanbul": "0.2.8",
+    "istanbul": "0.2.9",
     "assert-plus": "0.1.5",
     "coveralls": "2.10.0"
   },

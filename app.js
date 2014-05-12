@@ -1,7 +1,6 @@
 var lighter = require('lighter');
-lighter.setHttpPort(8888);
 
-exports.version = require('./package.json').version;
+lighter.setHttpPort(8888);
 
 lighter.addScripts([
 	'node_modules/jquery/dist/jquery.js',
@@ -16,6 +15,5 @@ lighter.addScripts([
 
 lighter.addStyles([
 	'node_modules/codemirror/lib/codemirror.css',
-	'node_modules/codemirror/theme/blackboard.css',
+	'node_modules/codemirror/theme/blackboard.css'
 ]);
-
