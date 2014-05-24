@@ -1,0 +1,9 @@
+// AUTOROUTE
+style:
+  svg {width: 240px; height: 240px;}
+body(style="background:#ddd")
+  // Shellify
+  svg(viewBox="0 0 80 80")
+    path(fill="#6b3" d="M50,20c4,0,8,4,8,8v30c0,4-4,8-8,8h-35c-4,0-8-4-8-8v-30c0-4,4-8,8-8zm0-2c5,0,10,5,10,10h4c0-7-7-14-14-14zm0-6c8,0,16,8,16,16h4c0-10-10-20-20-20zm0-6c11,0,22,11,22,22h4c0-13-13-26-26-26z")
+
+script(src="/all.js?{cacheBust}")

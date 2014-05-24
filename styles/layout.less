@@ -75,12 +75,12 @@ body {
 	padding: 4px;
 }
 
-#_FEATURES ._BOX6 {
+#_FEATURES ._BOX4 {
 	padding: 10px 20px;
 	line-height: 1.5;
 }
 
-#_PROJECTS ._BOX6 {
+#_PROJECTS ._BOX4 {
 	padding: 0 8px;
 }
 
@@ -186,13 +186,14 @@ br {
 }
 
 a._PROJECT {
+  position: relative;
 	display: block;
-	padding: 2px;
-	border: 1px solid #222;
-	border-radius: 20px;
+	padding: 2px 2px 2px 12px;
+	border: 1px solid #333;
+	border-radius: 16px;
 	background: #111;
 	font-weight: bold;
-	font-size: 22px;
+	font-size: 20px;
 	color: #fff;
 }
 
@@ -200,6 +201,11 @@ a._PROJECT:hover {
 	color: #fff;
 	background: #125;
 	border-color: #35a;
+  b._READY,
+  b._UNDOCUMENTED,
+  b._IDEA {
+    opacity: 1;
+  }
 }
 
 a._PROJECT svg {
@@ -212,7 +218,38 @@ a._PROJECT svg {
 a._PROJECT span {
 	margin-left: 0.5em;
 	font-size: 0.8em;
-	opacity: 0.4;
+  font-weight: normal;
+	opacity: 0.5;
+}
+
+b._READY,
+b._UNDOCUMENTED,
+b._IDEA {
+  position: absolute;
+  width: 16px;
+  margin: -1px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border: 1px solid #333;
+  opacity: 0.5;
+}
+
+b._READY {
+  background: #080;
+  border-color: #0a0;
+}
+
+b._UNDOCUMENTED {
+  background: #900;
+  border-color: #b00;
+}
+
+b._IDEA {
+  background: #609;
+  border-color: #70c;
 }
 
 ._HIDDEN {

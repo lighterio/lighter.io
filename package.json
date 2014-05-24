@@ -36,12 +36,13 @@
     "codemirror": "4.1.0",
     "lighter": "latest",
     "coffee-script": "1.7.1",
-    "jymin": "latest"
+    "jymin": "latest",
+    "mysql": "^2.3.0"
   },
   "devDependencies": {
     "zeriousify": "latest",
     "mocha": "1.18.2",
-    "istanbul": "0.2.9",
+    "istanbul": "0.2.10",
     "assert-plus": "0.1.5",
     "coveralls": "2.10.0"
   },
