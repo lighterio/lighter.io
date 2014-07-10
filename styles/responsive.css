@@ -1,0 +1,27 @@
+body {
+  font-size: 16px;
+  min-width: 980px;
+}
+
+._PANEL {
+  clear: both;
+  margin: 0 auto;
+  padding: 6px;
+  width: 980px;
+}
+
+@media all and (max-width: 1000px) {
+  ._BOX1, ._BOX2, ._BOX3,
+  ._BOX4, ._BOX5, ._BOX6,
+  ._BOX7, ._BOX8, ._BOX9,
+  ._BOX10, ._BOX11,
+  ._PANEL {
+    width: 100%;
+  }
+  #_TAGLINE {
+    display: none;
+  }
+  body {
+    min-width: 400px;
+  }
+}

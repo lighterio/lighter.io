@@ -1,0 +1,76 @@
+// AUTOROUTE
+call talks/page
+
+  set title:
+    Lighter.io - faster is better
+
+  set content
+
+    b
+      h2 Crazy Awesome Speeds
+      ul
+        li by Sam Eubank
+        li>a(href="http://lighter.io/talks/speed") http://lighter.io/talks/speed
+        li
+
+    b
+      h2 Who am I?
+      ul
+        li.a1 JavaScripter since 1996
+        li.a2 Performance enthusiast
+        li.a3 Relentless Nodevangelist
+
+      p.a1 I built my first web pages back when I was in school and the web was brand new.
+      p.a2 Over the years, I've worked tirelessly to reduce latency on some very highly trafficked websites.
+      p.a3 Since using Node, I've found more joy in development than I had ever experienced before, and there's no going back.
+
+    b
+      h2 Why am I here?
+      ul
+        li.a1 Talk about speed
+        li.a2 To show off some modules
+        li.a3 To make you faster
+
+    b
+      h2 Understanding speed
+      ul
+        li.a1 Latency - Time to client
+        li.a2 Throughput - Server RPS
+        li.a3 Dev - Tools, Builds, etc.
+
+      p.a1 When JavaScripters think of speed, we might think of snappy UIs but we may not think much about how those UIs get delivered, and that part is very important.
+      p.a2 Speed on your servers is also important, and that speed can save your company tons of money.
+      p.a3 One of the things that's frequently overlooked is how fast it takes you to run your dev environment, and that speed can be what makes you able to add new features more quickly, giving you greater impact over time.
+
+    b
+      h2 If you're not fast...
+      ul
+        li.a1 Client - You lose customers
+        li.a2 Server - Spend too much
+        li.a3 Dev - Delay new features
+
+      p.a1 Retailers have seen a 1% drop in orders for every additional 100ms of latency.
+      p.a2 Especially if you're doing anything with big data, your server fees can exceed your engineer salaries, and it's worth making things twice as performant so you can afford at least 50% more engineering staff.
+      p.a3 And one thing that's often neglected is that something like a 10 minute test suite can make everything worse, because you run out of time - time you could be using to build awesomeness.
+
+    b
+      h2 How to improve speed
+      ul
+        li.a1 Identify business optimizations
+        li.a2 Measure what's possible
+        li.a3 Make it happen
+
+      p.a1 So what do you do? You identify a business metric where you can move the needle by optimizing.
+      p.a2 Then you measure how much you can possibly improve it.
+      p.a3 And finally, you do it.
+
+    b
+      h2 Example @ "Kablamazon"
+      ul
+        li.a1 Identified that ads were slow
+        li.a2 Served an ad directly
+        li.a3 20% click increase
+
+      p.a1 Last year, I was working for a company that does some advertising... For the sake of anonymity, let's call them Kablamazon.
+      p.a2 To run a control experiment, we started from the fastest we could possibly get an ad, serving it directly in the page and caching the assets, then we added a controlled amount of delay to each treatment.
+      p.a3 We found that on an above the fold ad, this caused click-through rates to increase by 20% over what was normally seen in that slot.

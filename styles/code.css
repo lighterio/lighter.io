@@ -1,0 +1,55 @@
+textarea._TEMPLATE,
+textarea._COMPILED,
+textarea._CONTEXT,
+textarea._OUTPUT {
+  width: 100%;
+}
+
+b._CODE_TAB {
+  display: inline-block;
+  background: #ccc;
+  color: #24a;
+  padding: 2px 6px;
+  border: 1px solid #bbb;
+  border-bottom: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin: 0 2px 0 0;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+b._CODE_TAB._ON,
+b._CODE_TAB:hover {
+  color: #999;
+  background: #000;
+  border-color: #333;
+}
+
+textarea,
+.CodeMirror {
+  background: #111!important;
+  color: #fff;
+  border: 1px solid #000!important;
+  height: 400px;
+  font-size: 12px!important;
+  font: 12px Menlo, "Lucida Console", "Courier New", monospace;
+  transition: border-color 0.5s;
+}
+
+textarea {
+  outline: 0;
+  padding: 4px 6px;
+}
+
+.CodeMirror-gutter {
+  background: #181818;
+  border-right: 1px solid #222;
+  color: #999;
+}
+
+div.cm-s-blackboard div.CodeMirror-cursor {
+  border-left: 2px solid #fff!important;
+  text-indent: 20px;
+  overflow: hidden;
+}

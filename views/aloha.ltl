@@ -1,0 +1,38 @@
+call page
+  set title:
+    Aloha - simple internationalization
+  set content
+    #_HEAD
+      ._PANEL
+        h1#_LOGO
+          svg(viewBox="0 0 120 120")
+            path(fill="#fff" d="M60,60c-52-101-90,65,0,0zM60,60c-40,100,120,10,0,0z")
+            path(fill="#fc0" d="M60,60c-50-90-80,57,0,0zM60,60c-32,90,105,8,0,0z")
+            path(fill="#e50" d="M60,60c-20-55-40,40,0,0zM60,60c-25,48,60,-2,0,0z")
+            path(fill="#fff" d="M60,60c52-101,90,65,0,0zM60,60c40,100-120,10,0,0z")
+            path(fill="#fc0" d="M60,60c50-90,80,57,0,0zM60,60c32,90-105,8,0,0z")
+            path(fill="#e50" d="M60,60c20-55,40,40,0,0zM60,60c25,48-60,-2,0,0z")
+            path(fill="#fff" d="M60,60c-90-76,90-76,0,0z")
+            path(fill="#fc0" d="M60,60c-80-70,80-70,0,0z")
+            path(fill="#e50" d="M60,60c-50-32,50-32,0,0z")
+            path(fill="#fff" d="M53,60c0-9,14-9,14,0c0,9-14,9,-14,0z")
+          : Aloha
+          span simple internationalization
+    #_FEATURES
+      ._PANEL
+
+    #_BODY
+      ._PANEL
+        ._BOX
+          h2 What is Aloha?
+          p:
+            It's an idea for a basic internationalization module that caches
+            templates in multiple languages.
+
+      br
+
+    a#_FORK(href="https://github.com/zerious/aloha")
+      svg(viewBox="0 0 300 300")
+        path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
+        path(fill="#35a" d="M10,0l290,290v-190l-100-100z")
+        path(fill="#fff" d="M142,98c0-33,27-60,60-60c33,0,60,27,60,60c0,33-27,60-60,60c-10,0-17-1-27-7c-1-1-1-3,0-4l12-12c4-4,4-8,4,-11c19,21,48,2,47-16c7-4,7-4,12-13c-10-6-8-4-17-7c-8-14-16-18-22-22 c-3-9-1-7-7-17c-8,6-8,6-12,13c-18-1-37,28-16,47c-6-1-8,3-9,3c-19-12,2-20-15-29c4,16-10,22,9,35l-8,8 c-1,1-3,1-4,0c-6-10-7-17-7-27z")
