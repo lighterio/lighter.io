@@ -31,19 +31,19 @@
   ],
   "dependencies": {
     "beams": "0.0.16",
-    "codemirror": "4.2.0",
+    "codemirror": "4.4.0",
     "coffee-script": "1.7.1",
     "jquery": "2.1.1",
     "lighter": "latest",
     "marked": "0.3.2",
-    "mysql": "2.3.2"
+    "mysql": "2.4.1"
   },
   "devDependencies": {
     "zeriousify": "latest",
     "mocha": "1.20.1",
-    "istanbul": "0.2.11",
+    "istanbul": "0.3.0",
     "assert-plus": "0.1.5",
-    "coveralls": "2.10.0"
+    "coveralls": "2.11.1"
   },
   "licenses": [
     {
