@@ -36,7 +36,8 @@
     "jquery": "2.1.1",
     "lighter": "latest",
     "marked": "0.3.2",
-    "mysql": "2.4.1"
+    "mysql": "2.4.1",
+    "sly": "0.0.1"
   },
   "devDependencies": {
     "zeriousify": "latest",
