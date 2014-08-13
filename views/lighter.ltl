@@ -32,7 +32,7 @@ call page
 
       br
 
-    a#_FORK(href="https://github.com/zerious/lighter")
+    a#_FORK(href="https://github.com/lighterio/lighter")
       svg(viewBox="0 0 300 300")
         path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
         path(fill="#35a" d="M10,0l290,290v-190l-100-100z")

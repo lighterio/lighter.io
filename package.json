@@ -4,21 +4,21 @@
   "description": "Website for the Lighter framework and associated modules.",
   "main": "app.js",
   "scripts": {
-    "test": "mocha",
-    "retest": "mocha --watch",
-    "cover": "istanbul cover _mocha",
+    "test": "./node_modules/exam/exam.js",
+    "retest": "./node_modules/exam/exam.js --watch",
+    "cover": "istanbul cover ./node_modules/exam/exam.js",
     "report": "open coverage/lcov-report/index.html",
-    "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
+    "coveralls": "istanbul cover ./node_modules/exam/exam.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zerious/lighter.io.git"
+    "url": "https://github.com/lighterio/lighter.io.git"
   },
   "author": "Sam Eubank <sameubank@gmail.com>",
   "bugs": {
-    "url": "https://github.com/zerious/lighter.io/issues"
+    "url": "https://github.com/lighterio/lighter.io/issues"
   },
-  "homepage": "https://github.com/zerious/lighter.io",
+  "homepage": "https://github.com/lighterio/lighter.io",
   "keywords": [
     "lighter.io"
   ],
@@ -30,26 +30,23 @@
     "node >= 0.2.6"
   ],
   "dependencies": {
-    "beams": "0.0.16",
     "codemirror": "4.4.0",
     "coffee-script": "1.7.1",
     "jquery": "2.1.1",
-    "lighter": "latest",
+    "lighter": "0.1.59",
     "marked": "0.3.2",
-    "mysql": "2.4.1",
     "sly": "0.0.1"
   },
   "devDependencies": {
-    "zeriousify": "latest",
-    "mocha": "1.20.1",
+    "zeriousify": "0.1.9",
+    "exam": "0.0.5",
     "istanbul": "0.3.0",
-    "assert-plus": "0.1.5",
     "coveralls": "2.11.1"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/zerious/lighter.io/blob/master/MIT-LICENSE.md"
+      "url": "http://github.com/lighterio/lighter.io/blob/master/MIT-LICENSE.md"
     }
   ]
 }

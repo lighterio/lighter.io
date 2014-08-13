@@ -18,3 +18,7 @@ coverage
 node_modules
 test
 .cache
+
+build
+.travis.yml
+.npmignore
