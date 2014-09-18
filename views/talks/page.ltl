@@ -1,6 +1,8 @@
 html
   head
     link(rel="stylesheet" href="/sly.css?={cacheBust}")
+    if theme
+      link(rel="stylesheet" href="={theme}?={cacheBust}")
     link(rel="shortcut icon" href="/lighter.ico?={cacheBust}")
     meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1")
     title

@@ -7,10 +7,7 @@ call page
     #_HEAD
       ._PANEL
         h1#_LOGO
-          svg(viewBox="0 0 120 120")
-            path(fill="#e50" d="M20,80c0,45,80,45,80,0c0-40-40-60-40-70c0,20-40,30-40,70z")
-            path(fill="#fc0" d="M35,85c0,30,50,30,50,0c0-20-25-35-25-40c0,15-25,20-25,40z")
-            path(fill="#fff" d="M50,90c0,14,20,14,20,0c0-10-10-20-10-20c0,10-10,10-10,20z")
+          img(src="/lighter.svg?v=={cacheBust}")
           : Lighter
           span isomorphic MVC
     #_FEATURES
@@ -19,21 +16,218 @@ call page
     #_BODY
       ._PANEL
         ._BOX
-          h2 What is Lighter?
-          p:
-            Lighter is a vision for a Model View Controller framework that
-            delivers its views as client-side renderable templates.
-          br
+          //+docent
 
-          h2 When will it be available?
-          p:
-            Lighter is being developed as fast as possible. If you would
-            like to contribute, please submit an issue or a pull request.
+          :marked
 
-      br
 
-    a#_FORK(href="https://github.com/lighterio/lighter")
-      svg(viewBox="0 0 300 300")
-        path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
-        path(fill="#35a" d="M10,0l290,290v-190l-100-100z")
-        path(fill="#fff" d="M142,98c0-33,27-60,60-60c33,0,60,27,60,60c0,33-27,60-60,60c-10,0-17-1-27-7c-1-1-1-3,0-4l12-12c4-4,4-8,4,-11c19,21,48,2,47-16c7-4,7-4,12-13c-10-6-8-4-17-7c-8-14-16-18-22-22 c-3-9-1-7-7-17c-8,6-8,6-12,13c-18-1-37,28-16,47c-6-1-8,3-9,3c-19-12,2-20-15-29c4,16-10,22,9,35l-8,8 c-1,1-3,1-4,0c-6-10-7-17-7-27z")
+            [![NPM Version](https://img.shields.io/npm/v/lighter.svg) ![Downloads](https://img.shields.io/npm/dm/lighter.svg)](https://npmjs.org/package/lighter)
+            [![Build Status](https://img.shields.io/travis/lighterio/lighter.svg)](https://travis-ci.org/lighterio/lighter)
+            [![Code Coverage](https://img.shields.io/coveralls/lighterio/lighter/master.svg)](https://coveralls.io/r/lighterio/lighter)
+            [![Dependencies](https://img.shields.io/david/lighterio/lighter.svg)](https://david-dm.org/lighterio/lighter)
+            [![Support](https://img.shields.io/gratipay/Lighter.io.svg)](https://gratipay.com/Lighter.io/)
+
+            Lighter is a lightweight Node.js framework for web applications and APIs.
+
+            ### Isomorphic JavaScript
+
+            When used for web applications, Lighter will render views either on the server or the
+            client.  This functionality will allow Lighter to optimize for low latency.  The first
+            request to your web app renders HTML and returns it to the browser, then views are
+            lazy-loaded into the client so that subsequent requests only need to return JSON that
+            the client can render using its cached views.
+
+            ### Auto-routing
+
+            Lighter is influenced by the PHP framework CodeIgniter, in that by default, controllers
+            and their methods will automagically get added to the router based on their names and
+            where they are found under the controllers directory. This means you don't have to
+            write a ton of routing code, and you know where to find a controller method if you
+            know its URL, and vice versa.
+
+            ### Performance
+
+            Lighter's default router is extremely simple so that it can respond faster than other
+            frameworks such as Express, Restify and Meteor. The caveat is that dynamic paths are
+            not supported by default, so you would need to do `/blog/article?id=1` rather than
+            `/blog/article/1`. It's a small price to pay for amazing server throughput.
+
+            ### Building APIs
+
+            Lighter's simplicity makes it great for APIs, and we'll be adding functionality to
+            auto-generate API documentation.
+
+            ## Getting started
+
+            To use lighter, first you must install it.
+
+            ```bash.
+            npm i lighter
+            ```
+
+            Using lighter is as simple as creating a lighter directory structure (as seen below)
+            and then creating an `app.js` that requires lighter.
+
+            ```javascript
+            var lighter = require('lighter');
+            ```
+
+            Then you can run your app with Node.
+            ```bash
+            node app
+            ```
+
+            Soon, this setup process will be replaced with a CLI that will go something like:
+            ```bash
+            sudo npm i -g lighter
+            lighter new myapp
+            cd myapp
+            node app
+            ```
+
+            ### Directory structure
+
+            #### Assets loaded with Chug
+
+            Lighter uses Chug to cache its static assets, and each type of asset comes from an
+            assigned directory. Chug also loads models views and controllers. Changes inside
+            those directories will trigger reloads of the items that have been changed.
+            ```
+            /
+              controllers/
+              models/
+              public/
+              scripts/
+              styles/
+              views/
+            ```
+
+            If you want to load assets from other directories (such as node_modules/), you can
+            add to the list of locations using an API method like `addPublics`, `addScripts`,
+            `addStyles` or `addViews`.
+
+            ### Controllers
+
+            Here's a sample controller that you could save into
+            `/controllers/ContactController.js`:
+
+            ```bash
+            var Controller = require('lighter/lib/Controller');
+
+            module.exports = Controller.extend({
+
+              index: function GET(request, response) {
+                response.writeHead(200, {'content-type': 'text/html'});
+                response.end('TODO: Show contact info and a form.');
+              },
+
+              send: function POST(request, response) {
+                response.writeHead(200, {'content-type': 'text/html'});
+                response.end('TODO: Thank the user for contacting us.');
+              }
+
+            });
+            ```
+
+            To see the contact us form, you would visit `/contact`, and the form you submit
+            would post to `/contact/send`. Once we have models, we can do more interesting
+            things here.
+
+
+            ### Models
+
+            Models are coming soon...
+
+            ### Views
+
+            Views are rendered by name from `response.view`.
+
+            The following would render a template that is stored at `/views/hello.ltl` with a
+            context indicating who to say hello to.
+            ```javascript
+            function GET(request, response) {
+              response.view('hello', {who: 'World'});
+            }
+            ```
+
+            ## API
+
+            #### lighter.addControllers(Array|string location)
+            The `location` argument can be a single location or an array of locations. Lighter
+            adds this location to the array of controller locations to be chugged.
+
+            #### lighter.addPublics(Array|string location)
+            The `location` argument can be a single location or an array of locations. Lighter
+            adds this location to the array of public file locations to be chugged.
+
+            #### lighter.addScripts(Array|string location)
+            The `location` argument can be a single location or an array of locations. Lighter
+            adds this location to the array of script file locations to be chugged.
+
+            #### lighter.addStyles(Array|string location)
+            The `location` argument can be a single location or an array of locations. Lighter
+            adds this location to the array of style file locations to be chugged.
+
+            #### lighter.addViews(Array|string location)
+            The `location` argument can be a single location or an array of locations. Lighter
+            adds this location to the array of view file locations to be chugged.
+
+            #### lighter.setApp(Object app)
+            If you would like to use Express (or another framework that exposes
+            `app.get(path, callback)` etc., to do your routing, you can set Lighter to do this.
+
+            #### lighter.setLogger(Object logger)
+            Set an alternative logger that exposes `logger.log(message)`.
+
+            #### lighter.setHttpPort(port)
+            Set the port that you would like Lighter to use for HTTP.
+
+            #### lighter.setHttpsPort(port)
+            Set the port that you would like Lighter to use for HTTPS.
+
+            #### lighter.setAsciiArt(art)
+            Set an array of lines that you would like to be displayed upon startup.
+
+            #### Object lighter.chug
+            A reference to the Chug module that Lighter uses.
+
+            #### Object lighter.beams
+            A reference to the Beams module that Lighter uses.
+
+            #### Object lighter.colors
+            A reference to the Colors module that Lighter uses.
+
+            #### Object lighter.app
+            A reference to the Express-like app that's been set via `lighter.setApp(app)`.
+
+            #### Object lighter.logger
+            A reference to the logger that's been set via `lighter.setLogger(logger)`.
+
+            #### Array|Object lighter.publics
+            The files that have been added via `lighter.setPublic(location)` or
+            found in the `publics/` directory.
+
+            #### Array|Object lighter.scripts
+            The scripts that have been added via `lighter.setPublic(location)` or
+            found in the `scripts/` directory.
+
+            #### Array|Object lighter.styles
+            The stylesheets that have been added via `lighter.setPublic(location)` or
+            found in the `styles/` directory.
+
+            #### Array|Object lighter.views
+            The views that have been added via `lighter.setPublic(location)` or
+            found in the `views/` directory.
+
+            #### Array|Object lighter.controllers
+            The controllers that have been found in the `controllers/` directory.
+
+            #### Array|Object lighter.models
+            The models that have been found in the `models/` directory.
+
+            #### lighter.env
+            The environment string that comes from process.env.NODE_ENV.  Expected values
+            are `dev`, `test`, `stage`, `canary` or `prod`.
+
+
+          //-docent

@@ -1,6 +1,6 @@
 <!DOCTYPE svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <path stroke="#000" stroke-width="3" stroke-linejoin="round" d="M15,10h90v50c0,30,-45,58-45,58c0,0-45-23-45-58z"></path>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="60" height="60">
+  <path stroke="#123" stroke-width="2" stroke-linejoin="round" d="M15,10h90v50c0,30,-45,58-45,58c0,0-45-23-45-58z"></path>
   <path fill="#fc0" d="M15,10h90v50c0,30,-45,58-45,58c0,0-45-23-45-58z"></path>
   <path fill="#e50" d="M25,20h35v35h-35zM60,55h35v5c0,20,-35,45-35,45z"></path>
   <path fill="#fff" d="M60,20h35v35h-35zM25,55h35v50c0,0-35-20-35-45z"></path>

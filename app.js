@@ -11,6 +11,7 @@ var lighter = require('lighter')({
       'node_modules/marked/lib/marked.js',
       'node_modules/lighter/node_modules/ltl/ltl.js',
       'node_modules/lighter/node_modules/jymin/plugins/md5.js',
+      'node_modules/docent/scripts',
       'scripts'
     ],
     '/sly.js': [
@@ -35,3 +36,13 @@ var lighter = require('lighter')({
 });
 
 require('sly')();
+
+var marked = require('./node_modules/ltl/node_modules/marked');
+var hljs = require('highlight.js');
+
+marked.setOptions({
+  highlight: function (code) {
+    return /\n/.test(code) ? hljs.highlightAuto(code).value : code;
+  },
+  anchorMin: 1
+});

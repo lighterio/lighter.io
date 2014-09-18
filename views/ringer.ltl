@@ -7,10 +7,7 @@ call page
     #_HEAD
       ._PANEL
         h1#_LOGO
-          svg(viewBox="0 0 120 120")
-            path(fill="#e50" d="M5,80c20,50,130,10,110-40c-20-50-130-10-110,40m24-7c-6-15,56-39,64-24c6,15-56,39-64,24z")
-            path(fill="#fc0" d="M6,80c19,45,127,5,108-40c-20-49-128-9-108,40m14-11c-10-25,64-53,76-28c10,25-64,53-76,28z")
-            path(fill="#fff" d="M13,75c23,37,111-3,90-40c-23-37-111,3-90,40m0-8c-12-30,74-68,88-28c12,30-74,68-88,28z")
+          img(src="/ringer.svg?v=={cacheBust}")
           : Ringer
           span sharded service framework
     #_FEATURES
@@ -19,16 +16,17 @@ call page
     #_BODY
       ._PANEL
         ._BOX
-          h2 What is Ringer?
-          p:
-            It's an idea for a distributed service framework in Node.js,
-            allowing writes and reads to access parts of in-memory data
-            structures without requiring serialization and deserialization.
+          //+docent
 
-      br
+          :marked
 
-    a#_FORK(href="https://github.com/lighterio/ringer")
-      svg(viewBox="0 0 300 300")
-        path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
-        path(fill="#35a" d="M10,0l290,290v-190l-100-100z")
-        path(fill="#fff" d="M142,98c0-33,27-60,60-60c33,0,60,27,60,60c0,33-27,60-60,60c-10,0-17-1-27-7c-1-1-1-3,0-4l12-12c4-4,4-8,4,-11c19,21,48,2,47-16c7-4,7-4,12-13c-10-6-8-4-17-7c-8-14-16-18-22-22 c-3-9-1-7-7-17c-8,6-8,6-12,13c-18-1-37,28-16,47c-6-1-8,3-9,3c-19-12,2-20-15-29c4,16-10,22,9,35l-8,8 c-1,1-3,1-4,0c-6-10-7-17-7-27z")
+
+            [![NPM Version](https://img.shields.io/npm/v/ringer.svg) ![Downloads](https://img.shields.io/npm/dm/ringer.svg)](https://npmjs.org/package/ringer)
+            [![Build Status](https://img.shields.io/travis/lighterio/ringer.svg)](https://travis-ci.org/lighterio/ringer)
+            [![Code Coverage](https://img.shields.io/coveralls/lighterio/ringer/master.svg)](https://coveralls.io/r/lighterio/ringer)
+            [![Dependencies](https://img.shields.io/david/lighterio/ringer.svg)](https://david-dm.org/lighterio/ringer)
+            [![Support](https://img.shields.io/gratipay/Lighter.io.svg)](https://gratipay.com/Lighter.io/)
+
+            Ringer is going to be a super easy-to-use hash ring module for distributed services.
+
+          //-docent

@@ -2,51 +2,57 @@
   "name": "lighter.io",
   "version": "0.0.1",
   "description": "Website for the Lighter framework and associated modules.",
+  "keywords": [
+    "lighter.io"
+  ],
   "main": "app.js",
+  "engines": {
+    "node": ">=0.2.6"
+  },
   "scripts": {
     "test": "./node_modules/exam/exam.js",
-    "retest": "./node_modules/exam/exam.js --watch",
     "cover": "istanbul cover ./node_modules/exam/exam.js",
     "report": "open coverage/lcov-report/index.html",
     "coveralls": "istanbul cover ./node_modules/exam/exam.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lighterio/lighter.io.git"
-  },
-  "author": "Sam Eubank <sameubank@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/lighterio/lighter.io/issues"
-  },
+  "repository": "https://github.com/lighterio/lighter.io.git",
+  "bugs": "https://github.com/lighterio/lighter.io/issues",
   "homepage": "https://github.com/lighterio/lighter.io",
-  "keywords": [
-    "lighter.io"
+  "author": "Sam Eubank <sameubank@gmail.com>",
+  "contributors": [
+    "Sam Eubank <sameubank@gmail.com>"
   ],
-  "contributors": {
-    "name": "Sam Eubank",
-    "email": "sameubank@gmail.com"
-  },
-  "engines": [
-    "node >= 0.2.6"
-  ],
+  "license": "MIT",
   "dependencies": {
-    "codemirror": "4.4.0",
+    "codemirror": "^4.4.0",
     "coffee-script": "1.7.1",
+    "highlight.js": "8.2.0",
     "jquery": "2.1.1",
-    "lighter": "0.1.59",
-    "marked": "0.3.2",
-    "sly": "0.0.1"
+    "lighter": "^0.1.63",
+    "ltl": "^0.1.14",
+    "marked": "^0.3.2",
+    "sly": "^0.0.1"
   },
   "devDependencies": {
-    "zeriousify": "0.1.9",
-    "exam": "0.0.5",
+    "aloha": "^0.0.0",
+    "beams": "^0.0.16",
+    "cedar": "^0.0.17",
+    "chug": "^0.2.0",
+    "coveralls": "^2.11.1",
+    "d6": "^0.1.6",
+    "docent": "^0.0.0",
+    "exam": "^0.0.7",
     "istanbul": "0.3.0",
-    "coveralls": "2.11.1"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/lighterio/lighter.io/blob/master/MIT-LICENSE.md"
-    }
-  ]
+    "jymin": "^0.3.5",
+    "ormy": "^0.1.4",
+    "plans": "^0.0.1",
+    "requiry": "^0.0.1",
+    "ringer": "^0.0.0",
+    "seattle": "^0.0.4",
+    "shellify": "^0.0.4",
+    "splode": "^0.0.2",
+    "thrust": "^0.0.0",
+    "za": "^0.0.21",
+    "zeriousify": "^0.1.9"
+  }
 }

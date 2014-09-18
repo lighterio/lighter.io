@@ -1,0 +1,14 @@
+<!DOCTYPE svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="60" height="60">
+  <path stroke="#123" stroke-width="2" stroke-linejoin="round" d="M30,10c-25,20-25,80,0,100l80-50z"></path>
+  <path fill="#fc0" d="M30,10c-25,20-25,80,0,100l80-50z"></path>
+  <path fill="#fff" d="M40,18c-15,15-14,38,-14,41h80zm0,84c-15-15-14-38,-14-41h80z"></path>
+  <path fill="#e50" d="M35,32c0-8,12-8,12,0c0,8-12,8,-12,0z"></path>
+  <path fill="#e50" d="M30,52c0-8,12-8,12,0c0,8-12,8,-12,0z"></path>
+  <path fill="#e50" d="M51,46c0-8,12-8,12,0c0,8-12,8,-12,0z"></path>
+  <path fill="#e50" d="M69,50c0-8,12-8,12,0c0,8-12,8,-12,0z"></path>
+  <path fill="#e50" d="M71,69c0-8,12-8,12,0c0,8-12,8,-12,0z"></path>
+  <path fill="#e50" d="M56,79c0-8,12-8,12,0c0,8-12,8,-12,0z"></path>
+  <path fill="#e50" d="M39,71c0-8,12-8,12,0c0,8-12,8,-12,0z"></path>
+  <path fill="#e50" d="M36,91c0-8,12-8,12,0c0,8-12,8,-12,0z"></path>
+</svg>

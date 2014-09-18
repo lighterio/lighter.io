@@ -1,0 +1,49 @@
+// AUTOROUTE
+call talks/page
+
+  set title:
+    Mobile App Hacking
+
+  set content
+
+    b
+      h2 Mobile App Hacking
+      ul(style="background-image:url(/talks/matrix.gif)")
+        li.a1 Learn something
+        li.a2 Have fun
+        li.a3 Build apps
+
+    b
+      h2 You are the Customer
+      ul(style="background-image:url(/talks/thumbs-up.gif)")
+        li.a1 Use MAT
+        li.a2 Feel joy (& pain)
+        li.a3 Remove pain
+
+    b
+      h2 Keep it simple
+      ul(style="background-image:url(/talks/pumpkin.gif)")
+        li.a1 You have 28 hours
+        li.a2 Completeness counts
+        li.a3 Don't forget your presentation
+
+    b
+      h2 Work together
+      ul(style="background-image:url(/talks/double-hacking.gif)")
+        li.a1 "Coopetition"
+        li.a2 Secrecy doesn't help you (or us)
+        li.a3 Openness generates feedback
+
+    b
+      h2 Revenue "share" != company stock
+      ul(style="background-image:url(/talks/fake.gif)")
+        li.a1 TUNE governs payouts
+        li.a2 All your app are belong to TUNE
+        li.a3 Don't make TUNE look bad
+
+    b
+      h2 Thank You.
+      ul(style="background-image:url(/talks/cat-massage.gif)")
+        li.a1
+        li.a1 Hack on!
+        li.a1

@@ -1,0 +1,7 @@
+<!DOCTYPE svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="60" height="60">
+  <path stroke="#123" stroke-width="2" stroke-linejoin="round" d=""></path>
+  <path fill="#fff" d=""></path>
+  <path fill="#fc0" d=""></path>
+  <path fill="#e50" d=""></path>
+</svg>

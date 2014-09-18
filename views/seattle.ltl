@@ -7,13 +7,7 @@ call page
     #_HEAD
       ._PANEL
         h1#_LOGO
-          svg(viewBox="0 0 120 120")
-            path(fill="#fc0" d="M13,60c0-78,94-78,94,0c0,78-94,78-94,0z")
-            path(fill="#e50" d="M15,60c0-75,90-75,90,0c0,75-90,75-90,0z")
-            path(fill="#fff" d="M35,30c0-8,50-8,50,0c0,8-50,8-50,0m6,6c0-7,38-7,38,0c0,7-38,7-38,0m-1-10c0-6,40-6,40,0c0,6-40,6-40,0m13-5c0-4,14-4,14,0c0,4-14,4-14,0m6-3,l1-13,l1,13z")
-            path(fill="#fff" d="M48,36c10,30,4,50-6,80l5,1c10-30,16-50,5-80zM72,36c-10,30-4,50,6,80l-5,1c-10-30-16-50-5-80z")
-            path(fill="#fff" d="M58,19l-1,99h6l-1-99zM75,105,v-4h-30v4l15,5z")
-            path(fill="#fc0" d="M35,30c0,8,50,8,50,0c0,9-50,9-50,0m6,6c0,7,38,7,38,0c0,8-38,8-38,0m-1-10c0,6,40,6,40,0c0,7-40,7-40,0m13-5c0,4,14,4,14,0c0,5-14,5-14,0m5.5-14c0-2,3-2,3,0c0,2-3,2-3,0zM45,105v0.8l15,5l15-5v-0.8l-15,5z")
+          img(src="/seattle.svg?v=={cacheBust}")
           : Seattle
           span module standard tool
     #_FEATURES
@@ -22,14 +16,17 @@ call page
     #_BODY
       ._PANEL
         ._BOX
-          h2 What is Seattle?
-          p:
-            It is both a fantastic city and a nifty little Node module standardization tool.
+          //+docent
 
-      br
+          :marked
 
-    a#_FORK(href="https://github.com/lighterio/seattle")
-      svg(viewBox="0 0 300 300")
-        path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
-        path(fill="#35a" d="M10,0l290,290v-190l-100-100z")
-        path(fill="#fff" d="M142,98c0-33,27-60,60-60c33,0,60,27,60,60c0,33-27,60-60,60c-10,0-17-1-27-7c-1-1-1-3,0-4l12-12c4-4,4-8,4,-11c19,21,48,2,47-16c7-4,7-4,12-13c-10-6-8-4-17-7c-8-14-16-18-22-22 c-3-9-1-7-7-17c-8,6-8,6-12,13c-18-1-37,28-16,47c-6-1-8,3-9,3c-19-12,2-20-15-29c4,16-10,22,9,35l-8,8 c-1,1-3,1-4,0c-6-10-7-17-7-27z")
+
+
+            [![NPM Version](https://img.shields.io/npm/v/seattle.svg) ![Downloads](https://img.shields.io/npm/dm/seattle.svg)](https://npmjs.org/package/seattle)
+            [![Build Status](https://img.shields.io/travis/lighterio/seattle.svg)](https://travis-ci.org/lighterio/seattle)
+            [![Code Coverage](https://img.shields.io/coveralls/lighterio/seattle/master.svg)](https://coveralls.io/r/lighterio/seattle)
+            [![Dependencies](https://img.shields.io/david/lighterio/seattle.svg)](https://david-dm.org/lighterio/seattle)
+            [![Support](https://img.shields.io/gratipay/Lighter.io.svg)](https://gratipay.com/Lighter.io/)
+
+
+          //-docent

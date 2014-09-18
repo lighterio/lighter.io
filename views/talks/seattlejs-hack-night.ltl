@@ -1,0 +1,58 @@
+// AUTOROUTE
+call talks/page
+
+  set title:
+    SeattleJS Hack Night
+
+  set content
+
+    b
+      h2 SeattleJS Hack Night @ TUNE
+      ul
+        li HasOffers-Guest WiFi: HasWireless
+        li Slides:
+          a(href="http://192.168.211.221:8888/hack") http://192.168.211.221:8888/hack
+        li
+          input(id="_EMAIL" type="email" placeholder="Email")
+          input(id="_JOIN" type="submit" value="Join")
+
+    b
+      h2 Why are we here?
+      ul(style="background-image:url(/talks/double-hacking.gif)")
+        li.a1 <tt>if (hasTeam) work();</tt>
+        li.a2 We &#9825; JavaScript
+        li.a3 Free drinks & pizza
+
+    b
+      h2 You're at our 1st Hack Night!
+      ul(style="background-image:url(/talks/thumbs-up.gif)")
+        li.a1 Take advantage of this time.
+        li.a2 Come back next time.
+        li.a3 Bring friends!
+
+    b#frequency._POLL
+      h2 How often should we meet?
+      ul
+        li>label
+          input(type="radio")
+          : Weekly (not Weakly)
+        li>label
+          input(type="radio")
+          : Bi-Weekly
+        li>label
+          input(type="radio")
+          : Monthly
+
+    b
+      h2 Our sponsor...
+      ul(style="background-image:url(/talks/tune-on-black.svg)")
+
+    b
+      iframe(src="http://fast.wistia.net/embed/iframe/3qx4jqique")
+
+    b
+      h2 Thank You.
+      ul(style="background-image:url(/talks/pumpkin.gif)")
+        li.a1
+        li.a1 Hack on!
+        li.a1

@@ -5,14 +5,7 @@ call page
     #_HEAD
       ._PANEL
         h1#_LOGO
-          svg(viewBox="0 0 120 120")
-              path(fill="#e50" d="M20,20c0-20,80-20,80,0v80c0,20-80,20-80,0z")
-              path(fill="#fc0" d="M24,20c0-16,72-16,72,0c0,16-72,16-72,0z")
-              path(fill="#fff" d="M30,20c0-12,60-12,60,0c0,12-60,12-60,0m4,0c0,10,52,10,52,0c0-10-52-10-52-0m8,0c0-6,36-6,36,0c0,6-36,6-36,0m4,0c0,4,28,4,28,0c0-4-28-4-28-0z")
-              path(fill="#fc0" d="M24,27v80l0.7,0.4m9,4.3v-80l2,0.5m13,2.3l2,0.1v80l2,0.2m18-0.3l2-0.2v-80l-1,0.1m12-2l2-0.5v80l1-0.4m7-3l1-0.5v-80l0.5-0.4z")
-              path(fill="#e50" d="M90,40c15-6,27,24,12,30l-8,6c-15,6-27-24-12-30z")
-              path(fill="#fc0" d="M91,42c12-5,22,21,10,26c-12,5-22-21-10-26z")
-              path(fill="#fff" d="M93,46c8-2,14,14,6,18c-8,2-14-14-6-18m0.5,2c-7,3-1,17,5,14c7-3,1-17-5-14z")
+          img(src="/cedar.svg?v=={cacheBust}")
           : Cedar
           span beautiful, user-friendly logs
     #_FEATURES
@@ -21,25 +14,135 @@ call page
     #_BODY
       ._PANEL
         ._BOX
-          h2 Pretty logs
-          p:
-            Cedar's console logs feature colorful unicode symbols and default
-            text, apart from errors and warnings, which should catch your
-            attention. When there's a log with a stack trace, Cedar adds
-            short code snippets with the light and character highlighted so
-            that you can see the source of the problem much more quickly.
+          //+docent
 
-          br
+          :marked
 
-          h2 Multiple transports
-          p:
-            Cedar currently features console logging and file logging, and more
-            is on the way!
 
-      br
+            [![NPM Version](https://img.shields.io/npm/v/cedar.svg) ![Downloads](https://img.shields.io/npm/dm/cedar.svg)](https://npmjs.org/package/cedar)
+            [![Build Status](https://img.shields.io/travis/lighterio/cedar.svg)](https://travis-ci.org/lighterio/cedar)
+            [![Code Coverage](https://img.shields.io/coveralls/lighterio/cedar/master.svg)](https://coveralls.io/r/lighterio/cedar)
+            [![Dependencies](https://img.shields.io/david/lighterio/cedar.svg)](https://david-dm.org/lighterio/cedar)
+            [![Support](https://img.shields.io/gratipay/Lighter.io.svg)](https://gratipay.com/Lighter.io/)
 
-    a#_FORK(href="https://github.com/lighterio/cedar")
-      svg(viewBox="0 0 300 300")
-        path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
-        path(fill="#35a" d="M10,0l290,290v-190l-100-100z")
-        path(fill="#fff" d="M142,98c0-33,27-60,60-60c33,0,60,27,60,60c0,33-27,60-60,60c-10,0-17-1-27-7c-1-1-1-3,0-4l12-12c4-4,4-8,4,-11c19,21,48,2,47-16c7-4,7-4,12-13c-10-6-8-4-17-7c-8-14-16-18-22-22 c-3-9-1-7-7-17c-8,6-8,6-12,13c-18-1-37,28-16,47c-6-1-8,3-9,3c-19-12,2-20-15-29c4,16-10,22,9,35l-8,8 c-1,1-3,1-4,0c-6-10-7-17-7-27z")
+            Cedar is a Node.js logging library that is designed to be fast, simple and
+            pretty. Its console transport shows color symbols before your log messages.
+
+
+            ## Getting started
+
+            Add `cedar` to your dependencies.
+            ```bash
+            npm install --save cedar
+            ```
+
+            Create a stdout logger, and use it.
+            ```javascript
+            var log = require('cedar')();
+
+            log('Use a string.');
+
+            log(['Or'], ['an'], ['array']);
+
+            log({or: 'json, obviously'});
+
+            log.debug('This will be preceded by a magenta diamond thingy.');
+            log.trace('This will be preceded by a cyan plus.');
+            log.log('This will be preceded by a grey arrow, as above.');
+            log.info('This will be preceded by a green check mark.');
+            log.warn('This will be preceded by a thick yellow asterisk.');
+            log.error('This will be preceded by a thick red X.');
+            ```
+
+            ## Logger customization
+
+            #### log.setFormat(function callback[, string type])
+
+            Customize the message format.
+            ```javascript
+            var log = require('cedar')();
+            log.setFormat(function (message, prefix, type) {
+              return prefix + message + '!';
+            });
+            ```
+
+            If you specify the optional `type` parameter, it will only change the formatter
+            for that type.
+
+            #### log.setLevel(string level)
+
+            Change the level of log that is shown (default: `log`).
+            ```javascript
+            var log = require('cedar')();
+            log.setLogLevel('trace');
+            ```
+
+            Setting to a level from this list will enable logs of that level and all
+            of the levels after it: `debug`, `trace`, `log`, `info`, `warn`, `error`.
+            Setting the level to `nothing` will stop all logs.
+
+            #### log.setPrefixes(object prefixes)
+
+            Customize prefixes for the console log messages.
+            ```javascript
+            require('colors');
+
+            var log = require('cedar')();
+            log.setPrefixes({
+              debug: 'DEBUG '.magenta,
+              trace: 'TRACE '.cyan,
+              log: 'LOG   '.grey,
+              info: 'INFO  '.green,
+              warn: 'WARN  '.yellow,
+              error: 'ERROR '.red
+            });
+
+            // You can also get the prefixes:
+            var prefixes = log.getPrefixes();
+            ```
+
+            #### log.setJsonSpace(string whitespace)
+
+            Customize the spacing that JSON.stringify uses.
+            ```javascript
+            var log = require('cedar')();
+            log.setJsonSpace('  ');
+            ```
+            The default is two spaces.
+
+
+            ## Transports
+
+            Cedar currently supports "console" and "file" transports.
+
+            ### Console
+
+            The console logger writes to `process.stdout` with pretty colors.
+
+            Console is the default transport, so the following are equivalent:
+            ```javascript
+            logger = require('cedar')();
+            logger = require('cedar')('console');
+            ```
+
+            ### Base
+
+            The base logger writes to a stream.
+            ```javascript
+            var fs = require('fs');
+            var ws = fs.createWriteStream('my.log');
+            var logger = require('cedar')('base', {stream: ws});
+            logger.log('Write this string to a file');
+            ```
+
+            ### File
+
+            The file logger writes JSON arrays to a file.
+            The default file path is `logs/cedar.log`.
+            ```javascript
+            var logger = require('cedar')('file', {path: 'logs/cedar.log'});
+            logger.log('Write this string to a file');
+            ```
+
+
+          //-docent

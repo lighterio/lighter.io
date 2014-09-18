@@ -7,10 +7,7 @@ call page
     #_HEAD
       ._PANEL
         h1#_LOGO
-          svg(viewBox="0 0 120 120")
-            path(fill="#fc0" d="M30,101c-8,0-16-8-16-16v-50c0-8,8-16,16-16h60c8,0,16,8,16,16v50c0,8-8,16-16,16z")
-            path(fill="#e50" d="M30,95c-5,0-10-5-10-10v-50c0-5,5-10,10-10h60c5,0,10,5,10,10v50c0,5-5,10-10,10z")
-            path(fill="#fff" d="M30,46v-9l24,15v6l-24,15v-9l18-9zm28,28h30v7h-30z")
+          img(src="/shellify.svg?v=={cacheBust}")
           : Shellify
           span CLI maker
     #_FEATURES
@@ -19,14 +16,76 @@ call page
     #_BODY
       ._PANEL
         ._BOX
-          h2 What is Shellify?
-          p:
-            It's a multi-command CLI builder.
+          //+docent
 
-      br
+          :marked
 
-    a#_FORK(href="https://github.com/lighterio/shellify")
-      svg(viewBox="0 0 300 300")
-        path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
-        path(fill="#35a" d="M10,0l290,290v-190l-100-100z")
-        path(fill="#fff" d="M142,98c0-33,27-60,60-60c33,0,60,27,60,60c0,33-27,60-60,60c-10,0-17-1-27-7c-1-1-1-3,0-4l12-12c4-4,4-8,4,-11c19,21,48,2,47-16c7-4,7-4,12-13c-10-6-8-4-17-7c-8-14-16-18-22-22 c-3-9-1-7-7-17c-8,6-8,6-12,13c-18-1-37,28-16,47c-6-1-8,3-9,3c-19-12,2-20-15-29c4,16-10,22,9,35l-8,8 c-1,1-3,1-4,0c-6-10-7-17-7-27z")
+
+            [![NPM Version](https://img.shields.io/npm/v/shellify.svg) ![Downloads](https://img.shields.io/npm/dm/shellify.svg)](https://npmjs.org/package/shellify)
+            [![Build Status](https://img.shields.io/travis/lighterio/shellify.svg)](https://travis-ci.org/lighterio/shellify)
+            [![Code Coverage](https://img.shields.io/coveralls/lighterio/shellify/master.svg)](https://coveralls.io/r/lighterio/shellify)
+            [![Dependencies](https://img.shields.io/david/lighterio/shellify.svg)](https://david-dm.org/lighterio/shellify)
+            [![Support](https://img.shields.io/gratipay/Lighter.io.svg)](https://gratipay.com/Lighter.io/)
+
+            Shellify is a module for creating command-line interfaces.
+
+            ## Example
+
+            ```javascript
+            var shellify = require('shellify');
+
+            shellify({
+              commands: {
+                init: {
+                  note: 'Creates a new package using the Seattle Pub.js Standard',
+                  options: {
+                    name: '!Project name (can contain uppercase)',
+                    author: '!Author name and email|Sam Eubank<sameubank@gmail.com>',
+                    description: '!Package description'
+                  },
+                  alias: 'c'
+                },
+                space: {
+                  note: 'Converts tabs to 2 spaces and ensures standard line endings',
+                  alias: 's'
+                },
+                version: {
+                  note: 'Increments the major, minor or patch version by one',
+                  options: {
+                    number: '?Major, minor or patch|patch'
+                  },
+                  alias: 'v'
+                },
+                publish: {
+                  note: 'Publishes from the current working directory',
+                  alias: 'p'
+                }
+              }
+            });
+            ```
+
+            ## API
+
+            ### shellify(options)
+
+            Shellify exports itself as a function, seen in the example above.
+
+            ### shellify.logger
+
+            The Cedar console logger used by shellify, complete with symbols and colors.
+
+            ### shellify.base
+
+            A string that turns your terminal text back to its default color.
+
+            ### shellify.(red|yellow|green|cyan|blue|magenta|grey)
+
+            A string that turns your terminal text red/yellow/green/cyan/blue/magenta/grey.
+
+            ### shellify.mkdirp
+
+            A reference to a copy of substack's `mkdirp` module, allowing the same
+            functionality as `mkdir -p`.
+
+
+          //-docent
