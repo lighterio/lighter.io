@@ -1,7 +1,7 @@
 html
   head
     link(rel="stylesheet" href="/a.css?v=={cacheBust}")
-    // link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700")
+    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700")
     link(rel="shortcut icon" href="/favicon.ico?v=={cacheBust}")
     meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1")
     title
@@ -21,10 +21,6 @@ html
 
     if repo
       br
-      a#_FORK(href="https://github.com/${repo}")
-        svg(viewBox="0 0 300 300")
-          path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
-          path(fill="#35a" d="M10,0l290,290v-190l-100-100z")
-          path(fill="#fff" d="M142,98c0-33,27-60,60-60c33,0,60,27,60,60c0,33-27,60-60,60c-10,0-17-1-27-7c-1-1-1-3,0-4l12-12c4-4,4-8,4,-11c19,21,48,2,47-16c7-4,7-4,12-13c-10-6-8-4-17-7c-8-14-16-18-22-22 c-3-9-1-7-7-17c-8,6-8,6-12,13c-18-1-37,28-16,47c-6-1-8,3-9,3c-19-12,2-20-15-29c4,16-10,22,9,35l-8,8 c-1,1-3,1-4,0c-6-10-7-17-7-27z")
+      a#_FORK(href="https://github.com/${repo}")>img(src="/fork.svg?v=={cacheBust}")
 
     script(src="/a.js?v=={cacheBust}")

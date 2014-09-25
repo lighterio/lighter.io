@@ -85,15 +85,17 @@ call page
 
             Add Ltl to your project.
             ```bash
-            $ npm install --save ltl
+            npm install --save ltl
             ```
 
             Compile and render templates.
             ```javascript
-            var ltl = require('ltl');
-            var template = ltl.compile('#hi Hello #{name}!');
-            var result = template({name: 'World'});
-            // result: '<div id="hi">Hello World!</div>'
+            var ltl = require("ltl");
+            var template = ltl.compile("#hi Hello \\${who}!");
+            var result = template({who: "World"});
+            ```
+            ```html
+            <div id="hi">Hello World!</div>
             ```
 
             ## API
@@ -303,9 +305,22 @@ call page
             <code>\\${escaped} or \\={raw}
             ```
 
+            ### Variable Assignment
+
+            You can assign a value to a variable in the template context using `=`.
+            ```jade
+            who = 'World'
+            . Hello \\${who}!
+            ```
+            ```html
+            <p>Hello World!</p>
+            ```
+
             ### Control
             Use `for..in` to iterate over an array inside the context.
-             * Context: `{list: ['IPA', 'Porter', 'Stout']}`
+
+            *Context:* `{list: ['IPA', 'Porter', 'Stout']}`
+
             ```jade
             ul
               for item in list
@@ -316,13 +331,14 @@ call page
             ```
 
             Use `for..of` to iterate over an object's keys.
+
+            *Context:* `{pairings: {Coffee: 'coding', Beer: 'bloviating'}}`
             ```jade
-            ul
-              for field, value of data
-                li #{field}: #{value}
+            for drink, activity of pairings
+              . #{field} is for #{value}.
             ```
             ```html
-            <ul><li>IPA</li><li>Porter</li><li>Stout</li></ul>
+            <div>Coffee is for coding.</div><div>Beer is for bloviating</div>
             ```
 
             ### Conditionals

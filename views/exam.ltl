@@ -30,7 +30,7 @@ call page
             forks processes to distribute the test load across cores, because your time is
             important.
 
-            ## Quick Start
+            ## TL;DR
 
             Make your test directory.
             ```
@@ -67,17 +67,32 @@ call page
             exam
             ```
 
+
             ## Test structure
 
             Exam exposes global functions which you can use in your tests.
 
-            * `describe(title, fn)` runs `fn` as a suite of tests.
-            * `it(does, fn)` runs `fn` to test what something does.
-            * `is(actual, expected)` asserts equality.
-            * `before(fn)` runs `fn` before a suite.
-            * `beforeEach(fn)` runs `fn` before each test in a suite.
-            * `after(fn)` runs `fn` after a suite.
-            * `afterEach(fn)` runs `fn` after each test in a suite.
+            ### describe(title, fn)
+            Runs `fn` as a suite of tests.
+
+            ### it(does, fn)
+            Runs `fn` to test what something does.
+
+            ### is(actual, expected)
+            Asserts equality.
+
+            ### before(fn)
+            Runs `fn`** before a suite.<br>
+
+            ### beforeEach(fn)
+            Runs `fn` before each test in a suite.<br>
+
+            ### after(fn)
+            Runs `fn` after a suite.<br>
+
+            ### afterEach(fn)
+            Runs `fn` after each test in a suite.<br>
+
 
             ## Assertions
 
@@ -494,12 +509,21 @@ call page
 
             ### Options
 
-            | CLI argument   | Object property | Default   | Description                  |
-            |----------------|-----------------|-----------|------------------------------|
-            | -R, --reporter | reporter        | "console" | Which library will be used to output results - "console", "tap" or "xunit". |
-            | -p, --parser   | parser          | "acorn"   | Which EcmaScript parser will be used to handle syntax errors - "acorn" or "esprima". |                             |
-            | -w, --watch    | watch           | false     | Whether to keep the process running, watch for file changes, and re-run tests when a change is detected. |
-            | -c, --cluster  | cluster         | true      | Whether to spawn child processes, creating a cluster of test runners. |
+            #### -R, --reporter
+            Which library will be used to output results. Options include "console",
+            "tap", "xunit" and "counts". **Default: "console"**.
+
+            #### -p, --parser
+            Which EcmaScript parser will be used to handle syntax errors. Options include
+            "acorn" and "esprima". **Default: "acorn"**.
+
+            #### -w, --watch
+            Whether to keep the process running, watch for file changes, and re-run tests
+            when a change is detected. **Default: false**.
+
+            #### -c, --cluster
+            Whether to spawn child processes, creating a cluster of test runners.
+            **Default: true**.
 
 
           //-docent

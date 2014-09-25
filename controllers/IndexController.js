@@ -1,7 +1,8 @@
 var projects = [
   'aloha', 'beams', 'cedar', 'chug', 'd6', 'exam', 'gold',
-  'jymin', 'lighter', 'ltl', 'ringer', 'seattle', 'shellify',
-  'shield', 'sly', 'splode', 'thrust', 'za', 'zeriousify'
+  'jymin', 'lighter', 'ltl', 'ormy', 'plans', 'ringer',
+  'seattle', 'shellify', 'shield', 'sly', 'splode', 'thrust',
+  'za', 'zeriousify'
 ];
 
 var controller = module.exports = {

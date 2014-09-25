@@ -1,5 +1,4 @@
 var lighter = require('lighter')({
-  httpPort: 8888,
   scripts: {
     '/a.js': [
       'node_modules/jquery/dist/jquery.js',
@@ -46,3 +45,4 @@ marked.setOptions({
   },
   anchorMin: 1
 });
+

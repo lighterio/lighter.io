@@ -21,7 +21,6 @@ call page
             br
           br
 
-
     #_PROJECTS
 
       br
@@ -32,28 +31,28 @@ call page
           a._PROJECT(href="/lighter")
             img(src="/lighter.svg")
             : Lighter
-            span easy MVC
+            span framework
             b._READY
           br
 
           a._PROJECT(href="/za")
             img(src="/za.svg?v=={cacheBust}")
             : Za
-            span fast web server
+            span web server
             b._READY
           br
 
           a._PROJECT(href="/cedar")
             img(src="/cedar.svg?v=={cacheBust}")
             : Cedar
-            span useful logs
+            span logging
             b._READY
           br
 
           a._PROJECT(href="/ltl")
             img(src="/ltl.svg?v=={cacheBust}")
             : Ltl
-            span lean templates
+            span templates
             b._READY
           br
 
@@ -69,6 +68,7 @@ call page
             : D6
             span isomorphic transport
             b._UNDOCUMENTED
+          br
 
         ._BOX4
 
@@ -82,7 +82,7 @@ call page
           a._PROJECT(href="/jymin")
             img(src="/jymin.svg?v=={cacheBust}")
             : Jymin
-            span JS you minify
+            span <i>JS</i> <i>y</i>ou <i>m</i>inify
             b._UNDOCUMENTED
           br
 
@@ -116,6 +116,13 @@ call page
 
         ._BOX4
 
+          a._PROJECT(href="/plans")
+            img(src="/plans.svg?v=={cacheBust}")
+            : Plans
+            span asynchronicity
+            b._READY
+          br
+
           a._PROJECT(href="/gold")
             img(src="/gold.svg?v=={cacheBust}")
             : Gold
@@ -123,17 +130,10 @@ call page
             b._IDEA
           br
 
-          a._PROJECT(href="/seattle")
-            img(src="/seattle.svg?v=={cacheBust}")
-            : Seattle
-            span standard
-            b._UNDOCUMENTED
-          br
-
-          a._PROJECT(href="/shield")
-            img(src="/shield.svg?v=={cacheBust}")
-            : Shield
-            span DDoS guard
+          a._PROJECT(href="/ormy")
+            img(src="/ormy.svg?v=={cacheBust}")
+            : Ormy
+            span ORM
             b._IDEA
           br
 

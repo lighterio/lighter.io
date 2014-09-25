@@ -1,0 +1,69 @@
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #000;
+  color: #f8f8f8;
+}
+
+.hljs-shebang,
+.hljs-comment,
+.hljs-template_comment,
+.hljs-javadoc {
+  color: #7c7c7c;
+}
+
+.hljs-keyword,
+.hljs-tag,
+.hljs-request,
+.hljs-status, {
+  color: #96cbfe;
+}
+
+.hljs-sub .hljs-keyword,
+.method,
+.hljs-list .hljs-title,
+.nginx .hljs-title {
+  color: #ffffb6;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-cdata,
+.hljs-filter .hljs-argument,
+.hljs-attr_selector,
+.hljs-date {
+  color: #a8ff60;
+}
+
+.hljs-subst {
+  color: #daefa3;
+}
+
+.hljs-regexp {
+  color: #e9c062;
+}
+
+.hljs-title,
+.hljs-sub .hljs-identifier,
+.hljs-pi,
+.hljs-decorator,
+.hljs-type,
+.hljs-constant {
+  color: #ffffb6;
+}
+
+.hljs-symbol,
+.hljs-number,
+.hljs-variable,
+.hljs-literal {
+  color: #c6c5fe;
+}
+
+.hljs-hexcolor {
+  color: #c6c5fe;
+}
+
+.hljs-number {
+  color: #ff73fd;
+}
