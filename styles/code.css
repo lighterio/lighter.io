@@ -1,3 +1,59 @@
+tt,
+pre,
+code,
+textarea,
+.CodeMirror {
+  font-weight: 400;
+  font-family: Oxygen Mono, Courier New;
+}
+
+p {
+  color: #000;
+  padding: 0;
+  margin: 0.4em 0 1.2em 0;
+}
+
+li {
+  margin: 0 0 0 1.5em;
+}
+
+tt,
+p>code,
+li>code {
+  display: inline-block;
+  border: 1px solid #bbb;
+  background: #ddd;
+  color: #000;
+  border-radius: 0.3em;
+  margin: 0 0.1em;
+  padding: 0 0.1em;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+pre {
+  border: 0.1em solid #000;
+  border-width: 0.1em 0.2em 0.2em 0.1em;
+  background: #123;
+  border-radius: 0.3em;
+  margin: 0.8em 0;
+  padding: 0;
+}
+
+pre>code {
+  display: block;
+  border: 0 solid #346;
+  border-width: 0.2em 0 0 0.2em;
+  background: inherit;
+  padding: 0.3em 0.6em;
+  margin: 0;
+  color: #eee;
+}
+
 textarea._TEMPLATE,
 textarea._COMPILED,
 textarea._CONTEXT,
@@ -32,8 +88,6 @@ textarea,
   color: #fff;
   border: 1px solid #000!important;
   height: 400px;
-  font-size: 12px!important;
-  font: 12px Menlo, "Lucida Console", "Courier New", monospace;
   transition: border-color 0.5s;
 }
 
@@ -52,4 +106,12 @@ div.cm-s-blackboard div.CodeMirror-cursor {
   border-left: 2px solid #fff!important;
   text-indent: 20px;
   overflow: hidden;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  transition: background 0.3s, border-color 0.2s, color 0.1s, text-decoration 0.1s;
 }

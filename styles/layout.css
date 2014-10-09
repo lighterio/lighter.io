@@ -1,19 +1,5 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  border-top: 0.4em solid #e50;
-  font-family: Lato, Arial, sans-serif;
-  background: #ccc;
-  color: #000;
-  height: 100%;
-}
-
-body._SCROLLED {
-  border-width: 0.2em;
+#_STRIPE {
+  display: none;
 }
 
 #_HEAD {
@@ -22,61 +8,102 @@ body._SCROLLED {
   border-width: 1px 0;
 }
 
+#_HEAD>._PANEL {
+  padding: 0.5em 1em;
+}
+
+#_SCROLLED {
+  padding-top: 4.8em;
+}
+
+#_SCROLLED>#_STRIPE {
+  position: fixed;
+  z-index: 8;
+  display: block;
+  width: 100%;
+  height: 1px;
+  top: 0;
+  background: #e50;
+}
+
+#_SCROLLED>#_HEAD {
+  position: fixed;
+  top: 1px;
+  width: 100%;
+  z-index: 8;
+}
+
+#_SCROLLED>#_FORK {
+  position: fixed;
+  z-index: 9;
+}
+
 #_LOGO {
-  font-size: 1.6em;
-  font-weight: 500;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
   color: #fff;
   text-shadow: 0.02em 0.04em 0.01em #000;
   filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=45);
 }
 
-#_LOGO img,
-#_LOGO svg {
+h1 {
+  margin: 0 0 0 -0.3em;
+  font-size: 1.8em;
+}
+
+#_LOGO img {
   display: inline-block;
-  width: 60px;
-  height: 60px;
-  margin: 0 8px 0 0;
+  width: 2em;
+  height: 2em;
+  margin: 0 0.2em 0 0;
   vertical-align: middle;
 }
 
-#_LOGO span {
+#_LOGO u {
+  font-weight: 300;
   opacity: 0.6;
-  margin-left: 0.8em;
-  font-size: 0.8em;
+  padding: 0.1em 0.3em;
+  font-size: 0.9em;
+  text-decoration: none;
 }
 
-#_LOGO b {
-  color: #888;
+#_BODY {
+  background: #f8f8f8;
 }
 
-#_BODY{
-  background: #eee;
-}
-
-#_PROJECTS {
-  background: #eee;
-}
-
-#_FEATURES {
+#_FEATURES,
+#_BADGES {
   background: #fc0;
   border-bottom: 1px solid #999;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 
-#_FEATURES ._BOX {
-  background: #fff;
-  border-radius: 1em;
-  margin: 0.2em;
+#_BADGES,
+#_BADGES a {
+  line-height: 0.9;
+}
+
+#_BADGES {
+  background: #abc;
+  border-bottom: 1px solid #999;
+  font-size: 0.1em;
+}
+
+#_BADGES>._PANEL {
+  text-align: right;
+  padding: 0.2em 0.8em;
+}
+
+#_BADGES a {
+  vertical-align: top;
+  display: inline-block;
+  font-size: 12em;
   padding: 0.1em;
 }
 
-#_FEATURES ._BOX4 {
-  padding: 0.4em 0.8em;
-  line-height: 1.5;
-}
-
-#_PROJECTS ._BOX4 {
-  padding: 0 0.6em;
+#_BADGES img {
+  height: 1em;
 }
 
 #_FOOT {
@@ -98,27 +125,20 @@ body._SCROLLED {
   height: 1.3em;
 }
 
-li {
-  margin: 0 0 0 1.5em;
-}
-
 ._SET, ._SECTION {
   clear: both;
-}
-
-p {
-  margin: 1em 0;
 }
 
 br {
   clear: both;
 }
 
-._SECTION {
-  padding: 2em 0;
+._AREA {
+  margin: -1em;
+  clear: both;
 }
 
-._BOX, ._BOX12  {
+._BOX, ._BOX12 {
   padding: 1em;
 }
 
@@ -148,7 +168,7 @@ br {
 
 #_FORK {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
 }
@@ -156,78 +176,4 @@ br {
 #_FORK img {
   width: 6em;
   height: 6em;
-}
-
-a._PROJECT {
-  position: relative;
-  display: block;
-  padding: 0.2em;
-  border: 1px solid #000;
-  border-radius: 1em;
-  background: #235;
-  font-weight: 600;
-  font-size: 1.2em;
-  color: #fff;
-  margin: -0.4em -0.3em;
-}
-
-a._PROJECT:hover {
-  color: #fff;
-  background: #248;
-}
-
-a._PROJECT:hover b._READY,
-a._PROJECT:hover b._UNDOCUMENTED,
-a._PROJECT:hover b._IDEA {
-  opacity: 1;
-}
-
-a._PROJECT img,
-a._PROJECT svg {
-  vertical-align: middle;
-  width: 3em;
-  height: 3em;
-  margin: 0 0.5em 0 1.5em;
-}
-
-a._PROJECT span {
-  margin-left: 0.5em;
-  font-size: 0.8em;
-  font-weight: 300;
-  opacity: 0.6;
-}
-
-a._PROJECT i {
-  font-style: normal;
-  font-weight: 600;
-}
-
-b._READY,
-b._UNDOCUMENTED,
-b._IDEA {
-  position: absolute;
-  width: 1em;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  margin: -1px;
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
-  opacity: 0.5;
-}
-
-b._READY {
-  background: #0a0;
-}
-
-b._UNDOCUMENTED {
-  background: #d00;
-}
-
-b._IDEA {
-  background: #80d;
-}
-
-._HIDDEN {
-  display: none;
 }

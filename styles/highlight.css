@@ -1,16 +1,12 @@
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #000;
-  color: #f8f8f8;
-}
-
 .hljs-shebang,
 .hljs-comment,
 .hljs-template_comment,
 .hljs-javadoc {
   color: #7c7c7c;
+}
+
+.hljs-built_in {
+  color: #abf;
 }
 
 .hljs-keyword,
@@ -21,9 +17,7 @@
 }
 
 .hljs-sub .hljs-keyword,
-.method,
-.hljs-list .hljs-title,
-.nginx .hljs-title {
+.hljs-list .hljs-title {
   color: #ffffb6;
 }
 
@@ -67,3 +61,4 @@
 .hljs-number {
   color: #ff73fd;
 }
+

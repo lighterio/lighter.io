@@ -1,0 +1,53 @@
+h2,
+h3,
+h4 {
+  padding: 0 0 -0.2em 0;
+}
+
+h2 {
+  margin: 1em 0 0.6em 0;
+  font-size: 2em;
+  font-weight: 300!important;
+  border-bottom: 2px solid #abc;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+h3 {
+  margin: 1em 0 0.4em 0;
+  font-size: 1.4em;
+  font-weight: 400;
+  border-bottom: 1px solid #bcd;
+}
+
+h4 {
+  margin: 1em 0 0.2em 0;
+  font-size: 1.1em;
+  font-weight: 700!important;
+  border-bottom: 1px dotted #cde;
+}
+
+a._ANCHOR,
+a._ANCHOR:hover {
+  display: block;
+  position: relative;
+  color: inherit;
+}
+
+a._ANCHOR i {
+  position: absolute;
+  left: -1.5em;
+  top: 0.2em;
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  background: transparent url('/link.svg') no-repeat;
+  background-size: 100%;
+  opacity: 0.05;
+}
+
+a._ANCHOR:hover i {
+  opacity: 1;
+}

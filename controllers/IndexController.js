@@ -7,7 +7,7 @@ var projects = [
 
 var controller = module.exports = {
   index: function GET(request, response) {
-    response.view('index', {repo: 'lighterio/lighter.io'});
+    response.view('index', {repo: 'lighter.io'});
   }
 };
 
@@ -15,6 +15,6 @@ projects.forEach(function (key) {
   var name = key[0].toUpperCase() + key.substr(1);
   controller[key] = function GET(request, response) {
     app.views[key].toString();
-    response.view(key, {project: name, repo: 'lighterio/' + key});
+    response.view(key, {name: name, repo: key});
   };
 });

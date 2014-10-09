@@ -1,4 +1,4 @@
-call page
+call layout/page
 
   set title:
     Lighter.io - faster is better
@@ -7,10 +7,8 @@ call page
 
     #_HEAD
       ._PANEL
-        h1#_LOGO
-          img(src="/lighter.svg?v=={cacheBust}")
-          : Lighter.io
-          span faster is better
+        h1>a#_LOGO(href="/"):
+          <img src="/lighter.svg?v=={cacheBust}">Lighter.io <u>faster is better</u>
 
     #_FEATURES
       ._PANEL
@@ -21,7 +19,7 @@ call page
             br
           br
 
-    #_PROJECTS
+    #_BODY
 
       br
       ._PANEL
@@ -30,43 +28,37 @@ call page
 
           a._PROJECT(href="/lighter")
             img(src="/lighter.svg")
-            : Lighter
-            span framework
+            : Lighter <u>framework</u>
             b._READY
           br
 
           a._PROJECT(href="/za")
             img(src="/za.svg?v=={cacheBust}")
-            : Za
-            span web server
+            : Za <u>web server</u>
             b._READY
           br
 
           a._PROJECT(href="/cedar")
             img(src="/cedar.svg?v=={cacheBust}")
-            : Cedar
-            span logging
+            : Cedar <u>logger</u>
             b._READY
           br
 
           a._PROJECT(href="/ltl")
             img(src="/ltl.svg?v=={cacheBust}")
-            : Ltl
-            span templates
+            : Ltl <u>templates</u>
             b._READY
           br
 
           a._PROJECT(href="/chug")
             img(src="/chug.svg?v=={cacheBust}")
-            : Chug
-            span caching builder
+            : Chug <u>builder</u>
             b._READY
           br
 
           a._PROJECT(href="/d6")
             img(src="/d6.svg?v=={cacheBust}")
-            : D6
-            span isomorphic transport
+            : D6 <u>isomorphic JS</u>
             b._UNDOCUMENTED
           br
 
@@ -74,94 +66,76 @@ call page
 
           a._PROJECT(href="/exam")
             img(src="/exam.svg?v=={cacheBust}")
-            : Exam
-            span test runner
+            : Exam <u>test runner</u>
             b._READY
           br
 
           a._PROJECT(href="/jymin")
             img(src="/jymin.svg?v=={cacheBust}")
-            : Jymin
-            span <i>JS</i> <i>y</i>ou <i>m</i>inify
+            : Jymin <u>front-end JS</u>
             b._UNDOCUMENTED
           br
 
           a._PROJECT(href="/beams")
             img(src="/beams.svg?v=={cacheBust}")
-            : Beams
-            span long poller
+            : Beams <u>long poller</u>
             b._READY
-          br
-
-          a._PROJECT(href="/sly")
-            img(src="/sly.svg?v=={cacheBust}")
-            : Sly
-            span slide player
-            b._UNDOCUMENTED
           br
 
           a._PROJECT(href="/shellify")
             img(src="/shellify.svg?v=={cacheBust}")
-            : Shellify
-            span CLI maker
+            : Shellify <u>CLI maker</u>
             b._UNDOCUMENTED
           br
 
           a._PROJECT(href="/splode")
             img(src="/splode.svg?v=={cacheBust}")
-            : Splode
-            span error handler
+            : Splode <u>error handler</u>
             b._READY
+          br
+
+          a._PROJECT(href="/sly")
+            img(src="/sly.svg?v=={cacheBust}")
+            : Sly <u>slide player</u>
+            b._UNDOCUMENTED
           br
 
         ._BOX4
 
           a._PROJECT(href="/plans")
             img(src="/plans.svg?v=={cacheBust}")
-            : Plans
-            span asynchronicity
+            : Plans <u>async flow</u>
             b._READY
           br
 
           a._PROJECT(href="/gold")
             img(src="/gold.svg?v=={cacheBust}")
-            : Gold
-            span app manager
+            : Gold <u>workspace</u>
             b._IDEA
           br
 
           a._PROJECT(href="/ormy")
             img(src="/ormy.svg?v=={cacheBust}")
-            : Ormy
-            span ORM
+            : Ormy <u>ORM</u>
             b._IDEA
           br
 
           a._PROJECT(href="/aloha")
             img(src="/aloha.svg?v=={cacheBust}")
-            : Aloha
-            span simple i18n
+            : Aloha <u>i18n</u>
             b._IDEA
           br
 
           a._PROJECT(href="/ringer")
             img(src="/ringer.svg?v=={cacheBust}")
-            : Ringer
-            span hash ring
+            : Ringer <u>data store</u>
             b._IDEA
           br
 
           a._PROJECT(href="/thrust")
             img(src="/thrust.svg?v=={cacheBust}")
-            : Thrust
-            span deployer
+            : Thrust <u>deployer</u>
             b._IDEA
           br
 
       br
-
-    a#_FORK(href="https://github.com/lighterio/lighter.io")
-      svg(viewBox="0 0 300 300")
-        path(fill="#69f" d="M0,0l300,300v-10l-290-290zM200,0l100,100v-10l-90-90z")
-        path(fill="#35a" d="M10,0l290,290v-190l-100-100z")
-        path(fill="#fff" d="M142,98c0-33,27-60,60-60c33,0,60,27,60,60c0,33-27,60-60,60c-10,0-17-1-27-7c-1-1-1-3,0-4l12-12c4-4,4-8,4,-11c19,21,48,2,47-16c7-4,7-4,12-13c-10-6-8-4-17-7c-8-14-16-18-22-22 c-3-9-1-7-7-17c-8,6-8,6-12,13c-18-1-37,28-16,47c-6-1-8,3-9,3c-19-12,2-20-15-29c4,16-10,22,9,35l-8,8 c-1,1-3,1-4,0c-6-10-7-17-7-27z")

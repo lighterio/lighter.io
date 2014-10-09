@@ -1,0 +1,77 @@
+#_FEATURES ._BOX {
+  background: #fff;
+  border-radius: 1em;
+  margin: 0.2em;
+  padding: 0.1em;
+}
+
+#_FEATURES ._BOX4 {
+  padding: 0.4em 0.8em;
+  line-height: 1.5;
+}
+
+a._PROJECT {
+  position: relative;
+  display: block;
+  padding: 0.2em;
+  border: 1px solid #000;
+  border-radius: 1em;
+  background: #235;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: #fff;
+  margin: -0.4em -0.3em;
+  font-family: Lato, Arial, sans-serif;
+  font-weight: 400;
+}
+
+a._PROJECT:hover {
+  color: #fff;
+  background: #248;
+}
+
+a._PROJECT:hover b {
+  opacity: 1;
+}
+
+a._PROJECT img,
+a._PROJECT svg {
+  vertical-align: middle;
+  width: 3em;
+  height: 3em;
+  margin: 0 0.5em 0 1.5em;
+}
+
+a._PROJECT u {
+  margin-left: 0.2em;
+  font-size: 0.9em;
+  font-weight: 300;
+  text-decoration: none!important;
+  opacity: 0.6;
+}
+
+b._READY,
+b._UNDOCUMENTED,
+b._IDEA {
+  position: absolute;
+  width: 1em;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: -1px;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  opacity: 0.5;
+}
+
+b._READY {
+  background: #0a0;
+}
+
+b._UNDOCUMENTED {
+  background: #d00;
+}
+
+b._IDEA {
+  background: #80d;
+}

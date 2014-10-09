@@ -1,4 +1,11 @@
-var lighter = require('lighter')({
+require('docent')();
+
+require('lighter')({
+  configPath: "config/${ENV}.json",
+  logger: [
+    {transport: 'console', level: 'log', worker: 0},
+    {transport: 'file', level: 'info', pattern: 'log/YYYY/MM/DD/lighterio-HOST-WORKER.log'}
+  ],
   scripts: {
     '/a.js': [
       'node_modules/jquery/dist/jquery.js',
@@ -31,18 +38,22 @@ var lighter = require('lighter')({
       'node_modules/sly/styles/sly.css'
     ]
   },
-  enableCluster: false
+  watchPaths: [
+    'node_modules/aloha',
+    'node_modules/beams',
+    'node_modules/cedar',
+    'node_modules/chug',
+    'node_modules/lighter'
+  ]
 });
 
-require('sly')();
-
-var marked = require('./node_modules/ltl/node_modules/marked');
-var hljs = require('highlight.js');
-
-marked.setOptions({
-  highlight: function (code) {
-    return /\n/.test(code) ? hljs.highlightAuto(code).value : code;
-  },
-  anchorMin: 1
+app.work(function () {
+  require('sly')();
 });
 
+if (app.isDev) {
+  var gen = require('docent/commands/gen');
+  setInterval(function () {
+    gen({});
+  }, 1e3);
+}
