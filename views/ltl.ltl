@@ -1,53 +1,50 @@
 description = "lean template language"
 call layout/page
   set content
-    ._BOX6
-      b._CODE_TAB._TEMPLATE._ON Live Editable Template
-      b._CODE_TAB._COMPILED Compiled
-      ._TEMPLATE
-        textarea._TEMPLATE(rows=8 cols=40 autofocus):
-          html(lang="en")
-            head>title \\${pageTitle}
-            body#demo
-              h1.big.heading Ltl Demo
-              #description:
-                Ltl (pronounced "little") is the lean,
-                clean, fast-rendering template machine.
-                Use it in Node.js or in the browser.
-              :markdown
-                ## Custom Filters?
-                Yes, [Ltl](/ltl) has them.
-              if youUseLtl
-                . Your pages are super fast!
-              else
-                . Use Ltl!
-              script:coffee
-                # NOWRAP
-                console.log "CoffeeScript can be fun."
-              script:
-                console.log("Of course JS works too.");
-              : Rendered by: \\={renderedBy}
-      ._COMPILED._HIDDEN
-        textarea._COMPILED
-    ._BOX6
-      b._CODE_TAB._CONTEXT Context
-      b._CODE_TAB._OUTPUT._ON Output
-      ._CONTEXT._HIDDEN
-        textarea._CONTEXT:
-          {
-            "pageTitle": "Welcome to Ltl!",
-            "youUseLtl": true, "renderedBy": "<b>Ltl</b>"
-          }
-      ._OUTPUT
-        textarea._OUTPUT(rows=5 cols=40 disabled)
+      ._AREA
+        ._BOX6
+          b._CODE_TAB._TEMPLATE._ON Live Editable Template
+          b._CODE_TAB._COMPILED Compiled
+          ._TEMPLATE
+            textarea._TEMPLATE(rows=8 cols=40 autofocus):
+            html(lang="en")
+              head>title \\${title}
+              body#demo
+                h1.big Ltl Demo
+                #description:
+                  Ltl is the fastest JS template
+                  engine for browsers and Node.
+                :markdown
+                  ## Filters?
+                  [Ltl](/ltl) has them.
+                if youUseLtl
+                  . Your site is super fast!
+                script:coffee
+                  #NOWRAP
+                  console.log "Here's CoffeeScript."
+                script:
+                  console.log("Here's JavaScript.")
+                : Rendered by: \\={engine}
+          ._COMPILED._HIDDEN
+            textarea._COMPILED
+        ._BOX6
+          b._CODE_TAB._CONTEXT Context
+          b._CODE_TAB._OUTPUT._ON Output
+          ._CONTEXT._HIDDEN
+            textarea._CONTEXT:
+              {
+                "title": "Welcome to Ltl!",
+                "youUseLtl": true,
+                "engine": "<b>Ltl</b>"
+              }
+          ._OUTPUT
+            textarea._OUTPUT(rows=5 cols=40 disabled)
 
     #_DOCENT_DOC
       //+docent
 
       :marked
 
-
-        ## TL;DR
 
         The [Ltl](http://lighter.io/ltl) template language (pronounced "little") uses a clean
         [Jade](http://jade-lang.com/reference/)-like syntax to generate

@@ -1,3 +1,5 @@
+var A = require('aloha');
+
 var projects = [
   'aloha', 'beams', 'cedar', 'chug', 'd6', 'exam', 'gold',
   'jymin', 'lighter', 'ltl', 'ormy', 'plans', 'ringer',
@@ -5,16 +7,20 @@ var projects = [
   'za', 'zeriousify'
 ];
 
-var controller = module.exports = {
+module.exports = {
+
+  init: function () {
+    var self = this;
+    projects.forEach(function (key) {
+      var name = key[0].toUpperCase() + key.substr(1);
+      self[key] = function GET(request, response) {
+        response.view(key, {name: name, repo: key});
+      };
+    });
+  },
+
   index: function GET(request, response) {
     response.view('index', {repo: 'lighter.io'});
   }
-};
 
-projects.forEach(function (key) {
-  var name = key[0].toUpperCase() + key.substr(1);
-  controller[key] = function GET(request, response) {
-    app.views[key].toString();
-    response.view(key, {name: name, repo: key});
-  };
-});
+};

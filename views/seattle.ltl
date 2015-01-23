@@ -6,8 +6,6 @@ call layout/page
 
       :marked
 
-        ## TL;DR
-
         Seattle is aimed at creating a module standard to be used by Seattle JS Hackers.
 
 

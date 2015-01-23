@@ -1,28 +1,29 @@
 var createEditor;
 
-onReady(function() {
+onReady(function () {
   window['coffee-script'] = window.CoffeeScript;
   window.markdown = window.marked;
-  $('textarea').each(function(index, textarea) {
-    var className;
-    className = textarea.className;
-    if (className === '_TEMPLATE') {
-      return createEditor('jade', textarea);
-    } else if (className === '_OUTPUT') {
-      return createEditor('htmlmixed', textarea);
+  all('textarea', function (textarea) {
+    if (hasClass(textarea, '_TEMPLATE')) {
+      createEditor('jade', textarea);
+    }
+    else if (hasClass(textarea, '_OUTPUT')) {
+      createEditor('htmlmixed', textarea);
     }
   });
-  return $(document).on('click', 'b._CODE_TAB', function() {
-    var className;
-    className = this.className.split(' ')[1];
-    $(this).parent().children().filter('div').addClass('_HIDDEN').filter('.' + className).removeClass('_HIDDEN').parent().find('._ON').removeClass('_ON');
-    return $(this).addClass('_ON');
+  on('b._CODE_TAB', 'click', function (tab) {
+    var strip = getParent(tab);
+    var tabs = getChildren(strip);
+    all(strip, '._ON', function (tab) {
+      removeClass(tab, '_ON');
+    });
+    addClass(tab, '_ON');
   });
 });
 
 ltl.setOption('tabWidth', 2);
 
-createEditor = function(mode, textarea) {
+function createEditor(mode, textarea) {
   var $panel, change, editor, isLtl, panel;
   isLtl = mode === 'jade';
   editor = CodeMirror.fromTextArea(textarea, {

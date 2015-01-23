@@ -2,8 +2,7 @@ onReady(function() {
   var href, links;
   href = window.favicon;
   if (href) {
-    links = getElementsByTagName('link');
-    forEach(links, function(link) {
+    all('link', function(link) {
       var parent;
       if (contains(link.rel, 'icon')) {
         parent = getParent(link);

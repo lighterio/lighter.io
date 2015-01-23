@@ -1,11 +1,14 @@
 require('docent')();
 
-require('lighter')({
+var App = module.exports = require('lighter')({
   configPath: "config/${ENV}.json",
+  processCount: 4,
+  exposeGlobals: true,
   logger: [
-    {transport: 'console', level: 'log', worker: 0},
-    {transport: 'file', level: 'info', pattern: 'log/YYYY/MM/DD/lighterio-HOST-WORKER.log'}
+    {transport: 'console', level: 'trace'},
+    {transport: 'file', level: 'info', path: 'log/${YYYY}/${MM}/${DD}/lighter-${HH}:${NN}-${HOST}.log', zip: true}
   ],
+  ring: {},
   scripts: {
     '/a.js': [
       'node_modules/jquery/dist/jquery.js',
@@ -18,7 +21,7 @@ require('lighter')({
       'node_modules/lighter/node_modules/ltl/ltl.js',
       'node_modules/lighter/node_modules/jymin/plugins/md5.js',
       'node_modules/docent/scripts',
-      'scripts'
+      'pack:scripts'
     ],
     '/sly.js': [
       'node_modules/lighter/node_modules/jymin/jymin.js',
@@ -47,13 +50,20 @@ require('lighter')({
   ]
 });
 
-app.work(function () {
+App.work(function () {
   require('sly')();
 });
 
-if (app.isDev) {
-  var gen = require('docent/commands/gen');
-  setInterval(function () {
-    gen({});
-  }, 1e3);
+if (App.isDev) {
+  App.one(function () {
+    var gen = require('docent/commands/gen');
+    setInterval(function () {
+      gen.run({});
+    }, 5e3);
+  });
 }
+
+var accessLog = require('cedar')([
+  {transport: 'console'},
+  {transport: 'file', path: 'log/access_${YYYY}-${MM}-${DD}_${HOST}.log', after: 'tar -cf ${PATH}.gz ${PATH};rm ${PATH}'}
+]);

@@ -1,4 +1,4 @@
-call page
+call layout/page
 
   set title:
     Lighter.io - faster is better

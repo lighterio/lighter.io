@@ -21,12 +21,12 @@ tt,
 p>code,
 li>code {
   display: inline-block;
-  border: 1px solid #bbb;
-  background: #ddd;
+  border: 1px solid #ddd;
+  background: #eee;
   color: #000;
   border-radius: 0.3em;
-  margin: 0 0.1em;
-  padding: 0 0.1em;
+  margin: -0.18em 0.2em;
+  padding: 0.18em 0.2em;
   line-height: 1.2;
   font-weight: 700;
 }

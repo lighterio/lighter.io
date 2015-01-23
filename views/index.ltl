@@ -13,9 +13,9 @@ call layout/page
     #_FEATURES
       ._PANEL
         ._BOX
-          ._BOX6 Lighter.io modules are the <b>fastest tools</b> for modern web development.
+          ._BOX6 Lighter.io modules are the <b>fastest tools</b> for building modern web services and UIs.
             br
-          ._BOX6 We build <b>easy APIs</b> with <b>interactive docs</b> and <b>100% test coverage</b>.
+          ._BOX6 We create <b>easy APIs</b> with <b>100% test coverage</b> and <b>interactive documentation</b>.
             br
           br
 
@@ -139,3 +139,5 @@ call layout/page
           br
 
       br
+
+p bottom

@@ -7,8 +7,6 @@ call layout/page
       :marked
 
 
-        # TL;DR
-
         Chug is a caching build system. It compiles, minifies, and caches your
         project's assets so they can be served directly from cache, eliminating
         the unnecessary step of saving your files to a build directory.
@@ -81,6 +79,11 @@ call layout/page
         ### .gzip()
         Runs `gzip` on each asset, using `each`.
 
+        ### .replace((string|RegExp) pattern, (string|function) replacement)
+        Replaces the contents of each asset using
+        `string.replace(pattern, replacement)`. This includes base, compiled,
+        minified, shrunken and gzipped contents.
+
         ### .watch()
         Puts a `fs.watch` on the files and directories that were added to the `Load`.
         When changes occur, the affected assets are reloaded, then the load re-runs its
@@ -105,12 +108,16 @@ call layout/page
         asset to be added to an existing load rather than the default
         behavior of returning a new load with a single asset.
 
+        ### .sort(customSortFunction)
+        Apply a custom sorting function for ordering the assets in a load.
+
         ### .shrink()
-        Builds a dictionary of terms that match `/_[A-Z][_A-Z0-9]+/`,
-        then replaces occurrences of the terms with short names containing
-        one or more lowercase letters. This can be used to replace classes
-        and IDs in your minified JS and CSS since they wouldn't be replaced
-        by Uglify or CSSO.
+        Builds a dictionary of terms that match a pattern, such as having
+        a leading underscore: `/_[A-Z][_A-Z0-9]+/i`, then replaces
+        occurrences of the terms with short names containing one or more
+        lowercase letters. This can be used to replace classes and IDs
+        in your minified JS and CSS since they wouldn't be replaced by
+        UglifyJS or CSSO.
 
         ### .cull(string key, string value)
         If you would like to designate certain sections of code as applying

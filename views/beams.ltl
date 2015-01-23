@@ -7,8 +7,6 @@ call layout/page
       :marked
 
 
-        ## TL;DR
-
         Beams is a long-polling Node.js server extension and client library.
 
         ### Quick Start

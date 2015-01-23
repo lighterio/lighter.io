@@ -10,7 +10,7 @@
 *.out
 *.pid
 *.gz
-pids
+data
 logs
 results
 npm-debug.log
@@ -19,3 +19,5 @@ node_modules
 build
 overrides.json
 icon.ltl
+data
+pids

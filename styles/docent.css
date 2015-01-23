@@ -9,9 +9,10 @@
 }
 
 #_DOCENT_FIX {
+  top: 0;
   position: absolute;
   width: 100%;
-  top: 0;
+  height: 0;
   margin-top: 6.4em;
 }
 

@@ -1,4 +1,4 @@
-description = "simple internationalization"
+description = "@{simple internationalization}"
 call layout/page
   set content
     #_DOCENT_DOC
@@ -6,8 +6,6 @@ call layout/page
 
       :marked
 
-
-        ## TL;DR
 
         Aloha is a simple Node.js internationalization module.
 
@@ -18,6 +16,7 @@ call layout/page
 
         Use it:
         ```
+        // TODO: expose, dir, base
         ```
 
 

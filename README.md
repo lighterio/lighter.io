@@ -1,4 +1,16 @@
-Website for the Lighter framework.
+# These aren't the droids you're looking for.
+
+<br>
+
+## [Lighter.io](http://lighter.io)
+Lighter.io is an organization that maintains a family of fast, user-friendly
+modules for Node.js and browsers.
+
+<br>
+
+## [Lighterio](https://npmjs.org/package/lighterio)
+The `lighterio` module is a set of tools for maintaining Lighter.io standards,
+plus a collection of libraries that are shared by Lighter.io modules.
 
 <!--
 [![NPM Version](https://img.shields.io/npm/v/lighter.io.svg)](https://npmjs.org/package/lighter.io)

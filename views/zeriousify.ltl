@@ -7,8 +7,6 @@ call layout/page
       :marked
 
 
-        ## TL;DR
-
         Zeriousify is a Node.js module for ensuring that your package adheres to the Zerious
         Module Standard (ZMS).
 

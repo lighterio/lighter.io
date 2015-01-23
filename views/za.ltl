@@ -7,8 +7,6 @@ call layout/page
       :marked
 
 
-        ## TL;DR
-
         Za is a simple web server that exposes an Express-like API and is capable of
         handling far more requests per second than Express.
 
