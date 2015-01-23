@@ -1,7 +1,0 @@
-WARN 2014-12-03T16:52:58.729Z ["[Lighter] Changed \u001b[36m~/Workspace/za/lib/server.js\u001b[39m."]
-INFO 2014-12-03T16:52:59.527Z ["[Lighter] Models loaded. \u001b[90mx0\u001b[39m"]
-INFO 2014-12-03T16:52:59.541Z ["[Lighter] Scripts routed to \u001b[36m/sly.js\u001b[39m. \u001b[90mx1\u001b[39m"]
-INFO 2014-12-03T16:52:59.543Z ["[Lighter] Styles routed to \u001b[36m/sly.css\u001b[39m. \u001b[90mx1\u001b[39m"]
-INFO 2014-12-03T16:52:59.545Z ["[Lighter] Controllers loaded. \u001b[90mx2\u001b[39m"]
-INFO 2014-12-03T16:52:59.561Z ["[Lighter] Scripts routed to \u001b[36m/a.js\u001b[39m. \u001b[90mx1\u001b[39m"]
-INFO 2014-12-03T16:52:59.566Z ["[Lighter] Styles routed to \u001b[36m/a.css\u001b[39m. \u001b[90mx1\u001b[39m"]

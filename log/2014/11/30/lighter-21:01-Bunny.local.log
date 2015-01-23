@@ -1,7 +1,0 @@
-ERROR 2014-11-30T21:01:58.805Z ["TypeError: Cannot call method 'call' of undefined\n  at Object.eval.f [as error404] (<anonymous>:1:42)\n  at ServerResponse.proto.view.proto.render (/Users/sam/Workspace/lighter/lib/response.js:35:27)\n  at ServerResponse.proto.error500.proto.error (/Users/sam/Workspace/lighter/lib/response.js:82:9)\n  at finish (/Users/sam/Workspace/za/lib/router.js:195:18)\n  at next (/Users/sam/Workspace/za/lib/router.js:137:18)\n  at Server.Router.serve (/Users/sam/Workspace/za/lib/router.js:204:5)\n  at Server.EventEmitter.emit (events.js:98:17)\n  at HTTPParser.parser.onIncoming (http.js:2108:12)\n  at HTTPParser.parserOnHeadersComplete [as onHeadersComplete] (http.js:121:23)\n  at Socket.socket.ondata (http.js:1966:22)\n  at TCP.onread (net.js:527:27)\n"]
-INFO 2014-11-30T21:01:59.543Z ["[Lighter] Models loaded. \u001b[90mx0\u001b[39m"]
-INFO 2014-11-30T21:01:59.551Z ["[Lighter] Scripts routed to \u001b[36m/sly.js\u001b[39m. \u001b[90mx1\u001b[39m"]
-INFO 2014-11-30T21:01:59.552Z ["[Lighter] Styles routed to \u001b[36m/sly.css\u001b[39m. \u001b[90mx1\u001b[39m"]
-INFO 2014-11-30T21:01:59.553Z ["[Lighter] Controllers loaded. \u001b[90mx2\u001b[39m"]
-INFO 2014-11-30T21:01:59.564Z ["[Lighter] Scripts routed to \u001b[36m/a.js\u001b[39m. \u001b[90mx1\u001b[39m"]
-INFO 2014-11-30T21:01:59.566Z ["[Lighter] Styles routed to \u001b[36m/a.css\u001b[39m. \u001b[90mx1\u001b[39m"]
