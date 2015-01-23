@@ -1,0 +1,4 @@
+ERROR 2015-01-16T00:44:52.783Z ["SyntaxError: Unexpected string\n    at Object.parse (native)\n    at Pipe.channel.onread (child_process.js:337:28)"]
+ERROR 2015-01-16T00:44:52.784Z ["SyntaxError: Unexpected string\n    at Object.parse (native)\n    at Pipe.channel.onread (child_process.js:337:28)"]
+ERROR 2015-01-16T00:44:54.292Z ["SyntaxError: Unexpected string\n    at Object.parse (native)\n    at Pipe.channel.onread (child_process.js:337:28)"]
+ERROR 2015-01-16T00:44:55.448Z ["SyntaxError: Unexpected string\n    at Object.parse (native)\n    at Pipe.channel.onread (child_process.js:337:28)"]
