@@ -29,14 +29,14 @@ h4 {
   border-bottom: 1px dotted #cde;
 }
 
-a._ANCHOR,
-a._ANCHOR:hover {
+a._anchor,
+a._anchor:hover {
   display: block;
   position: relative;
   color: inherit;
 }
 
-a._ANCHOR i {
+a._anchor i {
   position: absolute;
   left: -1.5em;
   top: 0.2em;
@@ -48,6 +48,6 @@ a._ANCHOR i {
   opacity: 0.05;
 }
 
-a._ANCHOR:hover i {
+a._anchor:hover i {
   opacity: 1;
 }

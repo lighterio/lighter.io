@@ -13,8 +13,8 @@ call talks/page
         li Slides:
           a(href="http://192.168.211.221:8888/hack") http://192.168.211.221:8888/hack
         li
-          input(id="_EMAIL" type="email" placeholder="Email")
-          input(id="_JOIN" type="submit" value="Join")
+          input(id="_email" type="email" placeholder="Email")
+          input(id="_join" type="submit" value="Join")
 
     b
       h2 Why are we here?
@@ -30,7 +30,7 @@ call talks/page
         li.a2 Come back next time.
         li.a3 Bring friends!
 
-    b#frequency._POLL
+    b#frequency._poll
       h2 How often should we meet?
       ul
         li>label

@@ -1,10 +1,11 @@
+/* @use tat/styles/style.css */
+
 tt,
 pre,
 code,
-textarea,
 .CodeMirror {
   font-weight: 400;
-  font-family: Oxygen Mono, Courier New;
+  font-family: _sourceCodePro;
 }
 
 p {
@@ -54,14 +55,18 @@ pre>code {
   color: #eee;
 }
 
-textarea._TEMPLATE,
-textarea._COMPILED,
-textarea._CONTEXT,
-textarea._OUTPUT {
+textarea._template,
+textarea._compiled,
+textarea._context,
+textarea._output {
   width: 100%;
+  outline: 0;
+  padding: 4px 6px;
+  font-weight: 400;
+  font-family: _sourceCodePro;
 }
 
-b._CODE_TAB {
+b._codeTab {
   display: inline-block;
   background: #ccc;
   color: #24a;
@@ -75,25 +80,23 @@ b._CODE_TAB {
   cursor: pointer;
 }
 
-b._CODE_TAB._ON,
-b._CODE_TAB:hover {
+b._codeTab._on,
+b._codeTab:hover {
   color: #999;
   background: #000;
   border-color: #333;
 }
 
-textarea,
+textarea._template,
+textarea._compiled,
+textarea._context,
+textarea._output,
 .CodeMirror {
   background: #111!important;
   color: #fff;
   border: 1px solid #000!important;
   height: 400px;
   transition: border-color 0.5s;
-}
-
-textarea {
-  outline: 0;
-  padding: 4px 6px;
 }
 
 .CodeMirror-gutter {

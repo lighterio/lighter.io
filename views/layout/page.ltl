@@ -1,27 +1,24 @@
 html(lang="en")
   head
-    if styleTags
-      : ={styleTags}
+    if headTags
+      : ={headTags}
     else
-      link(rel="stylesheet" href="/a.css?v=={cacheBust}")
-    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,600,700|Oxygen+Mono:400")
-    link(rel="shortcut icon" href="/favicon.ico?v=={cacheBust}")
+      script(src="/a.js?v=={cacheBust}")
     meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1")
+    script (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-48857856-1','lighter.io');ga('send','pageview')
     title
       if name && description
         : ${name} - ${description}
       else
         get title
-    script (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-48857856-1','lighter.io');ga('send','pageview')
-
   body
-    b#_STRIPE
+    b#_stripe
     if name && description
-      #_HEAD>._PANEL
-        h1>a#_LOGO(href="/"):
+      #_head>._panel
+        h1>a#_logo(href="/"):
           <img src="/${repo}.svg?v=={cacheBust}">${name} <u>${description}</u>
 
-      #_BADGES>._PANEL
+      #_badges>._panel
         a(href="https://npmjs.org/package/${repo}" target="_blank")>img(src="https://img.shields.io/npm/v/${repo}.svg" alt="NPM Version")
         a(href="https://npmjs.org/package/${repo}" target="_blank")>img(src="https://img.shields.io/npm/dm/${repo}.svg" alt="Downloads")
         a(href="https://travis-ci.org/lighterio/${repo}" target="_blank")>img(src="https://img.shields.io/travis/lighterio/${repo}.svg" alt="Build Status")
@@ -29,34 +26,26 @@ html(lang="en")
         a(href="https://david-dm.org/lighterio/${repo}" target="_blank")>img(src="https://img.shields.io/david/lighterio/${repo}.svg" alt="Dependencies")
         // a(href="https://gratipay.com/Lighter.io/" target="_blank")>img(src="https://img.shields.io/gratipay/Lighter.io.svg" alt="Support")
 
-      #_BODY>._PANEL
-        ._AREA
+      #_body>._panel
+        ._area
           get content
         br
 
-      #_DOCENT_FIX>._PANEL
-        #_DOCENT_NAV
+      #_docentFix>._panel
+        #_docentNav
 
     else
       get content
 
-    #_FOOT
-      ._PANEL
+    #_foot
+      ._panel
         if name
-          ._AREA
-            ._BOX6 <b>={name}</b> is a <a id="_LIGHTERIO" href="/"><img src="/lighter.svg?v=={cacheBust}">Lighter.io</a> module.
-            ._BOX6._ALIGN_RIGHT <b>&lt;&gt;</b> with <b>&#9829;</b> by <a href="https://github.com/zerious">z</a>+
+          ._area
+            ._box6 <b>={name}</b> is a <a id="_lighterio" href="/"><img src="/lighter.svg?v=={cacheBust}">Lighter.io</a> module.
+            ._box6._alignRight <b>&lt;&gt;</b> with <b>&#9829;</b> by <a href="https://github.com/zerious">z</a>+
         else
-          ._ALIGN_RIGHT <b>&lt;&gt;</b> with <b>&#9829;</b> by <a href="https://github.com/zerious">z</a>+
+          ._alignRight <b>&lt;&gt;</b> with <b>&#9829;</b> by <a href="https://github.com/zerious">z</a>+
 
     if repo
       br
-      a#_FORK(href="https://github.com/lighterio/${repo} " target="_blank")>img(src="/fork.svg?v=={cacheBust}")
-
-    if scriptTags
-      script window._WAITING_FOR_SCRIPTS = 1
-      : ={scriptTags}
-      // Once D6 has context, it calls onReady upon transitions, otherwise call it here.
-      script D6._CONTEXT || window._ON_READY()
-    else
-      script(src="/a.js?v=={cacheBust}")
+      a#_fork(href="https://github.com/lighterio/${repo} " target="_blank")>img(src="/fork.svg?v=={cacheBust}")

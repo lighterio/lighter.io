@@ -1,23 +1,25 @@
+// @use jymin/jymin.js
+// @use codemirror/lib/codemirror.js
 var createEditor;
 
-onReady(function () {
+Jymin.onReady(function () {
   window['coffee-script'] = window.CoffeeScript;
   window.markdown = window.marked;
-  all('textarea', function (textarea) {
-    if (hasClass(textarea, '_TEMPLATE')) {
+  Jymin.all('textarea', function (textarea) {
+    if (Jymin.hasClass(textarea, '_template')) {
       createEditor('jade', textarea);
     }
-    else if (hasClass(textarea, '_OUTPUT')) {
+    else if (Jymin.hasClass(textarea, '_output')) {
       createEditor('htmlmixed', textarea);
     }
   });
-  on('b._CODE_TAB', 'click', function (tab) {
-    var strip = getParent(tab);
-    var tabs = getChildren(strip);
-    all(strip, '._ON', function (tab) {
-      removeClass(tab, '_ON');
+  Jymin.on('b._codeTab', 'click', function (tab) {
+    var strip = Jymin.getParent(tab);
+    var tabs = Jymin.getChildren(strip);
+    Jymin.all(strip, '._on', function (tab) {
+      Jymin.removeClass(tab, '_on');
     });
-    addClass(tab, '_ON');
+    Jymin.addClass(tab, '_on');
   });
 });
 
@@ -36,13 +38,13 @@ function createEditor(mode, textarea) {
     lineWrapping: mode === 'javascript',
     cursorBlinkRate: 400
   });
-  $panel = $(textarea).closest('._PANEL');
+  $panel = $(textarea).closest('._panel');
   panel = $panel[0];
   panel[textarea.className] = editor;
   change = function() {
     var compiled, spaced, context, output, $template, value, spaces;
     editor.save();
-    $template = $panel.find('textarea._TEMPLATE');
+    $template = $panel.find('textarea._template');
     value = $template.val();
     spaces = 0;
     value = value.replace(/(^|\n)(\s+)/g, function (match, br, space) {
@@ -52,14 +54,14 @@ function createEditor(mode, textarea) {
       return br + space.substr(spaces);
     });
     $template.val(value);
-    context = JSON.parse($panel.find('textarea._CONTEXT').val());
+    context = JSON.parse($panel.find('textarea._context').val());
     spaced = ltl.compile(value, {
       space: '\t'
     });
     compiled = ltl.compile(value);
     output = spaced(context);
-    $panel.find('textarea._COMPILED').val(compiled.toString());
-    panel._OUTPUT.doc.setValue(output);
+    $panel.find('textarea._compiled').val(compiled.toString());
+    panel._output.doc.setValue(output);
   };
   if (isLtl) {
     editor.on('change', change);

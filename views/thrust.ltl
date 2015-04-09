@@ -1,7 +1,7 @@
 description = "deployment system"
 call layout/page
   set content
-    #_DOCENT_DOC
+    #_docentDoc
       //+docent
 
       :marked

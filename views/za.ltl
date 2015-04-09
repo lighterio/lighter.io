@@ -1,7 +1,7 @@
 description = "fast web server"
 call layout/page
   set content
-    #_DOCENT_DOC
+    #_docentDoc
       //+docent
 
       :marked
@@ -37,30 +37,14 @@ call layout/page
 
         ```javascript
         var za = require('za');
-        var server1 = za();
-        var server2 = za();
-        server1.listen(8001);
-        server2.listen(8002);
+        var server1 = za({port: 8001});
+        var server2 = za({port: 8002});
         console.log('HTTP servers are listening on 8001 and 8002');
         ```
 
-        ### server.listen(httpPort, [httpsPort, httpsOptions])
+        ### server.router
 
-        Za `Server` objects can listen on both HTTP and HTTPS ports.
-        ```javascript
-        var fs = require('fs');
-        var server = require('za')();
-        server.listen(8080, 8443, {
-          key: fs.readFileSync('ssl-key.pem'),
-          cert: fs.readFileSync('ssl-cert.pem')
-        });
-        ```
-
-        ### server.routers
-
-        Za exposes its HTTP and HTTPS `Router` objects via `server.routers.http` and
-        `server.routers.https`. If a router is listening, it has an entry in
-        `server.routers`, otherwise it doesn't.
+        Za exposes its `Router` object via `server.router`.
 
         ### router.use([path,] fn)
 
@@ -120,23 +104,23 @@ call layout/page
 
         ### server.use(path, fn)
 
-        Calls `router.use` on all of the routers that the server has listening.
+        Calls `router.use` on the server's router.
 
         ### server.get(path, fn)
 
-        Calls `router.get` on all of the routers that the server has listening.
+        Calls `router.get` on the server's router.
 
         ### server.post(path, fn)
 
-        Calls `router.post` on all of the routers that the server has listening.
+        Calls `router.post` on the server's router.
 
         ### server.put(path, fn)
 
-        Calls `router.put` on all of the routers that the server has listening.
+        Calls `router.put` on the server's router.
 
         ### server.delete(path, fn)
 
-        Calls `router.delete` on all of the routers that the server has listening.
+        Calls `router.delete` on the server's router.
 
         ## HTTP object decorations
 

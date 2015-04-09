@@ -5,139 +5,119 @@ call layout/page
 
   set content
 
-    #_HEAD
-      ._PANEL
-        h1>a#_LOGO(href="/"):
+    #_head
+      ._panel
+        h1>a#_logo(href="/"):
           <img src="/lighter.svg?v=={cacheBust}">Lighter.io <u>faster is better</u>
 
-    #_FEATURES
-      ._PANEL
-        ._BOX
-          ._BOX6 Lighter.io modules are the <b>fastest tools</b> for building modern web services and UIs.
+    #_features
+      ._panel
+        ._box
+          ._box6 Lighter.io modules are the <b>fastest tools</b> for building modern web services and UIs.
             br
-          ._BOX6 We create <b>easy APIs</b> with <b>100% test coverage</b> and <b>interactive documentation</b>.
+          ._box6 We maintain <b>easy APIs</b> with <b>thorough test coverage</b> and <b>interactive documentation</b>.
             br
           br
 
-    #_BODY
+    #_body
 
       br
-      ._PANEL
+      ._panel
 
-        ._BOX4
+        ._box4
 
-          a._PROJECT(href="/lighter")
-            img(src="/lighter.svg")
+          a._project(href="/lighter")
+            l-icon(lighter)
             : Lighter <u>framework</u>
-            b._READY
+            b._ready
           br
 
-          a._PROJECT(href="/za")
-            img(src="/za.svg?v=={cacheBust}")
-            : Za <u>web server</u>
-            b._READY
-          br
-
-          a._PROJECT(href="/cedar")
-            img(src="/cedar.svg?v=={cacheBust}")
-            : Cedar <u>logger</u>
-            b._READY
-          br
-
-          a._PROJECT(href="/ltl")
-            img(src="/ltl.svg?v=={cacheBust}")
-            : Ltl <u>templates</u>
-            b._READY
-          br
-
-          a._PROJECT(href="/chug")
-            img(src="/chug.svg?v=={cacheBust}")
+          a._project(href="/chug")
+            l-icon(chug)
             : Chug <u>builder</u>
-            b._READY
+            b._ready
           br
 
-          a._PROJECT(href="/d6")
-            img(src="/d6.svg?v=={cacheBust}")
-            : D6 <u>isomorphic JS</u>
-            b._UNDOCUMENTED
+          a._project(href="/cedar")
+            l-icon(cedar)
+            : Cedar <u>logger</u>
+            b._ready
           br
 
-        ._BOX4
+          a._project(href="/ltl")
+            l-icon(ltl)
+            : Ltl <u>templates</u>
+            b._ready
+          br
 
-          a._PROJECT(href="/exam")
-            img(src="/exam.svg?v=={cacheBust}")
+          a._project(href="/za")
+            l-icon(za)
+            : Za <u>web server</u>
+            b._ready
+          br
+
+        ._box4
+
+          a._project(href="/exam")
+            l-icon(exam)
             : Exam <u>test runner</u>
-            b._READY
+            b._ready
           br
 
-          a._PROJECT(href="/jymin")
-            img(src="/jymin.svg?v=={cacheBust}")
+          a._project(href="/jymin")
+            l-icon(jymin)
             : Jymin <u>front-end JS</u>
-            b._UNDOCUMENTED
+            b._undocumented
           br
 
-          a._PROJECT(href="/beams")
-            img(src="/beams.svg?v=={cacheBust}")
+          a._project(href="/d6")
+            l-icon(d6)
+            : D6 <u>isomorphic JS</u>
+            b._undocumented
+          br
+
+          a._project(href="/beams")
+            l-icon(beams)
             : Beams <u>long poller</u>
-            b._READY
+            b._ready
           br
 
-          a._PROJECT(href="/shellify")
-            img(src="/shellify.svg?v=={cacheBust}")
-            : Shellify <u>CLI maker</u>
-            b._UNDOCUMENTED
-          br
-
-          a._PROJECT(href="/splode")
-            img(src="/splode.svg?v=={cacheBust}")
+          a._project(href="/splode")
+            l-icon(splode)
             : Splode <u>error handler</u>
-            b._READY
+            b._ready
           br
 
-          a._PROJECT(href="/sly")
-            img(src="/sly.svg?v=={cacheBust}")
-            : Sly <u>slide player</u>
-            b._UNDOCUMENTED
+        ._box4
+
+          a._project(href="/tat")
+            l-icon(tat)
+            : Tat <u>custom tags</u>
+            b._idea
           br
 
-        ._BOX4
-
-          a._PROJECT(href="/plans")
-            img(src="/plans.svg?v=={cacheBust}")
+          a._project(href="/plans")
+            l-icon(plans)
             : Plans <u>async flow</u>
-            b._READY
+            b._ready
           br
 
-          a._PROJECT(href="/gold")
-            img(src="/gold.svg?v=={cacheBust}")
+          a._project(href="/gold")
+            l-icon(gold)
             : Gold <u>workspace</u>
-            b._IDEA
+            b._idea
           br
 
-          a._PROJECT(href="/ormy")
-            img(src="/ormy.svg?v=={cacheBust}")
+          a._project(href="/ormy")
+            l-icon(ormy)
             : Ormy <u>ORM</u>
-            b._IDEA
+            b._idea
           br
 
-          a._PROJECT(href="/aloha")
-            img(src="/aloha.svg?v=={cacheBust}")
-            : Aloha <u>i18n</u>
-            b._IDEA
-          br
-
-          a._PROJECT(href="/ringer")
-            img(src="/ringer.svg?v=={cacheBust}")
-            : Ringer <u>data store</u>
-            b._IDEA
-          br
-
-          a._PROJECT(href="/thrust")
-            img(src="/thrust.svg?v=={cacheBust}")
-            : Thrust <u>deployer</u>
-            b._IDEA
+          a._project(href="/ringer")
+            l-icon(ringer)
+            : Ringer <u>data system</u>
+            b._idea
           br
 
       br
-
-p bottom

@@ -1,13 +1,15 @@
-onReady(function() {
-  var href, links;
+// @use jymin/jymin.js
+
+Jymin.onReady(function () {
+  var href;
   href = window.favicon;
   if (href) {
-    all('link', function(link) {
+    Jymin.all('link', function (link) {
       var parent;
-      if (contains(link.rel, 'icon')) {
-        parent = getParent(link);
-        removeElement(link);
-        return link = addElement(parent, 'link?rel=shortcut icon&href=' + href);
+      if (Jymin.contains(link.rel, 'icon')) {
+        parent = Jymin.getParent(link);
+        Jymin.removeElement(link);
+        return Jymin.addElement(parent, 'link?rel=shortcut icon&href=' + href);
       }
     });
   }

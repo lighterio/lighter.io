@@ -1,0 +1,42 @@
+description = "Icons"
+call layout/page
+
+  set title:
+    Icons
+
+  set content
+
+    style:
+      svg {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #999;
+      }
+
+    l-icon(aloha)
+    l-icon(beams)
+    l-icon(cedar)
+    l-icon(chug)
+    l-icon(d6)
+    l-icon(exam)
+    l-icon(gold)
+    l-icon(jymin)
+    l-icon(lighter)
+    l-icon(ltl)
+    l-icon(ormy)
+    l-icon(plans)
+    l-icon(ringer)
+    l-icon(seattle)
+    l-icon(shellify)
+    l-icon(shield)
+    l-icon(sly)
+    l-icon(splode)
+    l-icon(thrust)
+    l-icon(za)
+    l-icon(zeriousify)
+
+    svg(viewBox="0 0 120 120")
+      path(stroke="#123" stroke-width="2" stroke-linejoin="round" d="M60,116c-180-150,180-150,0,0z")
+      path(fill="#e50" d="M60,116c-180-150,180-150,0,0z")
+      path(fill="#fc0" d="M40,82c-85-96,125-96,40,0c20-60-24-40-0,10c-10-4-20,10-20,20c0-10-10-24-20-20c24-50-20-70,0-10z")
+      path(fill="#fff" d="M32,63c-38-64,94-64,56,0c17-40-45-50-14,24c-7-2-14,4-14,8c0-4-7-10-14-8c31-74-31-64-14-24z")

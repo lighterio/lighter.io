@@ -1,7 +1,7 @@
 description = "DDoS protection"
 call layout/page
   set content
-    #_DOCENT_DOC
+    #_docentDoc
       //+docent
 
 

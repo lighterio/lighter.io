@@ -3,7 +3,7 @@ body {
   min-width: 980px;
 }
 
-._PANEL {
+._panel {
   clear: both;
   margin: 0 auto;
   padding: 0.5em 1em;
@@ -11,14 +11,14 @@ body {
 }
 
 @media all and (max-width: 1000px) {
-  ._BOX1, ._BOX2, ._BOX3,
-  ._BOX4, ._BOX5, ._BOX6,
-  ._BOX7, ._BOX8, ._BOX9,
-  ._BOX10, ._BOX11,
-  ._PANEL {
+  ._box1, ._box2, ._box3,
+  ._box4, ._box5, ._box6,
+  ._box7, ._box8, ._box9,
+  ._box10, ._box11,
+  ._panel {
     width: 100%;
   }
-  #_TAGLINE {
+  #_tagline {
     display: none;
   }
   body {

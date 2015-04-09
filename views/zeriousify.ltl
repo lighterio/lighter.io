@@ -1,7 +1,7 @@
 description = "module tester"
 call layout/page
   set content
-    #_DOCENT_DOC
+    #_docentDoc
       //+docent
 
       :marked
@@ -114,4 +114,4 @@ call layout/page
 
 
       //-docent
-    #_DOCENT_NAV
+    #_docentNav

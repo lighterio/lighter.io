@@ -1,21 +1,23 @@
-bind(window, 'scroll', function () {
+// @use jymin/jymin.js
+
+Jymin.bind(window, 'scroll', function () {
   var body = document.body;
-  body._OFFSET_TOP = 35;
+  body._offsetTop = 35;
   var top = body.scrollTop || document.documentElement.scrollTop;
   var start = 6;
   var end = 80;
-  body.id = top > start ? '_SCROLLED' : '';
+  body.id = top > start ? '_scrolled' : '';
   var fraction = Math.max(0, Math.min(1, (top - start) / (end - start)));
-  all('#_HEAD,#_FORK', function (element) {
+  Jymin.all('#_head,#_fork', function (element) {
     element.style.fontSize = (1 - fraction * 0.5) + 'em';
   });
-  one('#_HEAD ._PANEL', function (element) {
+  Jymin.one('#_head ._panel', function (element) {
     element.style.padding = (0.5 - fraction * 0.4) + 'em 1em';
   });
-  one('#_LOGO img', function (element) {
+  Jymin.one('#_logo img', function (element) {
     element.style.width = element.style.height = (2 - fraction / 2) + 'em';
   });
-  one('#_DOCENT_FIX', function (element) {
-    element.className = (top > end) ? '_FIXED' : '';
+  Jymin.one('#_docentFix', function (element) {
+    element.className = (top > end) ? '_fixed' : '';
   });
 });

@@ -1,0 +1,47 @@
+description = "totally awesome tags"
+call layout/page
+  set content
+
+    js
+      var colors = state.colors = [];
+      var borders = state.borders = [];
+      var string =
+        '03f090c00fc00dfb0f00605090307bf0f7409f9f7a07fdf0' +
+        'f97686f09f8074872d8a0f05a200a7633bcf230bd90b1908' +
+        '014c89f7a0ff045faf78304a9dcb9798eb80402df70fcfd6' +
+        '6000899f574be6f0f7f640536685a4a54afdfb609fe5b666';
+      for (var i = 0; i < 64; i++) {
+        var c = string.substr(i * 3, 3);
+        var b = c.replace(/[1-9a-f]/g, function (n) {
+          return Math.ceil(new Number('0x' + n) / 2);
+        });
+        colors.push(c);
+        borders.push(b);
+      }
+
+    //t-12
+      i = 0
+      for c in colors
+        b = borders[i++]
+        ._color
+          ._swatch(style="background:#={c};border:3px solid #={b}") #={c}
+
+    t-12
+      t-demo
+
++css
+
+  ._color {
+    display: inline-block;
+    vertical-align: top;
+    margin: 1px;
+    width: 4em;
+    height: 2em;
+  }
+
+  ._swatch {
+    width: 4em;
+    height: 2em;
+    text-align: center;
+    vertica-align: middle;
+  }

@@ -1,0 +1,229 @@
+call talks/page
+  set title:
+    Web Components
+
+  set content
+
+    s-deck
+
+      s-slide
+        s-section
+          h2 Adventures in
+          h1 Web Componentland
+          a(href="/talks/awc") http://lighter.io/talks/awc
+          br
+          img._talksAvatar(src="/sam.jpg")
+          h4 Sam Eubank
+          a._talksSocial(href="https://github.com/zerious" target="_blank")
+            s-icon(github)
+            space
+            : zerious
+          a._talksSocial(href="http://linkedin.com/in/sameubank" target="_blank")
+            s-icon(linkedin)
+            space
+            : sameubank
+          a._talksSocial(href="http://twitter.com/sameubank" target="_blank")
+            s-icon(twitter)
+            space
+            : sameubank
+
+      //s-slide
+        s-title http://lighter.io/talks/awc
+        s-img(src="/talks/dogfood.jpg")
+
+      s-slide
+        s-section._slyCenter
+          h3 React Components
+          h2(style="font-size:4em") &#8800;
+          h3 Web Components
+
+      s-slide
+        s-section._slyCenter
+          h3 Angular Directives
+          h2(style="font-size:4em") &#8800;
+          h3 Web Components
+
+      s-slide
+        s-title>a(href="http://webcomponents.org/" target="_blank") WebComponents.org
+        s-iframe(src="http://webcomponents.org/")
+
+      s-slide
+        s-title Agenda
+        s-content
+          ul
+            li 3 Web Component W3C Specs
+            li Browser Support
+            li Polyfill Libraries like Polymer
+            li Component Registries
+            li Fun Stuff
+        s-notes We'll cover as much awesome stuff as we can today. We'll start with the parts of the W3C Spec that comprise make up the Web Components functionality. We'll look at the various browser implementations of each. Then we'll see a few libraries that polyfill functionality into browsers that don't natively support web components. We'll look at component registries that exist (or don't). Then we'll see how you might be able to get what I think is the coolest stuff in the web components spec.
+
+      s-slide
+        s-title Web Components
+        s-content
+          s-poll
+            t-field(type="radio" choices="{A:'What are those?',B:'You mean, like <x-gif>?',C:'I\\'ve used a polyfill library.',D:'I build web components!'}" stacked)
+
+      s-slide
+        s-section._slyCenter
+          br>br
+          h2 W3C Specs
+
+      s-slide
+        s-title WC3 Specs
+        s-content._slySmaller
+          t-7
+            h4 Web Components
+            ul
+              li>a(href="http://w3c.github.io/webcomponents/spec/custom/" target="_blank") Custom Elements
+              li>a(href="http://w3c.github.io/webcomponents/spec/imports/" target="_blank") HTML Imports
+              li>a(href="http://w3c.github.io/webcomponents/spec/shadow/" target="_blank") Shadow DOM
+          t-5
+            h4 HTML5
+            ul
+              li>a(href="http://www.w3.org/TR/html5/scripting-1.html#the-template-element" target="_blank") &lt;template&gt;
+
+      s-slide
+        s-section
+          s-quote A custom element is a platform object whose interface is defined by the author.
+
+      s-slide
+        s-title Why? - Div Soup
+        s-img(src="/talks/div-soup.png")
+
+      s-slide
+        s-title Custom Elements
+        s-content._slySmaller
+          h4 Advantages
+          ul
+            li Succinct and expressive
+            li Immediate rendering (no FOUC)
+          h4 Requirements
+          ul
+            li Must contain a hyphen
+            li>tt document.registerElement
+
+      s-slide
+        s-title Custom Element JS
+        s-content
+          s-code:
+            document.registerElement("t-hello", {
+             prototype: Object.create(HTMLElement.prototype, {
+              createdCallback: {
+               value: function () {
+                this.innerHTML = 'Hello!';
+               }
+              }
+             })
+            });
+
+      s-slide
+        s-title>a(href="http://geelen.github.io/x-gif") Example: &lt;x-gif&gt;
+        s-iframe(src="http://geelen.github.io/x-gif")
+
+      s-slide
+        s-section
+          s-quote HTML Imports are HTML documents that are linked as external resources from another HTML document.
+
+      s-slide
+        s-title HTML Import Example
+        s-content
+          s-code:
+            &lt;head&gt;
+            &lt;link id="hello" rel="import" href="hello.html"&gt;
+            &lt;script&gt;
+              var link = document.getElementById('hello');
+              console.log(link.import.body.innerHTML);
+            &lt;/script&gt;
+
+          p
+            b Note:
+            : Imports are HTML, so they can import other imports.
+
+      s-slide
+        s-section
+          s-quote Shadow DOM addresses the DOM tree encapsulation problem.
+
+      s-slide
+        s-title Shadow DOM
+        s-content
+          s-code:
+            &lt;div id="a" class="x"&gt;&lt;/div&gt;
+            &lt;script&gt;
+              var d = document;
+              var a = d.getElementById('a');
+              var r = a.createShadowRoot();
+              r.innerHTML = '&lt;div id="b" class="x"&gt;&lt;/div&gt;';
+              console.log(d.querySelector('.x').id); // "a"
+              console.log(r.querySelector('.x').id); // "b"
+            &lt;/script&gt;
+
+      s-slide
+        s-section
+          s-quote The <tt>&lt;template&gt;</tt> element is used to declare fragments of HTML that can be cloned and inserted in the document by script.
+
+      s-slide
+        s-title The <tt>&lt;template&gt;</tt> element
+        s-content
+          s-code(style="font-size:0.9em"):
+            &lt;template id="link"&gt;&lt;li&gt;&lt;a&gt;&lt;/a&gt;&lt;/li&gt;&lt;/template&gt;
+            &lt;ul id="list"&gt;&lt;/ul&gt;
+            &lt;script&gt;
+              var link = document.getElementById('link');
+              var list = document.getElementById('list');
+              var links = {'/about': 'About', '/contact': 'Contact'};
+              for (var url in links) {
+                var item = link.content.cloneNode(true);
+                var a = item.firstChild;
+                a.href = url;
+                a.innerText = links[url];
+                list.appendChild(item);
+              }
+            &lt;/script&gt;
+
+      //s-slide
+        s-title Selective Polyfill
+        s-iframe(src="https://github.com/geelen/x-gif/blob/gh-pages/index.html")
+
+      s-slide
+        s-title>a(href="http://www.polymer-project.org/" target="_blank") Polymer-Project.org
+        s-iframe(src="http://www.polymer-project.org/")
+
+      s-slide
+        s-title>a(href="http://x-tags.org/" target="_blank") X-Tags.org
+        s-iframe(src="http://x-tags.org/")
+
+      s-slide
+        s-title>a(href="http://bosonic.github.io/" target="_blank") Bosonic.GitHub.io
+        s-iframe(src="http://bosonic.github.io/")
+
+      s-slide
+        s-section
+          h2 Thank You!
+          h1 Questions?
+          br
+          img._talksAvatar(src="/sam.jpg")
+          h4 Sam Eubank
+          a._talksSocial(href="https://github.com/zerious" target="_blank")
+            s-icon(github)
+            space
+            : zerious
+          a._talksSocial(href="http://linkedin.com/in/sameubank" target="_blank")
+            s-icon(linkedin)
+            space
+            : sameubank
+          a._talksSocial(href="http://twitter.com/sameubank" target="_blank")
+            s-icon(twitter)
+            space
+            : sameubank
+
+
++css
+  ._talksAvatar {
+    width: 12em;
+    float: left;
+    margin: 0 1em 2em 0;
+  }
+  ._talksSocial {
+    padding: 0.125em;
+  }
