@@ -1,3 +1,6 @@
+js
+  console.log(state)
+
 if wc === ''
   svg(viewBox="0 0 249.126 165.191")
     path(fill="#E44D26" d="M85.003 164.563l-47.391-129.659 130.145-34.813 23.674 135.994-49.344 29.016z")
@@ -31,3 +34,33 @@ else if polymer === ''
     path(fill="#8591cf" d="M32,14h8l-4,7z")
     path(fill="#6c78b6" d="M28,21h8l-4,7z")
     path(fill="#606ba2" d="M28,21l4,7h-8z")
+
+else if  chrome === '' ||  ff === '' ||  opera === '' ||  safari === '' ||  ie === ''
+  if  chrome === ''
+    left = 60
+  else if  ff === ''
+    left = 640
+  else if  opera === ''
+    left = 1180
+  else if  safari === ''
+    left = 1760
+  else if  ie === ''
+    left = 2300
+  svg(viewBox="0 0 538 538" style="display:inline-block;margin:-0.5em 0")
+    image(x="={-left}" y="0" width="2878" height="538" xlink:href="/talks/browsers.png")
+
+
+else if yes === '' || no === '' || sorta === ''
+
+  svg(viewBox="0 0 120 120")
+
+    if yes === ''
+      path(fill="none" stroke="#0c0" stroke-width="20" d="M18,54l20,32l56-70")
+
+    else if no === ''
+      path(stroke="#c00" stroke-width="20" d="M30,30l60,60m0-60l-60,60")
+
+    else if sorta === ''
+      path(fill="none" stroke="#da0" stroke-width="20" stroke-linejoin="round" d="M20,100h80l-40-70z")
+
+

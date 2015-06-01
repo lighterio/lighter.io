@@ -9,14 +9,19 @@ html(lang="en")
     title
       if name && description
         : ${name} - ${description}
+      else if title
+        : ${title}
       else
-        get title
+        : Lighter.io - Faster is Better
   body
     b#_stripe
     if name && description
       #_head>._panel
-        h1>a#_logo(href="/"):
-          <img src="/${repo}.svg?v=={cacheBust}">${name} <u>${description}</u>
+        h1>a#_logo(href="/")
+          l-icon(${repo})
+          : ${name}
+          space
+          u ${description}
 
       #_badges>._panel
         a(href="https://npmjs.org/package/${repo}" target="_blank")>img(src="https://img.shields.io/npm/v/${repo}.svg" alt="NPM Version")
@@ -28,23 +33,39 @@ html(lang="en")
 
       #_body>._panel
         ._area
-          get content
+          : ={block}
         br
 
       #_docentFix>._panel
         #_docentNav
 
     else
-      get content
+      : ={block}
 
     #_foot
       ._panel
-        if name
-          ._area
-            ._box6 <b>={name}</b> is a <a id="_lighterio" href="/"><img src="/lighter.svg?v=={cacheBust}">Lighter.io</a> module.
-            ._box6._alignRight <b>&lt;&gt;</b> with <b>&#9829;</b> by <a href="https://github.com/zerious">z</a>+
-        else
-          ._alignRight <b>&lt;&gt;</b> with <b>&#9829;</b> by <a href="https://github.com/zerious">z</a>+
+        ._area
+          ._box6
+            if name
+              b ={name}
+              space
+              : is a
+              space
+              a#_lighterio(href="/")
+                l-icon(lighter)
+                : Lighter.io
+              : module.
+          ._box6._alignRight
+            b &lt;&gt;
+            space
+            : with
+            space
+            b &#9829;
+            space
+            : by
+            space
+            a(href="https://github.com/zerious") z
+            a(href="https://github.com/lighterio") +
 
     if repo
       br

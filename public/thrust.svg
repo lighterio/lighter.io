@@ -2,10 +2,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="60" height="60">
   <path stroke="#123" stroke-width="2" stroke-linejoin="round" d="M2,118c90,0,0-90,0,0z"></path>
   <path stroke="#123" stroke-width="2" stroke-linejoin="round" d="M47,73v40c100-10-30-140-40-40zM115,5c-150,10,-10,150,0,0z"></path>
-  <path fill="#e50" d="M2,118c90,0,0-90,0,0z"></path>
+  <path fill="#e52" d="M2,118c90,0,0-90,0,0z"></path>
   <path fill="#fff" d="M47,73v40c100-10-30-140-40-40zM115,5c-150,10,-10,150,0,0z"></path>
-  <path fill="#e50" d="M67,40c0-17.3,26-17.3,26,0c0,17.3-26,17.3-26,0z"></path>
-  <path fill="#fc0" d="M68,40c0-16,24-16,24,0c0,16-24,16-24,0zM12,108c60,0,0-60,0,0z"></path>
+  <path fill="#e52" d="M67,40c0-17.3,26-17.3,26,0c0,17.3-26,17.3-26,0z"></path>
+  <path fill="#fc3" d="M68,40c0-16,24-16,24,0c0,16-24,16-24,0zM12,108c60,0,0-60,0,0z"></path>
   <path fill="#fff" d="M25,75l20,20l44-26l-38-38zM22,98c30,0,0-30,0,0z"></path>
-  <path fill="#e50" d="M25,75l1,1l18-33zM45,95l-1-1l33-18z"></path>
+  <path fill="#e52" d="M25,75l1,1l18-33zM45,95l-1-1l33-18z"></path>
 </svg>

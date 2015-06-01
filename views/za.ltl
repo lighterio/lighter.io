@@ -1,308 +1,308 @@
 description = "fast web server"
-call layout/page
-  set content
-    #_docentDoc
-      //+docent
+@page
 
-      :marked
+  #_docentDoc
+    //+docent
 
-
-        Za is a simple web server that exposes an Express-like API and is capable of
-        handling far more requests per second than Express.
+    :marked
 
 
-        ### Quick Start
-        Install `za` in your project:
-        ```bash
-        npm install --save za
-        ```
-
-        Use `za` to start an HTTP server:
-        ```javascript
-        var server = require('./za')();
-        server.listen(8888);
-        server.get('/', function (request, response) {
-          response.send('Hello World!');
-        });
-        console.log('Visit http://localhost:8888/ for "Hello World!"');
-
-        ```
+      Za is a simple web server that exposes an Express-like API and is capable of
+      handling far more requests per second than Express.
 
 
-        ## Server and Router
+      ### Quick Start
+      Install `za` in your project:
+      ```bash
+      npm install --save za
+      ```
 
-        ### za()
+      Use `za` to start an HTTP server:
+      ```javascript
+      var server = require('./za')();
+      server.listen(8888);
+      server.get('/', function (request, response) {
+        response.send('Hello World!');
+      });
+      console.log('Visit http://localhost:8888/ for "Hello World!"');
 
-        The `za` API is a function which instantiates servers.
+      ```
 
-        ```javascript
-        var za = require('za');
-        var server1 = za({port: 8001});
-        var server2 = za({port: 8002});
-        console.log('HTTP servers are listening on 8001 and 8002');
-        ```
 
-        ### server.router
+      ## Server and Router
 
-        Za exposes its `Router` object via `server.router`.
+      ### za()
 
-        ### router.use([path,] fn)
+      The `za` API is a function which instantiates servers.
 
-        The `use` method on a router sets a middleware function, optionally to be
-        routed only to a given path. The handler function takes `request`, `response`
-        and `next` arguments. The `request` and `response` arguments are HTTP request
-        and response objects, and the `next` argument is a function that you should
-        invoke when you want the next middleware to start executing. For performance
-        reasons, wildcard paths are not yet supported, but the middleware executes for
-        any request URLs that **start with** that path.
+      ```javascript
+      var za = require('za');
+      var server1 = za({port: 8001});
+      var server2 = za({port: 8002});
+      console.log('HTTP servers are listening on 8001 and 8002');
+      ```
 
-        This can be used for things like logging:
+      ### server.router
 
-        ```javascript
-        server.use(function (request, response, next) {
-          console.log('User requested "' + request.url + '"');
+      Za exposes its `Router` object via `server.router`.
+
+      ### router.use([path,] fn)
+
+      The `use` method on a router sets a middleware function, optionally to be
+      routed only to a given path. The handler function takes `request`, `response`
+      and `next` arguments. The `request` and `response` arguments are HTTP request
+      and response objects, and the `next` argument is a function that you should
+      invoke when you want the next middleware to start executing. For performance
+      reasons, wildcard paths are not yet supported, but the middleware executes for
+      any request URLs that **start with** that path.
+
+      This can be used for things like logging:
+
+      ```javascript
+      server.use(function (request, response, next) {
+        console.log('User requested "' + request.url + '"');
+        next();
+      });
+      ```
+
+      Or for something like authentication:
+
+      ```javascript
+      server.use('/admin', function (request, response, next) {
+        if (request.isAdminUser) {
           next();
-        });
-        ```
+        } else {
+          response.statusCode = 401;
+          response.end("You are not signed in as an admin user.");
+        }
+      });
+      ```
 
-        Or for something like authentication:
+      ### router.get(path, fn)
 
-        ```javascript
-        server.use('/admin', function (request, response, next) {
-          if (request.isAdminUser) {
-            next();
-          } else {
-            response.statusCode = 401;
-            response.end("You are not signed in as an admin user.");
-          }
-        });
-        ```
+      The `get` method on a router sets a GET handler function for a given
+      path. The handler function takes `request` and `response` arguments. For
+      performance reasons, wildcard paths are not yet supported.
 
-        ### router.get(path, fn)
+      ```javascript
+      server.get('/ping', function (request, response) {
+        response.end('OK');
+      });
+      ```
 
-        The `get` method on a router sets a GET handler function for a given
-        path. The handler function takes `request` and `response` arguments. For
-        performance reasons, wildcard paths are not yet supported.
+      ### router.post(path, fn)
 
-        ```javascript
-        server.get('/ping', function (request, response) {
-          response.end('OK');
-        });
-        ```
+      Works just like router.get, only the method is POST.
 
-        ### router.post(path, fn)
+      ### router.put(path, fn)
 
-        Works just like router.get, only the method is POST.
+      Works just like router.get, only the method is PUT.
 
-        ### router.put(path, fn)
+      ### router.delete(path, fn)
 
-        Works just like router.get, only the method is PUT.
+      Works just like router.get, only the method is DELETE.
 
-        ### router.delete(path, fn)
+      ### server.use(path, fn)
 
-        Works just like router.get, only the method is DELETE.
+      Calls `router.use` on the server's router.
 
-        ### server.use(path, fn)
+      ### server.get(path, fn)
 
-        Calls `router.use` on the server's router.
+      Calls `router.get` on the server's router.
 
-        ### server.get(path, fn)
+      ### server.post(path, fn)
 
-        Calls `router.get` on the server's router.
+      Calls `router.post` on the server's router.
 
-        ### server.post(path, fn)
+      ### server.put(path, fn)
 
-        Calls `router.post` on the server's router.
+      Calls `router.put` on the server's router.
 
-        ### server.put(path, fn)
+      ### server.delete(path, fn)
 
-        Calls `router.put` on the server's router.
+      Calls `router.delete` on the server's router.
 
-        ### server.delete(path, fn)
+      ## HTTP object decorations
 
-        Calls `router.delete` on the server's router.
+      Za decorates the `http.IncomingMessage` and `http.ServerResponse` prototypes
+      with useful methods.
 
-        ## HTTP object decorations
+      ### request.header(name)
 
-        Za decorates the `http.IncomingMessage` and `http.ServerResponse` prototypes
-        with useful methods.
+      Returns the value of a response header with the given name.
 
-        ### request.header(name)
+      ### request.cookies
 
-        Returns the value of a response header with the given name.
+      Exposes a getter which parses the cookie header and returns an object with
+      a key and value for each cookie.
 
-        ### request.cookies
+      ### request.body
 
-        Exposes a getter which parses the cookie header and returns an object with
-        a key and value for each cookie.
+      Exposes a getter which parses the request body and returns an object with a
+      key and value for each parameter in the POST body.
 
-        ### request.body
+      ### request.query
 
-        Exposes a getter which parses the request body and returns an object with a
-        key and value for each parameter in the POST body.
+      Exposes a getter which parses the query string and returns an object with a
+      key and value for each URL parameter.
 
-        ### request.query
+      ### request.multipart
 
-        Exposes a getter which parses the query string and returns an object with a
-        key and value for each URL parameter.
+      The `multipart` object has its keys and values set as the server is receiving
+      multipart form data. If the request is not a multipart type request, this
+      object will be undefined (so it can be used to test for multipart requests).
 
-        ### request.multipart
+      ### response.json(object)
 
-        The `multipart` object has its keys and values set as the server is receiving
-        multipart form data. If the request is not a multipart type request, this
-        object will be undefined (so it can be used to test for multipart requests).
+      Sends an object as a JSON string, with `content-type: application/json`.
 
-        ### response.json(object)
+      ### response.send(data)
 
-        Sends an object as a JSON string, with `content-type: application/json`.
+      Sends a string, an HTTP status, or an object as a JSON string - depending on
+      the type of the data (`string`, `number` or `object`).
 
-        ### response.send(data)
+      ### response.zip(text, preZipped)
 
-        Sends a string, an HTTP status, or an object as a JSON string - depending on
-        the type of the data (`string`, `number` or `object`).
+      Uses `gzip` to compress text (provided the `accept-encoding` header mentions
+      "gzip"), then sets `content-encoding: gzip` and sends the response.
 
-        ### response.zip(text, preZipped)
+      NOTE: If `preZipped` is passed in, the `gzip` compression step is skipped, and
+      the pre-zipped content is used instead. This is a useful performance feature
+      for when you need to send the same zipped response multiple times.
 
-        Uses `gzip` to compress text (provided the `accept-encoding` header mentions
-        "gzip"), then sets `content-encoding: gzip` and sends the response.
+      ### response.cookie(name, value, options)
 
-        NOTE: If `preZipped` is passed in, the `gzip` compression step is skipped, and
-        the pre-zipped content is used instead. This is a useful performance feature
-        for when you need to send the same zipped response multiple times.
+      Sets a cookie with a given name, value and options.
 
-        ### response.cookie(name, value, options)
+      ### response.redirect(location)
 
-        Sets a cookie with a given name, value and options.
+      Sends a 302 response, redirecting to the given location.
 
-        ### response.redirect(location)
+      ## Multipart
 
-        Sends a 302 response, redirecting to the given location.
+      Za includes its own multipart parser. When a multipart request is received, its
+      handler is called before the multipart parser begins. The handler can listen
+      for request events as file parsing proceeds.
 
-        ## Multipart
+      ### request.on("za:file", fn)
 
-        Za includes its own multipart parser. When a multipart request is received, its
-        handler is called before the multipart parser begins. The handler can listen
-        for request events as file parsing proceeds.
+      When the multipart parser finds a file, the request emits a `"za:file"` event
+      and passes the file field. A listener can set a `stream` object on the file
+      field, and the parser will save to that stream. When the parser is finished, it
+      will close the stream.
 
-        ### request.on("za:file", fn)
-
-        When the multipart parser finds a file, the request emits a `"za:file"` event
-        and passes the file field. A listener can set a `stream` object on the file
-        field, and the parser will save to that stream. When the parser is finished, it
-        will close the stream.
-
-        ```javascript
-        server.post('/upload', function (request, response) {
-          request.on('za:file', function (field) {
-            var path = '/tmp/upload';
-            var encoding = (/text/.test(field.type) ? 'utf8' : 'binary');
-            field.stream = fs.createWriteStream(, encoding);
-            field.stream.on('close', function () {
-              response.send('File "' + field.filename + '" saved to "' + path + '".');
-            });
+      ```javascript
+      server.post('/upload', function (request, response) {
+        request.on('za:file', function (field) {
+          var path = '/tmp/upload';
+          var encoding = (/text/.test(field.type) ? 'utf8' : 'binary');
+          field.stream = fs.createWriteStream(, encoding);
+          field.stream.on('close', function () {
+            response.send('File "' + field.filename + '" saved to "' + path + '".');
           });
         });
-        ```
+      });
+      ```
 
-        ### request.on("za:finished", fn)
+      ### request.on("za:finished", fn)
 
-        When the multipart parser is finished, the request emits a `"za:finished"`
-        event. At that time, `request.multipart` (as well as `request.body`) contain
-        all of the data that was sent in the multipart request.
-
-
-        ## Why is it called "Za"?
-
-        The term "za" is short for "pizza", and when it comes to web app responses and
-        pizza, everyone wants fast delivery. (Also, the name was available on NPM).
+      When the multipart parser is finished, the request emits a `"za:finished"`
+      event. At that time, `request.multipart` (as well as `request.body`) contain
+      all of the data that was sent in the multipart request.
 
 
-        ## Acknowledgements
+      ## Why is it called "Za"?
 
-        We would like to thank all of the amazing people who use, support,
-        promote, enhance, document, patch, and submit comments & issues.
-        Za couldn't exist without you.
-
-        Additionally, huge thanks go to [TUNE](http://www.tune.com) for employing
-        and supporting [Za](http://lighter.io/za) project maintainers,
-        and for being an epically awesome place to work (and play).
+      The term "za" is short for "pizza", and when it comes to web app responses and
+      pizza, everyone wants fast delivery. (Also, the name was available on NPM).
 
 
-        ## MIT License
+      ## Acknowledgements
 
-        Copyright (c) 2014 Sam Eubank
+      We would like to thank all of the amazing people who use, support,
+      promote, enhance, document, patch, and submit comments & issues.
+      Za couldn't exist without you.
 
-        Permission is hereby granted, free of charge, to any person obtaining a copy
-        of this software and associated documentation files (the "Software"), to deal
-        in the Software without restriction, including without limitation the rights
-        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-        copies of the Software, and to permit persons to whom the Software is
-        furnished to do so, subject to the following conditions:
-
-        The above copyright notice and this permission notice shall be included in all
-        copies or substantial portions of the Software.
-
-        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-        SOFTWARE.
+      Additionally, huge thanks go to [Goin’](https://goin.io) for employing
+      and supporting [Za](http://lighter.io/za) project maintainers,
+      and for being an epically awesome place to work (and play).
 
 
-        ## How to Contribute
+      ## MIT License
 
-        We welcome contributions from the community and are happy to have them.
-        Please follow this guide when logging issues or making code changes.
+      Copyright (c) 2014 Sam Eubank
 
-        ### Logging Issues
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+      of this software and associated documentation files (the "Software"), to deal
+      in the Software without restriction, including without limitation the rights
+      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+      copies of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
 
-        All issues should be created using the
-        [new issue form](https://github.com/lighterio/za/issues/new).
-        Please describe the issue including steps to reproduce. Also, make sure
-        to indicate the version that has the issue.
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
 
-        ### Changing Code
-
-        Code changes are welcome and encouraged! Please follow our process:
-
-        1. Fork the repository on GitHub.
-        2. Fix the issue ensuring that your code follows the
-           [style guide](http://lighter.io/style-guide).
-        3. Add tests for your new code, ensuring that you have 100% code coverage.
-           (If necessary, we can help you reach 100% prior to merging.)
-           * Run `npm test` to run tests quickly, without testing coverage.
-           * Run `npm run cover` to test coverage and generate a report.
-           * Run `npm run report` to open the coverage report you generated.
-        4. [Pull requests](http://help.github.com/send-pull-requests/) should be made
-           to the [master branch](https://github.com/lighterio/za/tree/master).
-
-        ### Contributor Code of Conduct
-
-        As contributors and maintainers of Za, we pledge to respect all
-        people who contribute through reporting issues, posting feature requests,
-        updating documentation, submitting pull requests or patches, and other
-        activities.
-
-        If any participant in this project has issues or takes exception with a
-        contribution, they are obligated to provide constructive feedback and never
-        resort to personal attacks, trolling, public or private harassment, insults, or
-        other unprofessional conduct.
-
-        Project maintainers have the right and responsibility to remove, edit, or
-        reject comments, commits, code, edits, issues, and other contributions
-        that are not aligned with this Code of Conduct. Project maintainers who do
-        not follow the Code of Conduct may be removed from the project team.
-
-        Instances of abusive, harassing, or otherwise unacceptable behavior may be
-        reported by opening an issue or contacting one or more of the project
-        maintainers.
-
-        We promise to extend courtesy and respect to everyone involved in this project
-        regardless of gender, gender identity, sexual orientation, ability or
-        disability, ethnicity, religion, age, location, native language, or level of
-        experience.
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+      SOFTWARE.
 
 
-      //-docent
+      ## How to Contribute
+
+      We welcome contributions from the community and are happy to have them.
+      Please follow this guide when logging issues or making code changes.
+
+      ### Logging Issues
+
+      All issues should be created using the
+      [new issue form](https://github.com/lighterio/za/issues/new).
+      Please describe the issue including steps to reproduce. Also, make sure
+      to indicate the version that has the issue.
+
+      ### Changing Code
+
+      Code changes are welcome and encouraged! Please follow our process:
+
+      1. Fork the repository on GitHub.
+      2. Fix the issue ensuring that your code follows the
+         [style guide](http://lighter.io/style-guide).
+      3. Add tests for your new code, ensuring that you have 100% code coverage.
+         (If necessary, we can help you reach 100% prior to merging.)
+         * Run `npm test` to run tests quickly, without testing coverage.
+         * Run `npm run cover` to test coverage and generate a report.
+         * Run `npm run report` to open the coverage report you generated.
+      4. [Pull requests](http://help.github.com/send-pull-requests/) should be made
+         to the [master branch](https://github.com/lighterio/za/tree/master).
+
+      ### Contributor Code of Conduct
+
+      As contributors and maintainers of Za, we pledge to respect all
+      people who contribute through reporting issues, posting feature requests,
+      updating documentation, submitting pull requests or patches, and other
+      activities.
+
+      If any participant in this project has issues or takes exception with a
+      contribution, they are obligated to provide constructive feedback and never
+      resort to personal attacks, trolling, public or private harassment, insults, or
+      other unprofessional conduct.
+
+      Project maintainers have the right and responsibility to remove, edit, or
+      reject comments, commits, code, edits, issues, and other contributions
+      that are not aligned with this Code of Conduct. Project maintainers who do
+      not follow the Code of Conduct may be removed from the project team.
+
+      Instances of abusive, harassing, or otherwise unacceptable behavior may be
+      reported by opening an issue or contacting one or more of the project
+      maintainers.
+
+      We promise to extend courtesy and respect to everyone involved in this project
+      regardless of gender, gender identity, sexual orientation, ability or
+      disability, ethnicity, religion, age, location, native language, or level of
+      experience.
+
+
+    //-docent

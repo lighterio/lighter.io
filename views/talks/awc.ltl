@@ -10,8 +10,7 @@ call talks/page
         s-section
           h2 Adventures in
           h1 Web Componentland
-          a(href="/talks/awc") http://lighter.io/talks/awc
-          br
+
           img._talksAvatar(src="/sam.jpg")
           h4 Sam Eubank
           a._talksSocial(href="https://github.com/zerious" target="_blank")
@@ -26,10 +25,6 @@ call talks/page
             s-icon(twitter)
             space
             : sameubank
-
-      //s-slide
-        s-title http://lighter.io/talks/awc
-        s-img(src="/talks/dogfood.jpg")
 
       s-slide
         s-section._slyCenter
@@ -54,7 +49,7 @@ call talks/page
             li 3 Web Component W3C Specs
             li Browser Support
             li Polyfill Libraries like Polymer
-            li Component Registries
+            li Other Stuff
             li Fun Stuff
         s-notes We'll cover as much awesome stuff as we can today. We'll start with the parts of the W3C Spec that comprise make up the Web Components functionality. We'll look at the various browser implementations of each. Then we'll see a few libraries that polyfill functionality into browsers that don't natively support web components. We'll look at component registries that exist (or don't). Then we'll see how you might be able to get what I think is the coolest stuff in the web components spec.
 
@@ -105,17 +100,16 @@ call talks/page
 
       s-slide
         s-title Custom Element JS
-        s-content
-          s-code:
-            document.registerElement("t-hello", {
-             prototype: Object.create(HTMLElement.prototype, {
-              createdCallback: {
-               value: function () {
-                this.innerHTML = 'Hello!';
-               }
-              }
-             })
-            });
+        s-code:
+          document.registerElement("t-hello", {
+           prototype: Object.create(HTMLElement.prototype, {
+            createdCallback: {
+             value: function () {
+              this.innerHTML = 'Hello!';
+             }
+            }
+           })
+          });
 
       s-slide
         s-title>a(href="http://geelen.github.io/x-gif") Example: &lt;x-gif&gt;
@@ -127,18 +121,17 @@ call talks/page
 
       s-slide
         s-title HTML Import Example
-        s-content
-          s-code:
-            &lt;head&gt;
-            &lt;link id="hello" rel="import" href="hello.html"&gt;
-            &lt;script&gt;
-              var link = document.getElementById('hello');
-              console.log(link.import.body.innerHTML);
-            &lt;/script&gt;
-
-          p
-            b Note:
-            : Imports are HTML, so they can import other imports.
+        s-code:
+          &lt;!--
+            Note: Imports are HTML.
+            They can import other imports.
+          --&gt;
+          &lt;head&gt;
+          &lt;link id="hello" rel="import" href="hello.html"&gt;
+          &lt;script&gt;
+            var link = document.getElementById('hello');
+            console.log(link.import.body.innerHTML);
+          &lt;/script&gt;
 
       s-slide
         s-section
@@ -146,17 +139,28 @@ call talks/page
 
       s-slide
         s-title Shadow DOM
-        s-content
-          s-code:
-            &lt;div id="a" class="x"&gt;&lt;/div&gt;
-            &lt;script&gt;
-              var d = document;
-              var a = d.getElementById('a');
-              var r = a.createShadowRoot();
-              r.innerHTML = '&lt;div id="b" class="x"&gt;&lt;/div&gt;';
-              console.log(d.querySelector('.x').id); // "a"
-              console.log(r.querySelector('.x').id); // "b"
-            &lt;/script&gt;
+        s-code:
+          &lt;div id="a" class="x"&gt;&lt;/div&gt;
+          &lt;script&gt;
+            var d = document;
+            var a = d.getElementById('a');
+            var r = a.createShadowRoot();
+            r.innerHTML = '&lt;div id="b" class="x"&gt;&lt;/div&gt;';
+            console.log(d.querySelector('.x').id); // "a"
+            console.log(r.querySelector('.x').id); // "b"
+          &lt;/script&gt;
+
+      s-slide
+        s-title Shadow Double-Edged Sword
+        s-content._slySmaller
+          h4 Advantages
+          ul
+            li Styles don't cascade
+            li Events don't bubble
+          h4 Disadvantages
+          ul
+            li Styles don't cascade
+            li Events don't bubble
 
       s-slide
         s-section
@@ -164,38 +168,182 @@ call talks/page
 
       s-slide
         s-title The <tt>&lt;template&gt;</tt> element
-        s-content
-          s-code(style="font-size:0.9em"):
-            &lt;template id="link"&gt;&lt;li&gt;&lt;a&gt;&lt;/a&gt;&lt;/li&gt;&lt;/template&gt;
-            &lt;ul id="list"&gt;&lt;/ul&gt;
-            &lt;script&gt;
-              var link = document.getElementById('link');
-              var list = document.getElementById('list');
-              var links = {'/about': 'About', '/contact': 'Contact'};
-              for (var url in links) {
-                var item = link.content.cloneNode(true);
-                var a = item.firstChild;
-                a.href = url;
-                a.innerText = links[url];
-                list.appendChild(item);
-              }
-            &lt;/script&gt;
-
-      //s-slide
-        s-title Selective Polyfill
-        s-iframe(src="https://github.com/geelen/x-gif/blob/gh-pages/index.html")
+        s-code(style="font-size:0.9em"):
+          &lt;template id="link"&gt;&lt;li&gt;&lt;a&gt;&lt;/a&gt;&lt;/li&gt;&lt;/template&gt;
+          &lt;ul id="list"&gt;&lt;/ul&gt;
+          &lt;script&gt;
+            var link = document.getElementById('link');
+            var list = document.getElementById('list');
+            var links = {'/about': 'About', '/contact': 'Contact'};
+            for (var url in links) {
+              var item = link.content.cloneNode(true);
+              var a = item.firstChild;
+              a.href = url;
+              a.innerText = links[url];
+              list.appendChild(item);
+            }
+          &lt;/script&gt;
 
       s-slide
-        s-title>a(href="http://www.polymer-project.org/" target="_blank") Polymer-Project.org
+        s-section._slyCenter
+          h2 Browser support
+          br
+          img(src="/talks/browsers.png" style="width:100%")
+          br
+          br
+          h4 (AKA "WTF?!?")
+
+      s-slide
+        s-title Almost there?
+        s-content
+          table
+            tr
+              th
+              th>talk-icon(chrome)
+              th>talk-icon(opera)
+              th>talk-icon(ff)
+              th>talk-icon(safari)
+              th>talk-icon(ie)
+            tr
+              td &lt;template&gt;
+              td>talk-icon(yes)
+              td>talk-icon(yes)
+              td>talk-icon(yes)
+              td>talk-icon(yes)
+              td>talk-icon(no)
+            tr
+              td Custom Elements
+              td>talk-icon(yes)
+              td>talk-icon(yes)
+              td>talk-icon(sorta)
+              td>talk-icon(no)
+              td>talk-icon(no)
+            tr
+              td HTML Imports
+              td>talk-icon(yes)
+              td>talk-icon(yes)
+              td>talk-icon(sorta)
+              td>talk-icon(no)
+              td>talk-icon(no)
+            tr
+              td Shadow DOM
+              td>talk-icon(yes)
+              td>talk-icon(yes)
+              td>talk-icon(sorta)
+              td>talk-icon(no)
+              td>talk-icon(no)
+
+      s-slide
+        s-title Selective Polyfill
+        s-code:
+          &lt;script&gt;
+            if ('registerElement' in document
+              && 'createShadowRoot' in HTMLElement.prototype
+              && 'import' in document.createElement('link')
+              && 'content' in document.createElement('template')) {
+              // We're using a browser with native WC support!
+            } else {
+              document.write('&lt;script src="https:\/\/cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"&gt;&lt;\/script&gt;')
+            }
+          &lt;/script&gt;
+
+      s-slide
+        s-section
+          h2._slyCenter Polyfill Libraries
+
+      s-slide
+        s-title>a(href="http://www.polymer-project.org/" target="_blank") Polymer-Project.org - Google
         s-iframe(src="http://www.polymer-project.org/")
 
       s-slide
-        s-title>a(href="http://x-tags.org/" target="_blank") X-Tags.org
+        s-title Polymer
+        s-content
+          ul
+            li Most well-established
+            li Others are based on it
+            li Optimize with "Vulcanize"
+            li>a(href="https://www.polymer-project.org/0.5/docs/start/getting-the-code.html" target="_blank") Download?
+
+      s-slide
+        s-title>a(href="http://x-tags.org/" target="_blank") X-Tags.org - Mozilla
         s-iframe(src="http://x-tags.org/")
 
       s-slide
-        s-title>a(href="http://bosonic.github.io/" target="_blank") Bosonic.GitHub.io
+        s-title X-Tags
+        s-content
+          ul
+            li Borrows code from Polymer
+            li Only 65K compressed
+            li>a(href="http://mozbrick.github.io/" target="_external") Brick
+
+      s-slide
+        s-title>a(href="http://bosonic.github.io/" target="_blank") Bosonic.GitHub.io -
+          space
+          s-icon(github)
+          space
+          : goldoraf
         s-iframe(src="http://bosonic.github.io/")
+
+      s-slide
+        s-section
+          h2._slyCenter Other Stuff
+
+      s-slide
+        s-title>a(href="https://facebook.github.io/react/" target="_blank") React
+        s-iframe(src="https://facebook.github.io/react/")
+
+      s-slide
+        s-title>a(href="https://muut.com/riotjs/" target="_blank") Riot
+        s-iframe(src="https://muut.com/riotjs/")
+
+      s-slide
+        s-section
+          h2._slyCenter Fun Stuff
+
+      s-slide
+        s-title>a(href="/tat" target="_blank") &lt;t-shameless&gt;Tat&lt;t-shameless&gt;
+        s-iframe(src="/tat")
+
+      s-slide
+        s-title Tat
+        s-code:
+          /**
+           * Register a new custom element.
+           *
+           * @param {String}   elementName   A custom HTML element name.
+           * @param {Function} template  A template function used to generate HTML.
+           */
+          Tat._registerElement = function (elementName, template) {
+            if (document.registerElement) {
+              document.registerElement(elementName, {
+                prototype: Object.create(HTMLElement.prototype, {
+                  createdCallback: {
+                    value: function () {
+                      Tat._populateElement(this, template);
+                    }
+                  }
+                })
+              });
+            }
+            else if (!Tat._fallback) {
+              function populate(element) { // jshint ignore:line
+                var element = Jymin.getElement(element);
+                var template = Tat._elements[element];
+                if (template) {
+                  Tat._populateElement(element, template);
+                }
+              }
+              Tat._fallback = function (readyElement) {
+                Jymin.all(readyElement, '*', populate);
+              };
+              Jymin.onReady(Tat._fallback);
+              Jymin.bind(document, 'DOMNodeInserted', function (element, event, target) {
+                Tat._fallback = Jymin.doNothing;
+                populate(target);
+              });
+            }
+          };
+
 
       s-slide
         s-section
@@ -220,10 +368,11 @@ call talks/page
 
 +css
   ._talksAvatar {
-    width: 12em;
+    width: 10em;
     float: left;
     margin: 0 1em 2em 0;
   }
   ._talksSocial {
     padding: 0.125em;
+    font-size: 0.75em;
   }

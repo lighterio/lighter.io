@@ -7,7 +7,7 @@ call talks/page
   set content
 
     b
-      h2 SeattleJS Hack Night @ TUNE
+      h2 SeattleJS Hack Night @ Goin’
       ul
         li HasOffers-Guest WiFi: HasWireless
         li Slides:

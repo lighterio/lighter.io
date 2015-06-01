@@ -1,9 +1,9 @@
 description = "DDoS protection"
-call layout/page
-  set content
-    #_docentDoc
-      //+docent
+@page
+
+  #_docentDoc
+    //+docent
 
 
 
-      //-docent
+    //-docent

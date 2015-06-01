@@ -10,6 +10,10 @@
   line-height: 1.5;
 }
 
+#_projects ._box4 {
+  padding: 0 1em;
+}
+
 a._project {
   position: relative;
   display: block;
@@ -18,7 +22,6 @@ a._project {
   border-radius: 1em;
   background: #235;
   font-weight: 400;
-  font-size: 1.2em;
   color: #fff;
   margin: -0.4em -0.3em;
 }
@@ -37,7 +40,7 @@ a._project svg {
   vertical-align: middle;
   width: 3em;
   height: 3em;
-  margin: 0 0.5em 0 1.5em;
+  margin: 0 0.5em;
 }
 
 a._project u {
@@ -46,30 +49,4 @@ a._project u {
   font-weight: 300;
   text-decoration: none!important;
   opacity: 0.6;
-}
-
-b._ready,
-b._undocumented,
-b._idea {
-  position: absolute;
-  width: 1em;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  margin: -1px;
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
-  opacity: 0.5;
-}
-
-b._ready {
-  background: #0a0;
-}
-
-b._undocumented {
-  background: #d00;
-}
-
-b._idea {
-  background: #80d;
 }

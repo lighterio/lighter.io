@@ -1,8 +1,8 @@
 <!DOCTYPE svg>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="60" height="60">
   <path stroke="#123" stroke-width="2" stroke-linejoin="round" d="M60,2l50,30v56l-49.5,30l-49.5-30v-56z"></path>
-  <path fill="#fc0" d="M60,2l50,30v56l-49.5,30l-49.5-30v-56z"></path>
-  <path fill="#e50" d="M60,5l45,27l-45,27l-45-27zM14,35v52l45,27v-52zM107,35v52l-45,27v-52z"></path>
+  <path fill="#fc3" d="M60,2l50,30v56l-49.5,30l-49.5-30v-56z"></path>
+  <path fill="#e52" d="M60,5l45,27l-45,27l-45-27zM14,35v52l45,27v-52zM107,35v52l-45,27v-52z"></path>
   <path fill="#fff" d="M52,32c0,8,16,8,16,0c0-8-16-8-16,0z"></path>
   <path fill="#fff" d="M20,59c1,10,13,10,12,0c-1-10-13-10-12,0zM40,89c1,10,13,10,12,0c-1-10-13-10-12,0z"></path>
   <path fill="#fff" d="M91,55c-1,10,11,10,12,0c1-10-11-10-12,0M79,74c-1,10,11,10,12,0c1-10-11-10-12,0M67,93c-1,10,11,10,12,0c1-10-11-10-12,0"></path>

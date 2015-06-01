@@ -1,28 +1,6 @@
-call layout/page
+title = 'Lighter.io - faster is better'
+@page
 
-  set title:
-    Lighter.io - faster is better
+  h2 Page Not Found
 
-  set content
-
-    #_head
-      ._panel
-        a(href="/")
-          h1#_logo
-            svg(viewBox="0 0 120 120")
-              path(fill="#e50" d="M20,80c0,45,80,45,80,0c0-40-40-60-40-70c0,20-40,30-40,70z")
-              path(fill="#fc0" d="M35,85c0,30,50,30,50,0c0-20-25-35-25-40c0,15-25,20-25,40z")
-              path(fill="#fff" d="M50,90c0,14,20,14,20,0c0-10-10-20-10-20c0,10-10,10-10,20z")
-            : Lighter.io
-            span faster is better
-
-    #_features
-      ._panel
-
-
-    #_body
-      ._panel
-
-        h2 Page Not Found
-
-        p If you think this page should exist, let us know.
+  p If you think this page should exist, let us know.

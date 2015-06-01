@@ -1,123 +1,107 @@
-call layout/page
+title = 'Lighter.io - faster is better'
+@page
 
-  set title:
-    Lighter.io - faster is better
+  #_head
+    ._panel
+      h1>a#_logo(href="/")
+        l-icon(lighter)
+        : Lighter.io
+        space
+        u faster is better
 
-  set content
-
-    #_head
-      ._panel
-        h1>a#_logo(href="/"):
-          <img src="/lighter.svg?v=={cacheBust}">Lighter.io <u>faster is better</u>
-
-    #_features
-      ._panel
-        ._box
-          ._box6 Lighter.io modules are the <b>fastest tools</b> for building modern web services and UIs.
-            br
-          ._box6 We maintain <b>easy APIs</b> with <b>thorough test coverage</b> and <b>interactive documentation</b>.
-            br
+  #_features
+    ._panel
+      ._box
+        ._box6 Lighter.io modules are the <b>fastest tools</b> for building modern services and experiences.
           br
-
-    #_body
-
-      br
-      ._panel
-
-        ._box4
-
-          a._project(href="/lighter")
-            l-icon(lighter)
-            : Lighter <u>framework</u>
-            b._ready
+        ._box6 We maintain <b>easy APIs</b> with <b>thorough test coverage</b> and <b>interactive documentation</b>.
           br
+        br
 
-          a._project(href="/chug")
-            l-icon(chug)
-            : Chug <u>builder</u>
-            b._ready
-          br
+  #_body
 
-          a._project(href="/cedar")
-            l-icon(cedar)
-            : Cedar <u>logger</u>
-            b._ready
-          br
+    br
+    #_projects._panel
 
-          a._project(href="/ltl")
-            l-icon(ltl)
-            : Ltl <u>templates</u>
-            b._ready
-          br
+      ._box4
 
-          a._project(href="/za")
-            l-icon(za)
-            : Za <u>web server</u>
-            b._ready
-          br
+        a._project(href="/lighter")
+          l-icon(lighter)
+          : Lighter <u>framework</u>
+        br
 
-        ._box4
+        a._project(href="/chug")
+          l-icon(chug)
+          : Chug <u>builder</u>
+        br
 
-          a._project(href="/exam")
-            l-icon(exam)
-            : Exam <u>test runner</u>
-            b._ready
-          br
+        a._project(href="/cedar")
+          l-icon(cedar)
+          : Cedar <u>logger</u>
+        br
 
-          a._project(href="/jymin")
-            l-icon(jymin)
-            : Jymin <u>front-end JS</u>
-            b._undocumented
-          br
+        a._project(href="/ltl")
+          l-icon(ltl)
+          : Ltl <u>templates</u>
+        br
 
-          a._project(href="/d6")
-            l-icon(d6)
-            : D6 <u>isomorphic JS</u>
-            b._undocumented
-          br
+        a._project(href="/za")
+          l-icon(za)
+          : Za <u>web server</u>
+        br
 
-          a._project(href="/beams")
-            l-icon(beams)
-            : Beams <u>long poller</u>
-            b._ready
-          br
+      ._box4
 
-          a._project(href="/splode")
-            l-icon(splode)
-            : Splode <u>error handler</u>
-            b._ready
-          br
+        a._project(href="/exam")
+          l-icon(exam)
+          : Exam <u>test runner</u>
+        br
 
-        ._box4
+        a._project(href="/jymin")
+          l-icon(jymin)
+          : Jymin <u>front-end JS</u>
+        br
 
-          a._project(href="/tat")
-            l-icon(tat)
-            : Tat <u>custom tags</u>
-            b._idea
-          br
+        a._project(href="/porta")
+          l-icon(porta)
+          : Porta <u>isomorphism</u>
+        br
 
-          a._project(href="/plans")
-            l-icon(plans)
-            : Plans <u>async flow</u>
-            b._ready
-          br
+        a._project(href="/beams")
+          l-icon(beams)
+          : Beams <u>long poller</u>
+        br
 
-          a._project(href="/gold")
-            l-icon(gold)
-            : Gold <u>workspace</u>
-            b._idea
-          br
+        a._project(href="/splode")
+          l-icon(splode)
+          : Splode <u>error handler</u>
+        br
 
-          a._project(href="/ormy")
-            l-icon(ormy)
-            : Ormy <u>ORM</u>
-            b._idea
-          br
+      ._box4
 
-          a._project(href="/ringer")
-            l-icon(ringer)
-            : Ringer <u>data system</u>
-            b._idea
-          br
+        a._project(href="/tat")
+          l-icon(tat)
+          : Tat <u>custom elements</u>
+        br
 
-      br
+        a._project(href="/plans")
+          l-icon(plans)
+          : Plans <u>async flow</u>
+        br
+
+        a._project(href="/ormy")
+          l-icon(ormy)
+          : Ormy <u>ORM</u>
+        br
+
+        a._project(href="/omen")
+          l-icon(omen)
+          : Omen <u>data system</u>
+        br
+
+        a._project(href="/gold")
+          l-icon(gold)
+          : Gold <u>workspace</u>
+        br
+
+    br

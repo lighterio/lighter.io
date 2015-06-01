@@ -14,9 +14,11 @@ app.work(function () {
   require('sly')(app);
 });
 
+/*
 app.addAssets('tags', [
   'node_modules/sly/tags'
 ]);
+*/
 
 app.addAssets('scripts', [
   'node_modules/jquery/dist/jquery.js',

@@ -37,9 +37,9 @@ call talks/page
     b
       h2 Revenue "share" != company stock
       ul(style="background-image:url(/talks/fake.gif)")
-        li.a1 TUNE governs payouts
-        li.a2 All your app are belong to TUNE
-        li.a3 Don't make TUNE look bad
+        li.a1 Goin’ governs payouts
+        li.a2 All your app are belong to Goin’
+        li.a3 Don't make Goin’ look bad
 
     b
       h2 Thank You.

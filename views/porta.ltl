@@ -1,4 +1,4 @@
-description = "deployment system"
+description = "isomorphic JS renderer"
 @page
 
   #_docentDoc
@@ -7,26 +7,25 @@ description = "deployment system"
     :marked
 
 
-      Thrust is a deployment system that keeps track of users, hosts, host groups,
-      repositories, environments and deployments. It gives you a straightforward
-      web UI to coordinate your operations and a client process that keeps all of
-      your hosts connected.
+      Porta is an isomorphic JavaScript renderer. If you use Lighter with Ltl, Porta can
+      render your templates on the server side for the first request then lazy load
+      templates and render on the client for subsequent requests.
 
 
       ## Acknowledgements
 
       We would like to thank all of the amazing people who use, support,
       promote, enhance, document, patch, and submit comments & issues.
-      Thrust couldn't exist without you.
+      Porta couldn't exist without you.
 
       Additionally, huge thanks go to [Goin’](https://goin.io) for employing
-      and supporting [Thrust](http://lighter.io/thrust) project maintainers,
+      and supporting [Porta](http://lighter.io/porta) project maintainers,
       and for being an epically awesome place to work (and play).
 
 
       ## MIT License
 
-      Copyright (c) 2014 Sam Eubank
+      Copyright (c) 2015 Sam Eubank
 
       Permission is hereby granted, free of charge, to any person obtaining a copy
       of this software and associated documentation files (the "Software"), to deal
@@ -55,7 +54,7 @@ description = "deployment system"
       ### Logging Issues
 
       All issues should be created using the
-      [new issue form](https://github.com/lighterio/thrust/issues/new).
+      [new issue form](https://github.com/lighterio/porta/issues/new).
       Please describe the issue including steps to reproduce. Also, make sure
       to indicate the version that has the issue.
 
@@ -72,11 +71,11 @@ description = "deployment system"
          * Run `npm run cover` to test coverage and generate a report.
          * Run `npm run report` to open the coverage report you generated.
       4. [Pull requests](http://help.github.com/send-pull-requests/) should be made
-         to the [master branch](https://github.com/lighterio/thrust/tree/master).
+         to the [master branch](https://github.com/lighterio/porta/tree/master).
 
       ### Contributor Code of Conduct
 
-      As contributors and maintainers of Thrust, we pledge to respect all
+      As contributors and maintainers of Porta, we pledge to respect all
       people who contribute through reporting issues, posting feature requests,
       updating documentation, submitting pull requests or patches, and other
       activities.

@@ -2,10 +2,10 @@ var A = require('aloha');
 var url = require('url');
 
 var projects = [
-  'aloha', 'beams', 'cedar', 'chug', 'd6', 'exam', 'gold',
-  'jymin', 'lighter', 'ltl', 'ormy', 'plans', 'ringer',
-  'seattle', 'shellify', 'shield', 'sly', 'splode', 'tat',
-  'thrust', 'za', 'zeriousify'
+  'aloha', 'beams', 'cedar', 'chug', 'exam',
+  'gold', 'jymin', 'lighter', 'ltl', 'omen', 'ormy',
+  'plans', 'porta', 'seattle', 'shellify', 'shield',
+  'sly', 'splode', 'thrust', 'za', 'zeriousify'
 ];
 
 module.exports = {

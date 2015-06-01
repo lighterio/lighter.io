@@ -4,13 +4,13 @@
   <path stroke="#123" stroke-width="2" stroke-linejoin="round" d="M60,60c52-101,90,65,0,0zM60,60c40,100-120,10,0,0z"></path>
   <path stroke="#123" stroke-width="2" stroke-linejoin="round" d="M60,60c-90-76,90-76,0,0z"></path>
   <path fill="#fff" d="M60,60c-52-101-90,65,0,0zM60,60c-40,100,120,10,0,0z"></path>
-  <path fill="#fc0" d="M60,60c-50-90-80,57,0,0zM60,60c-32,90,105,8,0,0z"></path>
-  <path fill="#e50" d="M60,60c-20-55-40,40,0,0zM60,60c-25,48,60,-2,0,0z"></path>
+  <path fill="#fc3" d="M60,60c-50-90-80,57,0,0zM60,60c-32,90,105,8,0,0z"></path>
+  <path fill="#e52" d="M60,60c-20-55-40,40,0,0zM60,60c-25,48,60,-2,0,0z"></path>
   <path fill="#fff" d="M60,60c52-101,90,65,0,0zM60,60c40,100-120,10,0,0z"></path>
-  <path fill="#fc0" d="M60,60c50-90,80,57,0,0zM60,60c32,90-105,8,0,0z"></path>
-  <path fill="#e50" d="M60,60c20-55,40,40,0,0zM60,60c25,48-60,-2,0,0z"></path>
+  <path fill="#fc3" d="M60,60c50-90,80,57,0,0zM60,60c32,90-105,8,0,0z"></path>
+  <path fill="#e52" d="M60,60c20-55,40,40,0,0zM60,60c25,48-60,-2,0,0z"></path>
   <path fill="#fff" d="M60,60c-90-76,90-76,0,0z"></path>
-  <path fill="#fc0" d="M60,60c-80-70,80-70,0,0z"></path>
-  <path fill="#e50" d="M60,60c-50-32,50-32,0,0z"></path>
+  <path fill="#fc3" d="M60,60c-80-70,80-70,0,0z"></path>
+  <path fill="#e52" d="M60,60c-50-32,50-32,0,0z"></path>
   <path fill="#fff" d="M53,60c0-9,14-9,14,0c0,9-14,9,-14,0z"></path>
 </svg>

@@ -2,6 +2,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="60" height="60">
   <path stroke="#123" stroke-width="2" stroke-linejoin="round" d="M35,105c-10,0-20-10-20-20v-50c0-10,10-20,20-20h50c10,0,20,10,20,20v50c0,10,-10,20-20,20z"></path>
   <path fill="#fff" d="M35,105c-10,0-20-10-20-20v-50c0-10,10-20,20-20h50c10,0,20,10,20,20v50c0,10,-10,20-20,20z"></path>
-  <path fill="#fc0" d="M15,35l70,-5l-70,55z"></path>
-  <path fill="#e50" d="M105,35l-70,55l70-5z"></path>
+  <path fill="#fc3" d="M15,35l70,-5l-70,55z"></path>
+  <path fill="#e52" d="M105,35l-70,55l70-5z"></path>
 </svg>

@@ -1,23 +1,28 @@
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
 .hljs-shebang,
 .hljs-comment,
-.hljs-template_comment,
 .hljs-javadoc {
   color: #7c7c7c;
 }
 
-.hljs-built_in {
-  color: #abf;
-}
-
 .hljs-keyword,
 .hljs-tag,
+.tex .hljs-command,
 .hljs-request,
-.hljs-status, {
+.hljs-status,
+.clojure .hljs-attribute {
   color: #96cbfe;
 }
 
 .hljs-sub .hljs-keyword,
-.hljs-list .hljs-title {
+.method,
+.hljs-list .hljs-title,
+.nginx .hljs-title {
   color: #ffffb6;
 }
 
@@ -26,7 +31,9 @@
 .hljs-cdata,
 .hljs-filter .hljs-argument,
 .hljs-attr_selector,
-.hljs-date {
+.apache .hljs-cbracket,
+.hljs-date,
+.coffeescript .hljs-attribute {
   color: #a8ff60;
 }
 
@@ -42,16 +49,39 @@
 .hljs-sub .hljs-identifier,
 .hljs-pi,
 .hljs-decorator,
+.tex .hljs-special,
 .hljs-type,
-.hljs-constant {
+.hljs-constant,
+.smalltalk .hljs-class,
+.hljs-javadoctag,
+.hljs-yardoctag,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.nginx .hljs-built_in {
   color: #ffffb6;
 }
 
 .hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
 .hljs-number,
 .hljs-variable,
-.hljs-literal {
+.vbscript,
+.hljs-literal,
+.hljs-name {
   color: #c6c5fe;
+}
+
+.css .hljs-tag {
+  color: #96cbfe;
+}
+
+.css .hljs-rule .hljs-property,
+.css .hljs-id {
+  color: #ffffb6;
+}
+
+.css .hljs-class {
+  color: #fff;
 }
 
 .hljs-hexcolor {
@@ -59,6 +89,5 @@
 }
 
 .hljs-number {
-  color: #ff73fd;
+  color:#ff73fd;
 }
-

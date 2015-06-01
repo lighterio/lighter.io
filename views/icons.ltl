@@ -1,42 +1,53 @@
+title = 'Icons'
 description = "Icons"
-call layout/page
+@page
 
-  set title:
-    Icons
+  style:
+    svg {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #999;
+    }
 
-  set content
+  svg(viewBox="0 0 120 120")
+    g(stroke="#248" stroke-width="2" stroke-linejoin="round")
+      path(fill="#36c" d="M15,10c20,0,30,0,45-8c15,8,25,8,45,8v50c0,30,-45,58-45,58c0,0-45-23-45-58z")
+      path(fill="#69f" d="M15,10c20,0,30,0,45-8v52h-45zm45,44h45v6c0,30,-45,58-45,58z")
+      g(stroke="#861" fill="#fc3")
+        //
+          circle(cx="30" cy="22" r="5")
+          circle(cx="45" cy="20" r="5")
+          circle(cx="60" cy="16" r="5")
+          circle(cx="75" cy="20" r="5")
+          circle(cx="90" cy="22" r="5")
+        path(d="M60,18l11,22l24,4l-18,17l5,25l-22-12l-23,12l5-25l-18-17l24-4z")
 
-    style:
-      svg {
-        width: 100px;
-        height: 100px;
-        border: 1px solid #999;
-      }
+  l-icon(aloha)
+  l-icon(beams)
+  l-icon(cedar)
+  l-icon(chug)
+  l-icon(d6)
 
-    l-icon(aloha)
-    l-icon(beams)
-    l-icon(cedar)
-    l-icon(chug)
-    l-icon(d6)
-    l-icon(exam)
-    l-icon(gold)
-    l-icon(jymin)
-    l-icon(lighter)
-    l-icon(ltl)
-    l-icon(ormy)
-    l-icon(plans)
-    l-icon(ringer)
-    l-icon(seattle)
-    l-icon(shellify)
-    l-icon(shield)
-    l-icon(sly)
-    l-icon(splode)
-    l-icon(thrust)
-    l-icon(za)
-    l-icon(zeriousify)
+  svg(viewBox="0 0 120 120")
+    path(stroke="#123" fill="none" stroke-width="2" d="M34,88l-12,8l-8-2c0-10,2-18,6-24c-6,4-8,8-10,14l-8-8c4-10,6-24,24-36l-16,2l-4-8c6-12,16-18,32-14l-20-8c10-8,24-12,36,4l-4-12l22-2l-3,9c4-6,12-7,20-8l2,8l-12,9c10-3,24-6,32,16l-12,4c12,0,14,4,18,16l-8,12l-10-4c14,8,16,16,16,24l-14,8l-15-8zM34,88q26,54,52,0zM66,62c2-6,8-6,10,0c-2,4-8,4-10,0zm-12,0c-2,4-8,4-10,0c2-6,8-6,10,0z")
+    path(fill="#fc3" d="M34,88q26,54,52,0h12v-64h-66l-12,50zM66,62c2-6,8-6,10,0c-2,4-8,4-10,0zm-12,0c-2,4-8,4-10,0c2-6,8-6,10,0z")
+    path(fill="#e52" d="M50,92c6,26,14,26,20,0z")
+    path(fill="#fff" d="M34,88l-12,8l-8-2c0-10,2-18,6-24c-6,4-8,8-10,14l-8-8c4-10,6-24,24-36l-16,2l-4-8c6-12,16-18,32-14l-20-8c10-8,24-12,36,4l-4-12l22-2l-3,9c4-6,12-7,20-8l2,8l-12,9c10-3,24-6,32,16l-12,4c12,0,14,4,18,16l-8,12l-10-4c14,8,16,16,16,24l-14,8l-15-8l3-12c8,8,12-20,0-16c8-44-66-44-58,0c-12-4-8,24,0,16l3,12zm4,4c-4-6,8-14,16-12c0,8,12,8,12,0c8-2,20,6,16,12zM64,50c-4-8,20-6,16,2zm-8,0c4-8-20-6-16,2z")
 
-    svg(viewBox="0 0 120 120")
-      path(stroke="#123" stroke-width="2" stroke-linejoin="round" d="M60,116c-180-150,180-150,0,0z")
-      path(fill="#e50" d="M60,116c-180-150,180-150,0,0z")
-      path(fill="#fc0" d="M40,82c-85-96,125-96,40,0c20-60-24-40-0,10c-10-4-20,10-20,20c0-10-10-24-20-20c24-50-20-70,0-10z")
-      path(fill="#fff" d="M32,63c-38-64,94-64,56,0c17-40-45-50-14,24c-7-2-14,4-14,8c0-4-7-10-14-8c31-74-31-64-14-24z")
+  l-icon(exam)
+  l-icon(gold)
+  l-icon(jymin)
+  l-icon(lighter)
+  l-icon(ltl)
+  l-icon(ormy)
+  l-icon(plans)
+  l-icon(omen)
+  l-icon(seattle)
+  l-icon(shellify)
+  l-icon(shield)
+  l-icon(sly)
+  l-icon(splode)
+  l-icon(tat)
+  l-icon(thrust)
+  l-icon(za)
+  l-icon(zeriousify)
